@@ -10,11 +10,7 @@
 		25D1CC509131174B8FED6A50 /* Pods_iOSAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1090B110F84586CA76094406 /* Pods_iOSAppTests.framework */; };
 		7AE52D3C0A4EA507B289CB80 /* Pods_iOSApp_iOSAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117895BFD56397A270B3169A /* Pods_iOSApp_iOSAppUITests.framework */; };
 		B425266E2918B44A00E509BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B425266D2918B44A00E509BD /* AppDelegate.m */; };
-		B42526712918B44A00E509BD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526702918B44A00E509BD /* SceneDelegate.m */; };
-		B42526742918B44A00E509BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526732918B44A00E509BD /* ViewController.m */; };
-		B42526772918B44A00E509BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42526752918B44A00E509BD /* Main.storyboard */; };
 		B42526792918B44B00E509BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42526782918B44B00E509BD /* Assets.xcassets */; };
-		B425267C2918B44B00E509BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B425267A2918B44B00E509BD /* LaunchScreen.storyboard */; };
 		B425267F2918B44B00E509BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B425267E2918B44B00E509BD /* main.m */; };
 		B42526892918B44C00E509BD /* iOSAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526882918B44C00E509BD /* iOSAppTests.m */; };
 		B42526932918B44C00E509BD /* iOSAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526922918B44C00E509BD /* iOSAppUITests.m */; };
@@ -26,6 +22,10 @@
 		B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D12918E18C000C8D45 /* ZTKVO.m */; };
 		B469C4DE2918E18C000C8D45 /* LifecycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D32918E18C000C8D45 /* LifecycleView.m */; };
 		B469C4DF2918E18C000C8D45 /* LifecycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D42918E18C000C8D45 /* LifecycleViewController.m */; };
+		B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E22918FC65000C8D45 /* LaunchController.m */; };
+		B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E729191E9E000C8D45 /* ZTHttpManager.m */; };
+		B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4EA2919281A000C8D45 /* ZTResponse.m */; };
+		B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4ED29192856000C8D45 /* ParseHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +56,7 @@
 		B42526692918B44A00E509BD /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B425266C2918B44A00E509BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B425266D2918B44A00E509BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B425266F2918B44A00E509BD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		B42526702918B44A00E509BD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		B42526722918B44A00E509BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B42526732918B44A00E509BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B42526762918B44A00E509BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B42526782918B44B00E509BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B425267B2918B44B00E509BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B425267D2918B44B00E509BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B425267E2918B44B00E509BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B42526842918B44C00E509BD /* iOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +79,14 @@
 		B469C4D82918E18C000C8D45 /* LifecycleViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifecycleViewControllerProtocol.h; sourceTree = "<group>"; };
 		B469C4D92918E18C000C8D45 /* ZTMVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTMVVM.h; sourceTree = "<group>"; };
 		B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		B469C4E12918FC65000C8D45 /* LaunchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchController.h; sourceTree = "<group>"; };
+		B469C4E22918FC65000C8D45 /* LaunchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchController.m; sourceTree = "<group>"; };
+		B469C4E629191E9E000C8D45 /* ZTHttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTHttpManager.h; sourceTree = "<group>"; };
+		B469C4E729191E9E000C8D45 /* ZTHttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTHttpManager.m; sourceTree = "<group>"; };
+		B469C4E92919281A000C8D45 /* ZTResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTResponse.h; sourceTree = "<group>"; };
+		B469C4EA2919281A000C8D45 /* ZTResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTResponse.m; sourceTree = "<group>"; };
+		B469C4EC29192856000C8D45 /* ParseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseHelper.h; sourceTree = "<group>"; };
+		B469C4ED29192856000C8D45 /* ParseHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
 		B56EEB33ED61568700BCDA64 /* Pods-iOSAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSAppTests.release.xcconfig"; path = "Target Support Files/Pods-iOSAppTests/Pods-iOSAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		E0620F9F25D8892207FA4EFC /* Pods-iOSApp-iOSAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp-iOSAppUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSApp-iOSAppUITests/Pods-iOSApp-iOSAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,19 +167,16 @@
 		B425266B2918B44A00E509BD /* iOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				B469C4E429190DBB000C8D45 /* common */,
 				B469C4C82918E18C000C8D45 /* mvvm */,
 				B425266C2918B44A00E509BD /* AppDelegate.h */,
 				B425266D2918B44A00E509BD /* AppDelegate.m */,
-				B425266F2918B44A00E509BD /* SceneDelegate.h */,
-				B42526702918B44A00E509BD /* SceneDelegate.m */,
-				B42526722918B44A00E509BD /* ViewController.h */,
-				B42526732918B44A00E509BD /* ViewController.m */,
-				B42526752918B44A00E509BD /* Main.storyboard */,
 				B42526782918B44B00E509BD /* Assets.xcassets */,
-				B425267A2918B44B00E509BD /* LaunchScreen.storyboard */,
 				B425267D2918B44B00E509BD /* Info.plist */,
 				B425267E2918B44B00E509BD /* main.m */,
 				B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */,
+				B469C4E12918FC65000C8D45 /* LaunchController.h */,
+				B469C4E22918FC65000C8D45 /* LaunchController.m */,
 			);
 			path = iOSApp;
 			sourceTree = "<group>";
@@ -242,6 +241,27 @@
 				B469C4D82918E18C000C8D45 /* LifecycleViewControllerProtocol.h */,
 			);
 			path = lifecycle;
+			sourceTree = "<group>";
+		};
+		B469C4E429190DBB000C8D45 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				B469C4E529191E5D000C8D45 /* http */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		B469C4E529191E5D000C8D45 /* http */ = {
+			isa = PBXGroup;
+			children = (
+				B469C4E629191E9E000C8D45 /* ZTHttpManager.h */,
+				B469C4E729191E9E000C8D45 /* ZTHttpManager.m */,
+				B469C4E92919281A000C8D45 /* ZTResponse.h */,
+				B469C4EA2919281A000C8D45 /* ZTResponse.m */,
+				B469C4EC29192856000C8D45 /* ParseHelper.h */,
+				B469C4ED29192856000C8D45 /* ParseHelper.m */,
+			);
+			path = http;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,9 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B425267C2918B44B00E509BD /* LaunchScreen.storyboard in Resources */,
 				B42526792918B44B00E509BD /* Assets.xcassets in Resources */,
-				B42526772918B44A00E509BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,12 +503,14 @@
 				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
 				B469C4DC2918E18C000C8D45 /* UIViewController+MVVM.m in Sources */,
 				B469C4DB2918E18C000C8D45 /* UIView+MVVM.m in Sources */,
-				B42526742918B44A00E509BD /* ViewController.m in Sources */,
+				B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */,
 				B425266E2918B44A00E509BD /* AppDelegate.m in Sources */,
+				B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
+				B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */,
+				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
 				B469C4DA2918E18C000C8D45 /* ZTMVVM.m in Sources */,
 				B469C4DF2918E18C000C8D45 /* LifecycleViewController.m in Sources */,
-				B42526712918B44A00E509BD /* SceneDelegate.m in Sources */,
 				B469C4DE2918E18C000C8D45 /* LifecycleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,25 +546,6 @@
 			targetProxy = B425268F2918B44C00E509BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B42526752918B44A00E509BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B42526762918B44A00E509BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B425267A2918B44B00E509BD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B425267B2918B44B00E509BD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B42526962918B44C00E509BD /* Debug */ = {
@@ -674,7 +675,7 @@
 				INFOPLIST_FILE = iOSApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -702,7 +703,7 @@
 				INFOPLIST_FILE = iOSApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

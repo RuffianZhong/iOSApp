@@ -1,22 +1,25 @@
 //
-//  ViewController.m
+//  LaunchController.m
 //  iOSApp
 //
 //  Created by 钟达烽 on 2022/11/7.
 //
 
-#import "ViewController.h"
+#import "LaunchController.h"
 
-@interface ViewController ()
+@interface LaunchController ()
 
 @end
 
-@implementation ViewController
+@implementation LaunchController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor redColor];
 }
+
+
 
 
 @end
