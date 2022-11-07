@@ -20,6 +20,12 @@
 		B42526932918B44C00E509BD /* iOSAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526922918B44C00E509BD /* iOSAppUITests.m */; };
 		B42526952918B44C00E509BD /* iOSAppUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */; };
 		B462F311B1F5CCF91D5DDB51 /* Pods_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF97C20D7BB40226404D10B /* Pods_iOSApp.framework */; };
+		B469C4DA2918E18C000C8D45 /* ZTMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4C92918E18C000C8D45 /* ZTMVVM.m */; };
+		B469C4DB2918E18C000C8D45 /* UIView+MVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4CB2918E18C000C8D45 /* UIView+MVVM.m */; };
+		B469C4DC2918E18C000C8D45 /* UIViewController+MVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4CE2918E18C000C8D45 /* UIViewController+MVVM.m */; };
+		B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D12918E18C000C8D45 /* ZTKVO.m */; };
+		B469C4DE2918E18C000C8D45 /* LifecycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D32918E18C000C8D45 /* LifecycleView.m */; };
+		B469C4DF2918E18C000C8D45 /* LifecycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D42918E18C000C8D45 /* LifecycleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +70,21 @@
 		B425268E2918B44C00E509BD /* iOSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42526922918B44C00E509BD /* iOSAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITests.m; sourceTree = "<group>"; };
 		B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITestsLaunchTests.m; sourceTree = "<group>"; };
+		B469C4C92918E18C000C8D45 /* ZTMVVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTMVVM.m; sourceTree = "<group>"; };
+		B469C4CB2918E18C000C8D45 /* UIView+MVVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MVVM.m"; sourceTree = "<group>"; };
+		B469C4CC2918E18C000C8D45 /* UIViewController+MVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MVVM.h"; sourceTree = "<group>"; };
+		B469C4CD2918E18C000C8D45 /* UIView+MVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MVVM.h"; sourceTree = "<group>"; };
+		B469C4CE2918E18C000C8D45 /* UIViewController+MVVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MVVM.m"; sourceTree = "<group>"; };
+		B469C4D02918E18C000C8D45 /* ZTKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTKVO.h; sourceTree = "<group>"; };
+		B469C4D12918E18C000C8D45 /* ZTKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTKVO.m; sourceTree = "<group>"; };
+		B469C4D32918E18C000C8D45 /* LifecycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifecycleView.m; sourceTree = "<group>"; };
+		B469C4D42918E18C000C8D45 /* LifecycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifecycleViewController.m; sourceTree = "<group>"; };
+		B469C4D52918E18C000C8D45 /* LifecycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifecycleView.h; sourceTree = "<group>"; };
+		B469C4D62918E18C000C8D45 /* LifecycleViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifecycleViewProtocol.h; sourceTree = "<group>"; };
+		B469C4D72918E18C000C8D45 /* LifecycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifecycleViewController.h; sourceTree = "<group>"; };
+		B469C4D82918E18C000C8D45 /* LifecycleViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifecycleViewControllerProtocol.h; sourceTree = "<group>"; };
+		B469C4D92918E18C000C8D45 /* ZTMVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTMVVM.h; sourceTree = "<group>"; };
+		B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B56EEB33ED61568700BCDA64 /* Pods-iOSAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSAppTests.release.xcconfig"; path = "Target Support Files/Pods-iOSAppTests/Pods-iOSAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		E0620F9F25D8892207FA4EFC /* Pods-iOSApp-iOSAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp-iOSAppUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSApp-iOSAppUITests/Pods-iOSApp-iOSAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +165,7 @@
 		B425266B2918B44A00E509BD /* iOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				B469C4C82918E18C000C8D45 /* mvvm */,
 				B425266C2918B44A00E509BD /* AppDelegate.h */,
 				B425266D2918B44A00E509BD /* AppDelegate.m */,
 				B425266F2918B44A00E509BD /* SceneDelegate.h */,
@@ -155,6 +177,7 @@
 				B425267A2918B44B00E509BD /* LaunchScreen.storyboard */,
 				B425267D2918B44B00E509BD /* Info.plist */,
 				B425267E2918B44B00E509BD /* main.m */,
+				B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */,
 			);
 			path = iOSApp;
 			sourceTree = "<group>";
@@ -174,6 +197,51 @@
 				B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */,
 			);
 			path = iOSAppUITests;
+			sourceTree = "<group>";
+		};
+		B469C4C82918E18C000C8D45 /* mvvm */ = {
+			isa = PBXGroup;
+			children = (
+				B469C4CA2918E18C000C8D45 /* category */,
+				B469C4CF2918E18C000C8D45 /* kvo */,
+				B469C4D22918E18C000C8D45 /* lifecycle */,
+				B469C4D92918E18C000C8D45 /* ZTMVVM.h */,
+				B469C4C92918E18C000C8D45 /* ZTMVVM.m */,
+			);
+			path = mvvm;
+			sourceTree = "<group>";
+		};
+		B469C4CA2918E18C000C8D45 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				B469C4CD2918E18C000C8D45 /* UIView+MVVM.h */,
+				B469C4CB2918E18C000C8D45 /* UIView+MVVM.m */,
+				B469C4CC2918E18C000C8D45 /* UIViewController+MVVM.h */,
+				B469C4CE2918E18C000C8D45 /* UIViewController+MVVM.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		B469C4CF2918E18C000C8D45 /* kvo */ = {
+			isa = PBXGroup;
+			children = (
+				B469C4D02918E18C000C8D45 /* ZTKVO.h */,
+				B469C4D12918E18C000C8D45 /* ZTKVO.m */,
+			);
+			path = kvo;
+			sourceTree = "<group>";
+		};
+		B469C4D22918E18C000C8D45 /* lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				B469C4D52918E18C000C8D45 /* LifecycleView.h */,
+				B469C4D32918E18C000C8D45 /* LifecycleView.m */,
+				B469C4D72918E18C000C8D45 /* LifecycleViewController.h */,
+				B469C4D42918E18C000C8D45 /* LifecycleViewController.m */,
+				B469C4D62918E18C000C8D45 /* LifecycleViewProtocol.h */,
+				B469C4D82918E18C000C8D45 /* LifecycleViewControllerProtocol.h */,
+			);
+			path = lifecycle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,10 +482,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
+				B469C4DC2918E18C000C8D45 /* UIViewController+MVVM.m in Sources */,
+				B469C4DB2918E18C000C8D45 /* UIView+MVVM.m in Sources */,
 				B42526742918B44A00E509BD /* ViewController.m in Sources */,
 				B425266E2918B44A00E509BD /* AppDelegate.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
+				B469C4DA2918E18C000C8D45 /* ZTMVVM.m in Sources */,
+				B469C4DF2918E18C000C8D45 /* LifecycleViewController.m in Sources */,
 				B42526712918B44A00E509BD /* SceneDelegate.m in Sources */,
+				B469C4DE2918E18C000C8D45 /* LifecycleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +588,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSApp/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -571,6 +646,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSApp/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
