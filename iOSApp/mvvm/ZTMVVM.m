@@ -10,7 +10,7 @@
 
 @implementation ZTMVVM
 
-static NSKeyValueObservingOptions normalOptions = NSKeyValueObservingOptionNew;
+static NSKeyValueObservingOptions normalOptions = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
 
 #pragma mark - keyPaths 属性
 

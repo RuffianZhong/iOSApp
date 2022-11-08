@@ -33,7 +33,7 @@
          notify:(void (^)(id observable,NSString *keyPath)) notify{
     
    ///默认属性列表
-    NSMutableArray* array=[[self _propertyNameArray:observable]mutableCopy];
+    NSMutableArray* array=[[self _propertyNameArray:[observable class]]mutableCopy];
     
     [self observe:observable keyPaths:array options:options notify:notify];
 }
@@ -63,7 +63,7 @@
          notify:(void (^)(id observable,NSString *keyPath)) notify{
     
     ///默认属性列表
-    NSMutableArray* array=[[self _propertyNameArray:observable]mutableCopy];
+    NSMutableArray* array=[[self _propertyNameArray:[observable class]]mutableCopy];
     
     ///过滤属性逻辑
     if(keyPathArray != nil){
@@ -98,8 +98,12 @@
 /// @param change 字典类型，通过键值对显示新/旧值
 /// @param context 设置监听时携带的信息
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    //block
-    _observerNotify(object,keyPath);
+    id newValue = change[@"new"];
+    id oldValue = change[@"old"];
+    if(newValue != oldValue){
+        //block
+        _observerNotify(object,keyPath);
+    }
 }
 
 /// 注册属性监听
@@ -137,7 +141,7 @@
 #pragma mark - 辅助方法
 
 ///通过运行时获取当前对象的所有属性的名称，以数组的形式返回
-- (NSArray *) _propertyNameArray:(id)object{
+- (NSArray *) _propertyNameArray:(Class)objectClass{
     ///存储所有的属性名称
     NSMutableArray *nameArray = [[NSMutableArray alloc] init];
      
@@ -145,7 +149,7 @@
     unsigned int propertyCount = 0;
      
     ///通过运行时获取当前类的属性
-    objc_property_t *propertys = class_copyPropertyList([object class], &propertyCount);
+    objc_property_t *propertys = class_copyPropertyList(objectClass, &propertyCount);
      
     //把属性放到数组中
     for (int i = 0; i < propertyCount; i ++) {
@@ -154,6 +158,23 @@
         
         ///属性名称
         const char * propertyName = property_getName(property);
+        
+        ///属性类型
+        Class propertyClass = [NSObject class];
+        const char* attributes = property_getAttributes(property);
+        if (attributes[1] == '@') {
+            NSMutableString* className = [NSMutableString new];
+            for (int j=3; attributes[j] && attributes[j]!='"'; j++)
+                [className appendFormat:@"%c", attributes[j]];
+            propertyClass = NSClassFromString(className);
+        }
+        ///自定义类进一步添加子属性：parentName 点 childName
+        if([self isCustomClass:propertyClass]){
+            NSArray *childArray = [self _propertyNameArray:propertyClass];
+            for (int i = 0; i < childArray.count; i++) {
+                [nameArray addObject:[NSString stringWithFormat:@"%s.%@", propertyName,childArray[i]]];
+            }
+        }
          
         [nameArray addObject:[NSString stringWithUTF8String:propertyName]];
     }
@@ -162,6 +183,15 @@
     free(propertys);
      
     return nameArray;
+}
+
+/// 是否为自定义的类
+/// @param clazz 目标类型
+- (BOOL)isCustomClass:(Class)clazz{
+    if([NSBundle bundleForClass:clazz] == [NSBundle mainBundle]){
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - 生命周期
