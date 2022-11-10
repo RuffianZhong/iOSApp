@@ -20,13 +20,13 @@
 }
 
 - (void)showUserInfo{
-    _userData = _userModel.getUserData;
+    self.userData = _userModel.getUserData;
 }
 
 - (void)updateUserInfo:(NSString *)name{
-
+    
     ///通过点语法更新
-//    self.userData.name = name;
+    self.userData.name = name;
     
     ///只能通过 self + 属性 更新
     //int random = 500 + arc4random() % (1000-500+1);

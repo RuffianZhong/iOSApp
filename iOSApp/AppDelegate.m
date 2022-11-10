@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "LaunchController.h"
+#import "demo/mvvm/DemoController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     //2.创建根控制器
-    LaunchController *launchController = [[LaunchController alloc]init];
+//    LaunchController *launchController = [[LaunchController alloc]init];
+    DemoController *launchController = [[DemoController alloc]init];
+
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:launchController];
     navController.navigationBarHidden = YES;

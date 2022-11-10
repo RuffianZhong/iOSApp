@@ -17,6 +17,8 @@
 #import "MJRefresh.h"
 #import <SDWebImage/SDWebImage.h>
 #import "AppDelegate.h"
+#import "mvvm/UIViewController+ZTMVVM.h"
+#import "mvvm/UIView+ZTMVVM.h"
 
 #endif
 

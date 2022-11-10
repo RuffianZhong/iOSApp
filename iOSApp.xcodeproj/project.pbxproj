@@ -16,16 +16,19 @@
 		B42526932918B44C00E509BD /* iOSAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526922918B44C00E509BD /* iOSAppUITests.m */; };
 		B42526952918B44C00E509BD /* iOSAppUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */; };
 		B462F311B1F5CCF91D5DDB51 /* Pods_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF97C20D7BB40226404D10B /* Pods_iOSApp.framework */; };
-		B469C4DA2918E18C000C8D45 /* ZTMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4C92918E18C000C8D45 /* ZTMVVM.m */; };
-		B469C4DB2918E18C000C8D45 /* UIView+MVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4CB2918E18C000C8D45 /* UIView+MVVM.m */; };
-		B469C4DC2918E18C000C8D45 /* UIViewController+MVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4CE2918E18C000C8D45 /* UIViewController+MVVM.m */; };
 		B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D12918E18C000C8D45 /* ZTKVO.m */; };
-		B469C4DE2918E18C000C8D45 /* LifecycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D32918E18C000C8D45 /* LifecycleView.m */; };
-		B469C4DF2918E18C000C8D45 /* LifecycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D42918E18C000C8D45 /* LifecycleViewController.m */; };
 		B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E22918FC65000C8D45 /* LaunchController.m */; };
 		B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E729191E9E000C8D45 /* ZTHttpManager.m */; };
 		B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4EA2919281A000C8D45 /* ZTResponse.m */; };
 		B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4ED29192856000C8D45 /* ParseHelper.m */; };
+		B469C4F32919EDCC000C8D45 /* DemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4F22919EDCC000C8D45 /* DemoController.m */; };
+		B469C4F62919EF77000C8D45 /* DemoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4F52919EF77000C8D45 /* DemoViewModel.m */; };
+		B469C4F92919EF96000C8D45 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4F82919EF96000C8D45 /* UserData.m */; };
+		B469C4FC2919F0D7000C8D45 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4FB2919F0D7000C8D45 /* UserModel.m */; };
+		B469C4FF291A0312000C8D45 /* DemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4FE291A0312000C8D45 /* DemoView.m */; };
+		B469C502291A679C000C8D45 /* UserChild.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C501291A679B000C8D45 /* UserChild.m */; };
+		B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C504291B8993000C8D45 /* UIViewController+ZTMVVM.m */; };
+		B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C507291B89C1000C8D45 /* UIView+ZTMVVM.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,20 +67,8 @@
 		B425268E2918B44C00E509BD /* iOSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42526922918B44C00E509BD /* iOSAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITests.m; sourceTree = "<group>"; };
 		B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITestsLaunchTests.m; sourceTree = "<group>"; };
-		B469C4C92918E18C000C8D45 /* ZTMVVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTMVVM.m; sourceTree = "<group>"; };
-		B469C4CB2918E18C000C8D45 /* UIView+MVVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MVVM.m"; sourceTree = "<group>"; };
-		B469C4CC2918E18C000C8D45 /* UIViewController+MVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MVVM.h"; sourceTree = "<group>"; };
-		B469C4CD2918E18C000C8D45 /* UIView+MVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MVVM.h"; sourceTree = "<group>"; };
-		B469C4CE2918E18C000C8D45 /* UIViewController+MVVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MVVM.m"; sourceTree = "<group>"; };
 		B469C4D02918E18C000C8D45 /* ZTKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTKVO.h; sourceTree = "<group>"; };
 		B469C4D12918E18C000C8D45 /* ZTKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTKVO.m; sourceTree = "<group>"; };
-		B469C4D32918E18C000C8D45 /* LifecycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifecycleView.m; sourceTree = "<group>"; };
-		B469C4D42918E18C000C8D45 /* LifecycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifecycleViewController.m; sourceTree = "<group>"; };
-		B469C4D52918E18C000C8D45 /* LifecycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifecycleView.h; sourceTree = "<group>"; };
-		B469C4D62918E18C000C8D45 /* LifecycleViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifecycleViewProtocol.h; sourceTree = "<group>"; };
-		B469C4D72918E18C000C8D45 /* LifecycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifecycleViewController.h; sourceTree = "<group>"; };
-		B469C4D82918E18C000C8D45 /* LifecycleViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifecycleViewControllerProtocol.h; sourceTree = "<group>"; };
-		B469C4D92918E18C000C8D45 /* ZTMVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTMVVM.h; sourceTree = "<group>"; };
 		B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B469C4E12918FC65000C8D45 /* LaunchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchController.h; sourceTree = "<group>"; };
 		B469C4E22918FC65000C8D45 /* LaunchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchController.m; sourceTree = "<group>"; };
@@ -87,6 +78,22 @@
 		B469C4EA2919281A000C8D45 /* ZTResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTResponse.m; sourceTree = "<group>"; };
 		B469C4EC29192856000C8D45 /* ParseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseHelper.h; sourceTree = "<group>"; };
 		B469C4ED29192856000C8D45 /* ParseHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
+		B469C4F12919EDCC000C8D45 /* DemoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoController.h; sourceTree = "<group>"; };
+		B469C4F22919EDCC000C8D45 /* DemoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoController.m; sourceTree = "<group>"; };
+		B469C4F42919EF77000C8D45 /* DemoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewModel.h; sourceTree = "<group>"; };
+		B469C4F52919EF77000C8D45 /* DemoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewModel.m; sourceTree = "<group>"; };
+		B469C4F72919EF96000C8D45 /* UserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		B469C4F82919EF96000C8D45 /* UserData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		B469C4FA2919F0D7000C8D45 /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		B469C4FB2919F0D7000C8D45 /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		B469C4FD291A0312000C8D45 /* DemoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoView.h; sourceTree = "<group>"; };
+		B469C4FE291A0312000C8D45 /* DemoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoView.m; sourceTree = "<group>"; };
+		B469C500291A679B000C8D45 /* UserChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserChild.h; sourceTree = "<group>"; };
+		B469C501291A679B000C8D45 /* UserChild.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserChild.m; sourceTree = "<group>"; };
+		B469C503291B8993000C8D45 /* UIViewController+ZTMVVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZTMVVM.h"; sourceTree = "<group>"; };
+		B469C504291B8993000C8D45 /* UIViewController+ZTMVVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZTMVVM.m"; sourceTree = "<group>"; };
+		B469C506291B89C1000C8D45 /* UIView+ZTMVVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZTMVVM.h"; sourceTree = "<group>"; };
+		B469C507291B89C1000C8D45 /* UIView+ZTMVVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZTMVVM.m"; sourceTree = "<group>"; };
 		B56EEB33ED61568700BCDA64 /* Pods-iOSAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSAppTests.release.xcconfig"; path = "Target Support Files/Pods-iOSAppTests/Pods-iOSAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		E0620F9F25D8892207FA4EFC /* Pods-iOSApp-iOSAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp-iOSAppUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSApp-iOSAppUITests/Pods-iOSApp-iOSAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +174,7 @@
 		B425266B2918B44A00E509BD /* iOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				B469C4EF2919ED7B000C8D45 /* demo */,
 				B469C4E429190DBB000C8D45 /* common */,
 				B469C4C82918E18C000C8D45 /* mvvm */,
 				B425266C2918B44A00E509BD /* AppDelegate.h */,
@@ -201,24 +209,13 @@
 		B469C4C82918E18C000C8D45 /* mvvm */ = {
 			isa = PBXGroup;
 			children = (
-				B469C4CA2918E18C000C8D45 /* category */,
 				B469C4CF2918E18C000C8D45 /* kvo */,
-				B469C4D22918E18C000C8D45 /* lifecycle */,
-				B469C4D92918E18C000C8D45 /* ZTMVVM.h */,
-				B469C4C92918E18C000C8D45 /* ZTMVVM.m */,
+				B469C503291B8993000C8D45 /* UIViewController+ZTMVVM.h */,
+				B469C504291B8993000C8D45 /* UIViewController+ZTMVVM.m */,
+				B469C506291B89C1000C8D45 /* UIView+ZTMVVM.h */,
+				B469C507291B89C1000C8D45 /* UIView+ZTMVVM.m */,
 			);
 			path = mvvm;
-			sourceTree = "<group>";
-		};
-		B469C4CA2918E18C000C8D45 /* category */ = {
-			isa = PBXGroup;
-			children = (
-				B469C4CD2918E18C000C8D45 /* UIView+MVVM.h */,
-				B469C4CB2918E18C000C8D45 /* UIView+MVVM.m */,
-				B469C4CC2918E18C000C8D45 /* UIViewController+MVVM.h */,
-				B469C4CE2918E18C000C8D45 /* UIViewController+MVVM.m */,
-			);
-			path = category;
 			sourceTree = "<group>";
 		};
 		B469C4CF2918E18C000C8D45 /* kvo */ = {
@@ -228,19 +225,6 @@
 				B469C4D12918E18C000C8D45 /* ZTKVO.m */,
 			);
 			path = kvo;
-			sourceTree = "<group>";
-		};
-		B469C4D22918E18C000C8D45 /* lifecycle */ = {
-			isa = PBXGroup;
-			children = (
-				B469C4D52918E18C000C8D45 /* LifecycleView.h */,
-				B469C4D32918E18C000C8D45 /* LifecycleView.m */,
-				B469C4D72918E18C000C8D45 /* LifecycleViewController.h */,
-				B469C4D42918E18C000C8D45 /* LifecycleViewController.m */,
-				B469C4D62918E18C000C8D45 /* LifecycleViewProtocol.h */,
-				B469C4D82918E18C000C8D45 /* LifecycleViewControllerProtocol.h */,
-			);
-			path = lifecycle;
 			sourceTree = "<group>";
 		};
 		B469C4E429190DBB000C8D45 /* common */ = {
@@ -262,6 +246,33 @@
 				B469C4ED29192856000C8D45 /* ParseHelper.m */,
 			);
 			path = http;
+			sourceTree = "<group>";
+		};
+		B469C4EF2919ED7B000C8D45 /* demo */ = {
+			isa = PBXGroup;
+			children = (
+				B469C4F02919ED98000C8D45 /* mvvm */,
+			);
+			path = demo;
+			sourceTree = "<group>";
+		};
+		B469C4F02919ED98000C8D45 /* mvvm */ = {
+			isa = PBXGroup;
+			children = (
+				B469C4F12919EDCC000C8D45 /* DemoController.h */,
+				B469C4F22919EDCC000C8D45 /* DemoController.m */,
+				B469C4F42919EF77000C8D45 /* DemoViewModel.h */,
+				B469C4F52919EF77000C8D45 /* DemoViewModel.m */,
+				B469C4F72919EF96000C8D45 /* UserData.h */,
+				B469C4F82919EF96000C8D45 /* UserData.m */,
+				B469C4FA2919F0D7000C8D45 /* UserModel.h */,
+				B469C4FB2919F0D7000C8D45 /* UserModel.m */,
+				B469C4FD291A0312000C8D45 /* DemoView.h */,
+				B469C4FE291A0312000C8D45 /* DemoView.m */,
+				B469C500291A679B000C8D45 /* UserChild.h */,
+				B469C501291A679B000C8D45 /* UserChild.m */,
+			);
+			path = mvvm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,18 +511,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B469C4F32919EDCC000C8D45 /* DemoController.m in Sources */,
+				B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */,
+				B469C4F62919EF77000C8D45 /* DemoViewModel.m in Sources */,
 				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
-				B469C4DC2918E18C000C8D45 /* UIViewController+MVVM.m in Sources */,
-				B469C4DB2918E18C000C8D45 /* UIView+MVVM.m in Sources */,
 				B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */,
+				B469C4FC2919F0D7000C8D45 /* UserModel.m in Sources */,
 				B425266E2918B44A00E509BD /* AppDelegate.m in Sources */,
 				B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */,
+				B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
 				B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */,
+				B469C502291A679C000C8D45 /* UserChild.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
-				B469C4DA2918E18C000C8D45 /* ZTMVVM.m in Sources */,
-				B469C4DF2918E18C000C8D45 /* LifecycleViewController.m in Sources */,
-				B469C4DE2918E18C000C8D45 /* LifecycleView.m in Sources */,
+				B469C4FF291A0312000C8D45 /* DemoView.m in Sources */,
+				B469C4F92919EF96000C8D45 /* UserData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
