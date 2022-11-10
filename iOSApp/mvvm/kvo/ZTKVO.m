@@ -10,20 +10,20 @@
 
 @implementation ZTKVO
 
-- (void)withController:(UIViewController *)controller{
-    
-    _lifecycleViewController = [[LifecycleViewController alloc]init];
-    /// 初始化生命周期感知对象
-    [self initLifecycleViewController:controller];
-    
-}
+//- (void)withController:(UIViewController *)controller{
+//
+//    _lifecycleViewController = [[LifecycleViewController alloc]init];
+//    /// 初始化生命周期感知对象
+//    [self initLifecycleViewController:controller];
+//
+//}
 
-- (void)withView:(UIView *)view{
-    
-    _lifecycleView = [[LifecycleView alloc]init];
-    /// 初始化生命周期感知对象
-    [self initLifecycleView:view];
-}
+//- (void)withView:(UIView *)view{
+//
+//    _lifecycleView = [[LifecycleView alloc]init];
+//    /// 初始化生命周期感知对象
+//    [self initLifecycleView:view];
+//}
 
 #pragma mark - 核心API
 
@@ -116,7 +116,6 @@
             options:(NSKeyValueObservingOptions)options
             context:(void *)context
            onObservable:(NSObject*)observable{
-    
     if(keyPathArray!=nil){
         for (int i=0; i<keyPathArray.count; i++) {
             ///遍历添加所有的属性
@@ -131,8 +130,6 @@
 - (void)removeObserver:(NSObject *)observer forKeyPaths:(NSArray*)keyPathArray  onObservable:(NSObject*)observable{
     if(keyPathArray!=nil){
         for (int i=0; i<keyPathArray.count; i++) {
-            NSLog(@"---removeObserver:%@----key:%@-",observable,keyPathArray[i]);
-
             [observable removeObserver:observer forKeyPath:keyPathArray[i]];
         }
     }
@@ -199,61 +196,57 @@
 - (void)viewDidDisappear:(BOOL)animated{
 
     [self releaseObserver];
-    [self releaseLifecycleViewController];
+//    [self releaseLifecycleViewController];
 }
 
 /// View 的生命周期
 - (void)didRemoveFromWindow {
 
     [self releaseObserver];
-    [self releaseLifecycleView];
+//    [self releaseLifecycleView];
 }
 
 /// 初始化生命周期
-- (void)initLifecycleViewController:(UIViewController *)controller{
-    
-    if(controller){
-        [controller addChildViewController:_lifecycleViewController];
-        [_lifecycleViewController didMoveToParentViewController:controller];
-        [controller.view addSubview:_lifecycleViewController.view];
-        
-        _lifecycleViewController.lifecycleDelegate = self;/// 设置代理
-    }
-}
+//- (void)initLifecycleViewController:(UIViewController *)controller{
+//
+//    if(controller){
+//        [controller addChildViewController:_lifecycleViewController];
+//        [_lifecycleViewController didMoveToParentViewController:controller];
+//        [controller.view addSubview:_lifecycleViewController.view];
+//
+//        _lifecycleViewController.lifecycleDelegate = self;/// 设置代理
+//    }
+//}
 
-- (void)initLifecycleView:(UIView *)view{
-    
-    if(view){
-        [view addSubview:_lifecycleView];
-        _lifecycleView.lifecycleDelegate = self;/// 设置代理
-    }
-}
+//- (void)initLifecycleView:(UIView *)view{
+//
+//    if(view){
+//        [view addSubview:_lifecycleView];
+//        _lifecycleView.lifecycleDelegate = self;/// 设置代理
+//    }
+//}
 
 /// 释放生命周期
-- (void)releaseLifecycleViewController{
-    
-    if(_lifecycleViewController){
-        _lifecycleViewController.lifecycleDelegate = nil;
-        [_lifecycleViewController.view removeFromSuperview];
-        [_lifecycleViewController removeFromParentViewController];
-        
-        _lifecycleViewController = nil;
-    }
-}
+//- (void)releaseLifecycleViewController{
+//
+//    if(_lifecycleViewController){
+//        _lifecycleViewController.lifecycleDelegate = nil;
+//        [_lifecycleViewController.view removeFromSuperview];
+//        [_lifecycleViewController removeFromParentViewController];
+//
+//        _lifecycleViewController = nil;
+//    }
+//}
 
-- (void)releaseLifecycleView{
-    
-    if(_lifecycleView){
-        
-        _lifecycleView.lifecycleDelegate = nil;
-        [_lifecycleView removeFromSuperview];
-        
-        _lifecycleView = nil;
-    }
-}
-
-- (void)dealloc{
-    NSLog(@"---dealloc:%@--",self);
-}
+//- (void)releaseLifecycleView{
+//
+//    if(_lifecycleView){
+//
+//        _lifecycleView.lifecycleDelegate = nil;
+//        [_lifecycleView removeFromSuperview];
+//
+//        _lifecycleView = nil;
+//    }
+//}
 
 @end

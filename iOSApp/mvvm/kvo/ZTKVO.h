@@ -6,14 +6,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LifecycleViewController.h"
-#import "LifecycleViewControllerProtocol.h"
-#import "LifecycleView.h"
-#import "LifecycleViewProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZTKVO<T> : NSObject<LifecycleViewControllerProtocol,LifecycleViewProtocol>
+@interface ZTKVO<T> : NSObject
 
 @property(nonatomic,strong) NSObject *observerCache;
 @property(nonatomic,strong) id observableCache;
@@ -21,12 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) NSKeyValueObservingOptions optionsCache;
 @property(nonatomic,copy) void (^observerNotify)(T observable,NSString *keyPath);
 
-@property(nonatomic,strong) LifecycleViewController *lifecycleViewController;
-@property(nonatomic,strong) LifecycleView *lifecycleView;
+//@property(nonatomic,strong) LifecycleViewController *lifecycleViewController;
+//@property(nonatomic,strong) LifecycleView *lifecycleView;
 
-- (void)withController:(UIViewController *)controller;
-
-- (void)withView:(UIView *)view;
+//- (void)withController:(UIViewController *)controller;
+//- (void)withView:(UIView *)view;
 
 ///监听属性值变化（所有）
 - (void)observe:(T)observable

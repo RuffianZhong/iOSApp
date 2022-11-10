@@ -1,32 +1,21 @@
 //
-//  UIView+MVVM.m
-//  mvvm
+//  UIView+ZTMVVM.m
+//  iOSApp
+//  ZTMVVM UIView 分类
+//  Created by 钟达烽 on 2022/11/9.
 //
-//  Created by 钟达烽 on 2022/11/7.
-//
 
-#import "UIView+MVVM.h"
-#import <objc/runtime.h>
-#import "ZTKVO.h"
+#import "UIView+ZTMVVM.h"
+#import "kvo/ZTKVO.h"
 
-@implementation UIView (MVVM)
+@implementation UIView (ZTMVVM)
 
-static NSKeyValueObservingOptions normalOptions = NSKeyValueObservingOptionNew;
-
-#pragma mark - 关联对象添加属性 https://juejin.cn/post/6844903887179087880
-
-//const void *KVODICKEY = &KVODICKEY;
-
-//- (void)setKvoDic:(NSMutableDictionary *)kvoDic{
-//    objc_setAssociatedObject(self, KVODICKEY, kvoDic, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-//}
-//
-//- (NSMutableDictionary *)kvoDic{
-//    return objc_getAssociatedObject(self, KVODICKEY);
-//}
 
 #pragma mark - 使用全局变量
-static NSMutableDictionary *_kvoDic;
+
+static NSKeyValueObservingOptions normalOptions = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
+
+static NSMutableDictionary *viewResDic;
 
 
 #pragma mark - 方法交换，监听并自定义实现
@@ -35,10 +24,10 @@ static NSMutableDictionary *_kvoDic;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         /// 方法交换逻辑
-        swizzleMethodForView(self, @selector(willMoveToWindow:), @selector(swizzled_willMoveToWindow:));
+        swizzleMethodForView(self, @selector(willMoveToSuperview:), @selector(swizzled_willMoveToSuperview:));
         
         /// 初始化属性逻辑
-        _kvoDic = [[NSMutableDictionary alloc]init];
+        viewResDic = [[NSMutableDictionary alloc]init];
     });
 }
 
@@ -61,52 +50,51 @@ void swizzleMethodForView(Class class, SEL originalSelector, SEL swizzledSelecto
     }
 }
 
-- (void)swizzled_willMoveToWindow:(UIWindow *)newWindow
-{
+- (void)swizzled_willMoveToSuperview:(UIView *)newSuperview{
     // call original implementation
-    [self swizzled_willMoveToWindow:newWindow];
+    [self swizzled_willMoveToSuperview:newSuperview];
     
     // Logic
-    if(!newWindow){
+    if(!newSuperview){
         [self releaseResources];
     }
-    
 }
+
 
 #pragma mark - KVO监听属性变化逻辑
 
 #pragma mark - keyPaths 属性
 
-- (void)observe:(id)observable on:(UIResponder*)responder notify:(void (^)(id observable,NSString *keyPath)) notify{
+- (void)observe:(id)observable notify:(void (^)(id observable,NSString *keyPath)) notify{
     
     [[self makeZTKVO] observe:observable options:normalOptions notify:notify];
 }
 
-- (void)observe:(id)observable on:(UIResponder*)responder keyPaths:(NSArray*)keyPathArray notify:(void (^)(id observable,NSString *keyPath)) notify{
+- (void)observe:(id)observable keyPaths:(NSArray*)keyPathArray notify:(void (^)(id observable,NSString *keyPath)) notify{
 
     [[self makeZTKVO] observe:observable keyPaths:keyPathArray options:normalOptions notify:notify];
 }
 
-- (void)observe:(id)observable on:(UIResponder*)responder keyPathsNot:(NSArray*)keyPathArray notify:(void (^)(id observable,NSString *keyPath)) notify{
+- (void)observe:(id)observable keyPathsNot:(NSArray*)keyPathArray notify:(void (^)(id observable,NSString *keyPath)) notify{
 
     [[self makeZTKVO] observe:observable keyPathsNot:keyPathArray options:normalOptions notify:notify];
 }
 
 #pragma mark - options 属性
 
-- (void)observe:(id)observable on:(UIResponder*)responder options:(NSKeyValueObservingOptions)options notify:(void (^)(id observable,NSString *keyPath)) notify{
+- (void)observe:(id)observable options:(NSKeyValueObservingOptions)options notify:(void (^)(id observable,NSString *keyPath)) notify{
 
     [[self makeZTKVO] observe:observable options:options notify:notify];
 }
 
 #pragma mark - keyPaths 属性 && options 属性
 
-- (void)observe:(id)observable on:(UIResponder*)responder keyPaths:(NSArray*)keyPathArray options:(NSKeyValueObservingOptions)options notify:(void (^)(id observable,NSString *keyPath)) notify{
+- (void)observe:(id)observable keyPaths:(NSArray*)keyPathArray options:(NSKeyValueObservingOptions)options notify:(void (^)(id observable,NSString *keyPath)) notify{
 
     [[self makeZTKVO] observe:observable keyPaths:keyPathArray options:options notify:notify];
 }
 
-- (void)observe:(id)observable on:(UIResponder*)responder keyPathsNot:(NSArray*)keyPathArray options:(NSKeyValueObservingOptions)options notify:(void (^)(id observable,NSString *keyPath)) notify{
+- (void)observe:(id)observable keyPathsNot:(NSArray*)keyPathArray options:(NSKeyValueObservingOptions)options notify:(void (^)(id observable,NSString *keyPath)) notify{
 
     [[self makeZTKVO] observe:observable keyPathsNot:keyPathArray options:normalOptions notify:notify];
 }
@@ -122,14 +110,14 @@ void swizzleMethodForView(Class class, SEL originalSelector, SEL swizzledSelecto
     NSString *key = [NSString stringWithFormat:@"%p",self];//self 地址值作为key
    
     NSMutableArray *array = nil;
-    if([[_kvoDic allKeys] containsObject:key]){
-        array = _kvoDic[key];
+    if([[viewResDic allKeys] containsObject:key]){
+        array = viewResDic[key];
     }
     if(!array){
         array = [[NSMutableArray alloc]init];
     }
     [array addObject:ztKVO];
-    [_kvoDic setObject:array forKey:key];
+    [viewResDic setObject:array forKey:key];
     
     return ztKVO;
 }
@@ -138,15 +126,16 @@ void swizzleMethodForView(Class class, SEL originalSelector, SEL swizzledSelecto
 - (void)releaseResources{
     NSString *key = [NSString stringWithFormat:@"%p",self];//self 地址值作为key
     
-    if([[_kvoDic allKeys] containsObject:key]){
-        NSMutableArray *array = _kvoDic[key];
+    if([[viewResDic allKeys] containsObject:key]){
+        NSMutableArray *array = viewResDic[key];
         for(int i = 0; i < array.count; i++){
             ZTKVO *ztKVO = array[i];
             [ztKVO releaseObserver];
         }
         /// 从字典中移除对象
-        [_kvoDic removeObjectForKey:key];
+        [viewResDic removeObjectForKey:key];
     }
 }
+
 
 @end
