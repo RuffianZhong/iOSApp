@@ -6,8 +6,14 @@
 //
 
 #import "AppDelegate.h"
-#import "LaunchController.h"
+
 #import "demo/mvvm/DemoController.h"
+
+#import "demo/ui_style/DemoGradientController.h"
+#import "demo/ui_style/DemoBorderController.h"
+#import "demo/ui_style/DemoCornerController.h"
+#import "demo/ui_style/DemoShadowController.h"
+#import "demo/ui_style/DemoMixedController.h"
 
 @interface AppDelegate ()
 
@@ -22,12 +28,19 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     //2.创建根控制器
-//    LaunchController *launchController = [[LaunchController alloc]init];
-    DemoController *launchController = [[DemoController alloc]init];
+//    DemoController *launchController = [[DemoController alloc]init];
+    
+//    DemoBorderController *launchController = [[DemoBorderController alloc]init];
+//      DemoGradientController *launchController = [[DemoGradientController alloc]init];
+//    DemoCornerController *launchController = [[DemoCornerController alloc]init];
+//    DemoShadowController *launchController = [[DemoShadowController alloc]init];
+    DemoMixedController *launchController = [[DemoMixedController alloc]init];
 
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:launchController];
-    navController.navigationBarHidden = YES;
+//    navController.navigationBarHidden = YES;
+    navController.navigationBar.translucent = NO;
+    navController.navigationBar.barTintColor = [UIColor orangeColor];
         
     //3.显示窗口
     self.window.rootViewController = navController;

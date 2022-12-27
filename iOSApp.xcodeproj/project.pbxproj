@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		25D1CC509131174B8FED6A50 /* Pods_iOSAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1090B110F84586CA76094406 /* Pods_iOSAppTests.framework */; };
 		7AE52D3C0A4EA507B289CB80 /* Pods_iOSApp_iOSAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117895BFD56397A270B3169A /* Pods_iOSApp_iOSAppUITests.framework */; };
+		B40C0E0E295A932F00C0BC9A /* DemoMixedController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40C0E0D295A932F00C0BC9A /* DemoMixedController.m */; };
+		B417238D29504D6D008C568E /* DemoBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = B417238C29504D6D008C568E /* DemoBaseController.m */; };
+		B417239029504E6C008C568E /* DemoBorderController.m in Sources */ = {isa = PBXBuildFile; fileRef = B417238F29504E6C008C568E /* DemoBorderController.m */; };
+		B4172393295050B0008C568E /* DemoCornerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4172392295050B0008C568E /* DemoCornerController.m */; };
+		B417239629505498008C568E /* DemoGradientController.m in Sources */ = {isa = PBXBuildFile; fileRef = B417239529505498008C568E /* DemoGradientController.m */; };
+		B41723992950613A008C568E /* DemoShadowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41723982950613A008C568E /* DemoShadowController.m */; };
+		B420BA372951A9BD0023A224 /* ZTUitls.m in Sources */ = {isa = PBXBuildFile; fileRef = B420BA362951A9BD0023A224 /* ZTUitls.m */; };
 		B425266E2918B44A00E509BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B425266D2918B44A00E509BD /* AppDelegate.m */; };
 		B42526792918B44B00E509BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42526782918B44B00E509BD /* Assets.xcassets */; };
 		B425267F2918B44B00E509BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B425267E2918B44B00E509BD /* main.m */; };
@@ -29,6 +36,12 @@
 		B469C502291A679C000C8D45 /* UserChild.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C501291A679B000C8D45 /* UserChild.m */; };
 		B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C504291B8993000C8D45 /* UIViewController+ZTMVVM.m */; };
 		B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C507291B89C1000C8D45 /* UIView+ZTMVVM.m */; };
+		B488C56A2921F42C001EF62E /* UIView+ZTUIStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B488C5692921F42C001EF62E /* UIView+ZTUIStyle.m */; };
+		B49DDF3A292E39C60046ADE5 /* CornerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B49DDF39292E39C60046ADE5 /* CornerModel.m */; };
+		B49DDF3D292F13BC0046ADE5 /* BorderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B49DDF3C292F13BC0046ADE5 /* BorderModel.m */; };
+		B49DDF40292F14200046ADE5 /* GradientModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B49DDF3F292F14200046ADE5 /* GradientModel.m */; };
+		B49DDF43292F14560046ADE5 /* ShadowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B49DDF42292F14560046ADE5 /* ShadowModel.m */; };
+		B49DDF47292F1A1B0046ADE5 /* ZTUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B49DDF46292F1A1B0046ADE5 /* ZTUIKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +69,21 @@
 		2E5EED5D3A1C7C10147F569C /* Pods-iOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp.release.xcconfig"; path = "Target Support Files/Pods-iOSApp/Pods-iOSApp.release.xcconfig"; sourceTree = "<group>"; };
 		35168D9D4B5DEBDAADE90150 /* Pods-iOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp.debug.xcconfig"; path = "Target Support Files/Pods-iOSApp/Pods-iOSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5C77FC3381DD94CB0A3C1BFD /* Pods-iOSAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSAppTests/Pods-iOSAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B40C0E0C295A932F00C0BC9A /* DemoMixedController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoMixedController.h; sourceTree = "<group>"; };
+		B40C0E0D295A932F00C0BC9A /* DemoMixedController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoMixedController.m; sourceTree = "<group>"; };
+		B4172380294B09AE008C568E /* Enum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enum.h; sourceTree = "<group>"; };
+		B417238B29504D6D008C568E /* DemoBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoBaseController.h; sourceTree = "<group>"; };
+		B417238C29504D6D008C568E /* DemoBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoBaseController.m; sourceTree = "<group>"; };
+		B417238E29504E6C008C568E /* DemoBorderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoBorderController.h; sourceTree = "<group>"; };
+		B417238F29504E6C008C568E /* DemoBorderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoBorderController.m; sourceTree = "<group>"; };
+		B4172391295050B0008C568E /* DemoCornerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCornerController.h; sourceTree = "<group>"; };
+		B4172392295050B0008C568E /* DemoCornerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCornerController.m; sourceTree = "<group>"; };
+		B417239429505498008C568E /* DemoGradientController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoGradientController.h; sourceTree = "<group>"; };
+		B417239529505498008C568E /* DemoGradientController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoGradientController.m; sourceTree = "<group>"; };
+		B41723972950613A008C568E /* DemoShadowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoShadowController.h; sourceTree = "<group>"; };
+		B41723982950613A008C568E /* DemoShadowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoShadowController.m; sourceTree = "<group>"; };
+		B420BA352951A9BD0023A224 /* ZTUitls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUitls.h; sourceTree = "<group>"; };
+		B420BA362951A9BD0023A224 /* ZTUitls.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUitls.m; sourceTree = "<group>"; };
 		B42526692918B44A00E509BD /* iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B425266C2918B44A00E509BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B425266D2918B44A00E509BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -94,6 +122,18 @@
 		B469C504291B8993000C8D45 /* UIViewController+ZTMVVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZTMVVM.m"; sourceTree = "<group>"; };
 		B469C506291B89C1000C8D45 /* UIView+ZTMVVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZTMVVM.h"; sourceTree = "<group>"; };
 		B469C507291B89C1000C8D45 /* UIView+ZTMVVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZTMVVM.m"; sourceTree = "<group>"; };
+		B488C5682921F42C001EF62E /* UIView+ZTUIStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZTUIStyle.h"; sourceTree = "<group>"; };
+		B488C5692921F42C001EF62E /* UIView+ZTUIStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZTUIStyle.m"; sourceTree = "<group>"; };
+		B49DDF38292E39C60046ADE5 /* CornerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CornerModel.h; sourceTree = "<group>"; };
+		B49DDF39292E39C60046ADE5 /* CornerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CornerModel.m; sourceTree = "<group>"; };
+		B49DDF3B292F13BC0046ADE5 /* BorderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderModel.h; sourceTree = "<group>"; };
+		B49DDF3C292F13BC0046ADE5 /* BorderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BorderModel.m; sourceTree = "<group>"; };
+		B49DDF3E292F14200046ADE5 /* GradientModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientModel.h; sourceTree = "<group>"; };
+		B49DDF3F292F14200046ADE5 /* GradientModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientModel.m; sourceTree = "<group>"; };
+		B49DDF41292F14560046ADE5 /* ShadowModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShadowModel.h; sourceTree = "<group>"; };
+		B49DDF42292F14560046ADE5 /* ShadowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadowModel.m; sourceTree = "<group>"; };
+		B49DDF45292F1A1B0046ADE5 /* ZTUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUIKit.h; sourceTree = "<group>"; };
+		B49DDF46292F1A1B0046ADE5 /* ZTUIKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUIKit.m; sourceTree = "<group>"; };
 		B56EEB33ED61568700BCDA64 /* Pods-iOSAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSAppTests.release.xcconfig"; path = "Target Support Files/Pods-iOSAppTests/Pods-iOSAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		E0620F9F25D8892207FA4EFC /* Pods-iOSApp-iOSAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp-iOSAppUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSApp-iOSAppUITests/Pods-iOSApp-iOSAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +189,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B4172381294B17DA008C568E /* ui_style */ = {
+			isa = PBXGroup;
+			children = (
+				B417238B29504D6D008C568E /* DemoBaseController.h */,
+				B417238C29504D6D008C568E /* DemoBaseController.m */,
+				B417238E29504E6C008C568E /* DemoBorderController.h */,
+				B417238F29504E6C008C568E /* DemoBorderController.m */,
+				B4172391295050B0008C568E /* DemoCornerController.h */,
+				B4172392295050B0008C568E /* DemoCornerController.m */,
+				B417239429505498008C568E /* DemoGradientController.h */,
+				B417239529505498008C568E /* DemoGradientController.m */,
+				B41723972950613A008C568E /* DemoShadowController.h */,
+				B41723982950613A008C568E /* DemoShadowController.m */,
+				B40C0E0C295A932F00C0BC9A /* DemoMixedController.h */,
+				B40C0E0D295A932F00C0BC9A /* DemoMixedController.m */,
+			);
+			path = ui_style;
+			sourceTree = "<group>";
+		};
 		B42526602918B44A00E509BD = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +233,7 @@
 		B425266B2918B44A00E509BD /* iOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				B488C5632921E46A001EF62E /* ui */,
 				B469C4EF2919ED7B000C8D45 /* demo */,
 				B469C4E429190DBB000C8D45 /* common */,
 				B469C4C82918E18C000C8D45 /* mvvm */,
@@ -251,6 +311,7 @@
 		B469C4EF2919ED7B000C8D45 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				B4172381294B17DA008C568E /* ui_style */,
 				B469C4F02919ED98000C8D45 /* mvvm */,
 			);
 			path = demo;
@@ -273,6 +334,44 @@
 				B469C501291A679B000C8D45 /* UserChild.m */,
 			);
 			path = mvvm;
+			sourceTree = "<group>";
+		};
+		B488C5632921E46A001EF62E /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				B49DDF44292F19D60046ADE5 /* core */,
+				B49DDF37292E39A50046ADE5 /* model */,
+				B488C5682921F42C001EF62E /* UIView+ZTUIStyle.h */,
+				B488C5692921F42C001EF62E /* UIView+ZTUIStyle.m */,
+				B4172380294B09AE008C568E /* Enum.h */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		B49DDF37292E39A50046ADE5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B49DDF38292E39C60046ADE5 /* CornerModel.h */,
+				B49DDF39292E39C60046ADE5 /* CornerModel.m */,
+				B49DDF3B292F13BC0046ADE5 /* BorderModel.h */,
+				B49DDF3C292F13BC0046ADE5 /* BorderModel.m */,
+				B49DDF3E292F14200046ADE5 /* GradientModel.h */,
+				B49DDF3F292F14200046ADE5 /* GradientModel.m */,
+				B49DDF41292F14560046ADE5 /* ShadowModel.h */,
+				B49DDF42292F14560046ADE5 /* ShadowModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B49DDF44292F19D60046ADE5 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				B49DDF45292F1A1B0046ADE5 /* ZTUIKit.h */,
+				B49DDF46292F1A1B0046ADE5 /* ZTUIKit.m */,
+				B420BA352951A9BD0023A224 /* ZTUitls.h */,
+				B420BA362951A9BD0023A224 /* ZTUitls.m */,
+			);
+			path = core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,21 +610,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B488C56A2921F42C001EF62E /* UIView+ZTUIStyle.m in Sources */,
 				B469C4F32919EDCC000C8D45 /* DemoController.m in Sources */,
 				B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */,
 				B469C4F62919EF77000C8D45 /* DemoViewModel.m in Sources */,
 				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
 				B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */,
+				B49DDF3A292E39C60046ADE5 /* CornerModel.m in Sources */,
+				B41723992950613A008C568E /* DemoShadowController.m in Sources */,
 				B469C4FC2919F0D7000C8D45 /* UserModel.m in Sources */,
 				B425266E2918B44A00E509BD /* AppDelegate.m in Sources */,
 				B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */,
+				B4172393295050B0008C568E /* DemoCornerController.m in Sources */,
 				B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
 				B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */,
 				B469C502291A679C000C8D45 /* UserChild.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
+				B420BA372951A9BD0023A224 /* ZTUitls.m in Sources */,
+				B49DDF3D292F13BC0046ADE5 /* BorderModel.m in Sources */,
+				B417238D29504D6D008C568E /* DemoBaseController.m in Sources */,
+				B49DDF40292F14200046ADE5 /* GradientModel.m in Sources */,
 				B469C4FF291A0312000C8D45 /* DemoView.m in Sources */,
+				B49DDF47292F1A1B0046ADE5 /* ZTUIKit.m in Sources */,
+				B40C0E0E295A932F00C0BC9A /* DemoMixedController.m in Sources */,
+				B417239029504E6C008C568E /* DemoBorderController.m in Sources */,
+				B49DDF43292F14560046ADE5 /* ShadowModel.m in Sources */,
 				B469C4F92919EF96000C8D45 /* UserData.m in Sources */,
+				B417239629505498008C568E /* DemoGradientController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,7 +796,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JKNJAB78PB;
+				DEVELOPMENT_TEAM = QZ8P3DHUSD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -712,7 +824,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JKNJAB78PB;
+				DEVELOPMENT_TEAM = QZ8P3DHUSD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
