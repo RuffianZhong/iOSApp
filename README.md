@@ -122,6 +122,7 @@ _viewModel.userData.name = @"Ruffian";
 ```
 
 二.ZTUIStyle
+
 这部分内容是为了UI快速开发，为 UIView 及其 子类 提供了一系列关于 UI 样式的快速实现方式，使用方便，实现高效，无侵入
 优点：
 - [Y] 通过 CALayer 实现，效率高
@@ -130,9 +131,10 @@ _viewModel.userData.name = @"Ruffian";
 - [Y] 支持 UIView 及其 所有子类
 
 1.效果图
-![](image/image_01.png)  ![](image/image_02.png)
-![](image/image_03.png)  ![](image/image_04.png)
-![](image/image_05.png)  
+
+![](image/image_04.png)  ![](image/image_05.png)
+![](image/image_03.png)  ![](image/image_02.png)
+![](image/image_01.png)  
 
 2.API接口
 
