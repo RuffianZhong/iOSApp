@@ -26,10 +26,10 @@
 - (void)initGradient{
 
     self.navigationItem.title = @"渐变样式";
-    _viewGradient_1 = [self makeLabel:[UIColor blueColor] text:@"左->右 渐变"];
-    _viewGradient_2 = [self makeLabel:[UIColor blueColor] text:@"上->下 渐变"];
-    _viewGradient_3 = [self makeLabel:[UIColor blueColor] text:@"左下->右上 渐变"];
-    _viewGradient_4 = [self makeLabel:[UIColor blueColor] text:@"右下->左上 渐变"];
+    _viewGradient_1 = [self makeLabel:nil text:@"左->右 渐变"];
+    _viewGradient_2 = [self makeLabel:nil text:@"上->下 渐变"];
+    _viewGradient_3 = [self makeLabel:nil text:@"左下->右上 渐变"];
+    _viewGradient_4 = [self makeLabel:nil text:@"右下->左上 渐变"];
     
     [_viewGradient_1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(150);

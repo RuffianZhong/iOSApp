@@ -102,7 +102,7 @@
 
     [_viewCorner_6 zt_cornerWithUIRectCorner:UIRectCornerBottomLeft|UIRectCornerBottomRight withCornerRadii:20];
 
-    [_viewCorner_7 zt_cornerWithUIRectCorner:UIRectCornerAllCorners withCornerRadii:20];
+    [_viewCorner_7 zt_cornerWithUIRectCorner:UIRectCornerAllCorners withCornerRadii:100];
 
     [_viewCorner_8 zt_cornerWithUIRectCorner:UIRectCornerAllCorners withCornerRadii:20];
   

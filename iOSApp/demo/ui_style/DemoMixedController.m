@@ -23,7 +23,7 @@
 - (void)initMixed{
 
     self.navigationItem.title = @"混合样式";
-    _viewMixed = [self makeLabel:[UIColor blueColor] text:@"圆角/边框/渐变/阴影"];
+    _viewMixed = [self makeLabel:nil text:@"圆角/边框/渐变/阴影"];
     
     [_viewMixed mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(150);

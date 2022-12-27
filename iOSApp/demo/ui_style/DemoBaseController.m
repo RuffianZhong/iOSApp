@@ -29,7 +29,7 @@
 
 - (UILabel*)makeLabel:(UIColor*)bgColor text:(NSString*)text{
     UILabel *view = [[UILabel alloc] init];
-//    view.backgroundColor = bgColor;
+    view.backgroundColor = bgColor;
     view.text = text;
     view.textAlignment = NSTextAlignmentCenter;
     [_scrollView addSubview:view];

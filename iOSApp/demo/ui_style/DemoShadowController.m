@@ -34,7 +34,7 @@
     [_viewShadow_1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(150);
         make.width.mas_equalTo(150);
-        make.left.mas_equalTo(self.scrollView.mas_left).offset(30);
+        make.left.mas_equalTo(self.scrollView.mas_left).offset(20);
         make.top.mas_equalTo(self.scrollView.mas_top).offset(30);
     }];
     [_viewShadow_2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -46,7 +46,7 @@
     [_viewShadow_3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(150);
         make.width.mas_equalTo(330);
-        make.left.mas_equalTo(self.scrollView.mas_left).offset(30);
+        make.left.mas_equalTo(self.scrollView.mas_left).offset(20);
         make.top.mas_equalTo(_viewShadow_1.mas_bottom).offset(30);
     }];
     
