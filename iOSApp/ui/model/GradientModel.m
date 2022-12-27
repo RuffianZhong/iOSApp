@@ -24,38 +24,37 @@
     return _gradientLocations;
 }
 
-/// 设置渐变方向
-/// @param direction 渐变方向
-- (void)setDirection:(GradientDirection)direction{
-    _direction = direction;
-    switch (direction) {
+/// 计算渐变起点/终点
+/// @param normal 默认原点：默认原点影响垂直方向的值
+- (void)computePoint:(BOOL)normal{
+    switch (_direction) {
         case GradientDirectionRight2Left:
             _startPoint = CGPointMake(1, 0);
             _endPoint = CGPointMake(0, 0);
             break;
         case GradientDirectionTop2Bottom:
-            _startPoint = CGPointMake(0, 0);
-            _endPoint = CGPointMake(0, 1);
+            _startPoint = normal ? CGPointMake(0, 0) : CGPointMake(0, 1);
+            _endPoint = normal ? CGPointMake(0, 1): CGPointMake(0, 0);
             break;
         case GradientDirectionBottom2Top:
-            _startPoint = CGPointMake(0, 1);
-            _endPoint = CGPointMake(0, 0);
+            _startPoint = normal ? CGPointMake(0, 1) : CGPointMake(0, 0);
+            _endPoint = normal ? CGPointMake(0, 0) : CGPointMake(0, 1);
             break;
         case GradientDirectionLeftTop2RightBottom:
-            _startPoint = CGPointMake(0, 0);
-            _endPoint = CGPointMake(1, 1);
+            _startPoint = normal ? CGPointMake(0, 0) : CGPointMake(0, 1);
+            _endPoint = normal ? CGPointMake(1, 1): CGPointMake(1, 0);
             break;
         case GradientDirectionLeftBottom2RightTop:
-            _startPoint = CGPointMake(0, 1);
-            _endPoint = CGPointMake(1, 0);
+            _startPoint = normal ? CGPointMake(0, 1): CGPointMake(0, 0);
+            _endPoint = normal ? CGPointMake(1, 0) : CGPointMake(1, 1);
             break;
         case GradientDirectionRightTop2LeftBottom:
-            _startPoint = CGPointMake(1, 0);
-            _endPoint = CGPointMake(0, 1);
+            _startPoint = normal ? CGPointMake(1, 0) : CGPointMake(1, 1);
+            _endPoint = normal ? CGPointMake(0, 1) : CGPointMake(0, 0);
             break;
         case GradientDirectionRightBottom2LeftTop:
-            _startPoint = CGPointMake(1, 1);
-            _endPoint = CGPointMake(0, 0);
+            _startPoint = normal ? CGPointMake(1, 1) : CGPointMake(1, 0);
+            _endPoint = normal ? CGPointMake(0, 0) : CGPointMake(0, 1);
             break;
         case GradientDirectionLeft2Right:
         default:
@@ -64,7 +63,6 @@
             break;
     }
 }
-
 
 - (void)setGradientColors:(NSMutableArray*)gradientColors{
     if(gradientColors){

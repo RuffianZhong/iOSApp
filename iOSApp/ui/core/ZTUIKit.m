@@ -83,6 +83,7 @@
     
     //共用设置
     CGRect frame = view.bounds;
+    BOOL isKindOfLabel = [view isKindOfClass:[UILabel class]];
     
     //圆角
     if(_cornerModel){
@@ -130,6 +131,7 @@
             _borderGradientLayer.frame = frame;
             [_borderGradientLayer removeAllAnimations];
             _borderGradientLayer.colors = _borderModel.borderGradient.gradientColors;
+            [_borderModel.borderGradient computePoint: YES];//计算渐变坐标点
             _borderGradientLayer.startPoint = _borderModel.borderGradient.startPoint;
             _borderGradientLayer.endPoint = _borderModel.borderGradient.endPoint;
             //基于边框
@@ -148,6 +150,7 @@
         
         _gradientLayer.colors = _gradientModel.gradientColors;
         _gradientLayer.locations = _gradientModel.gradientLocations;
+        [_gradientModel computePoint: !isKindOfLabel];//计算渐变坐标点
         _gradientLayer.startPoint = _gradientModel.startPoint;
         _gradientLayer.endPoint = _gradientModel.endPoint;
     }
@@ -186,21 +189,18 @@
     }
 
     
-    //2.渐变背景处理
+    //3.渐变背景处理
     if(_gradientLayer){
-        
-        if([view isKindOfClass:[UILabel class]]){
+        if(isKindOfLabel){
             //通过背景色实现
-            view.backgroundColor = [ZTUitls makeColorFromImageWithLayer:_gradientLayer];
-           // view.layer.backgroundColor = [ZTUitls makeColorFromImageWithLayer:_gradientLayer].CGColor;
-
+            view.layer.backgroundColor = [ZTUitls makeColorFromImageWithLayer:_gradientLayer].CGColor;
         }else{
             //Z轴层级需要小于边框
             [view.layer insertSublayer:_gradientLayer atIndex:1];
         }
     }
     
-    //3.边框处理：在 Z 轴需要在最上层
+    //4.边框处理：在 Z 轴需要在最上层
     if(_borderLayer){
         if(_borderGradientLayer){//带渐变的边框
             [view.layer insertSublayer:_borderGradientLayer atIndex:2];

@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign) CGPoint endPoint;
 
+
+- (void)computePoint:(BOOL)normal;
 @end
 
 NS_ASSUME_NONNULL_END
