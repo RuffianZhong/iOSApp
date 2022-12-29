@@ -22,6 +22,7 @@
 		B42526932918B44C00E509BD /* iOSAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526922918B44C00E509BD /* iOSAppUITests.m */; };
 		B42526952918B44C00E509BD /* iOSAppUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */; };
 		B462F311B1F5CCF91D5DDB51 /* Pods_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF97C20D7BB40226404D10B /* Pods_iOSApp.framework */; };
+		B46651E9295D4772009953B7 /* DemoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651E8295D4772009953B7 /* DemoListController.m */; };
 		B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D12918E18C000C8D45 /* ZTKVO.m */; };
 		B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E22918FC65000C8D45 /* LaunchController.m */; };
 		B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E729191E9E000C8D45 /* ZTHttpManager.m */; };
@@ -85,6 +86,8 @@
 		B425268E2918B44C00E509BD /* iOSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42526922918B44C00E509BD /* iOSAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITests.m; sourceTree = "<group>"; };
 		B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITestsLaunchTests.m; sourceTree = "<group>"; };
+		B46651E7295D4772009953B7 /* DemoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoListController.h; sourceTree = "<group>"; };
+		B46651E8295D4772009953B7 /* DemoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoListController.m; sourceTree = "<group>"; };
 		B469C4D02918E18C000C8D45 /* ZTKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTKVO.h; sourceTree = "<group>"; };
 		B469C4D12918E18C000C8D45 /* ZTKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTKVO.m; sourceTree = "<group>"; };
 		B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 		B4172381294B17DA008C568E /* ui_style */ = {
 			isa = PBXGroup;
 			children = (
+				B46651E7295D4772009953B7 /* DemoListController.h */,
+				B46651E8295D4772009953B7 /* DemoListController.m */,
 				B417238B29504D6D008C568E /* DemoBaseController.h */,
 				B417238C29504D6D008C568E /* DemoBaseController.m */,
 				B417238E29504E6C008C568E /* DemoBorderController.h */,
@@ -553,6 +558,7 @@
 				B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */,
 				B469C4F62919EF77000C8D45 /* DemoViewModel.m in Sources */,
 				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
+				B46651E9295D4772009953B7 /* DemoListController.m in Sources */,
 				B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */,
 				B41723992950613A008C568E /* DemoShadowController.m in Sources */,
 				B469C4FC2919F0D7000C8D45 /* UserModel.m in Sources */,

@@ -9,11 +9,7 @@
 
 #import "demo/mvvm/DemoController.h"
 
-#import "demo/ui_style/DemoGradientController.h"
-#import "demo/ui_style/DemoBorderController.h"
-#import "demo/ui_style/DemoCornerController.h"
-#import "demo/ui_style/DemoShadowController.h"
-#import "demo/ui_style/DemoMixedController.h"
+#import "demo/ui_style/DemoListController.h"
 
 @interface AppDelegate ()
 
@@ -30,11 +26,7 @@
     //2.创建根控制器
 //    DemoController *launchController = [[DemoController alloc]init];
     
-//    DemoBorderController *launchController = [[DemoBorderController alloc]init];
-//      DemoGradientController *launchController = [[DemoGradientController alloc]init];
-//    DemoCornerController *launchController = [[DemoCornerController alloc]init];
-//    DemoShadowController *launchController = [[DemoShadowController alloc]init];
-    DemoMixedController *launchController = [[DemoMixedController alloc]init];
+    DemoListController *launchController = [[DemoListController alloc]init];
 
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:launchController];
