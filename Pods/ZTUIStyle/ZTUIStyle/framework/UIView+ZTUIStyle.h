@@ -1,12 +1,13 @@
 //
 //  UIView+ZTUIStyle.h
-//  iOSApp
+//  ZTUIStyle
 //
-//  Created by 钟达烽 on 2022/11/14.
+//  Created by 钟达烽 on 2022/12/27.
 //
 
 #import <UIKit/UIKit.h>
 #import "Enum.h"
+#import <objc/message.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -63,6 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) zt_gradientWithGradientColors:(NSMutableArray<UIColor*>*)gradientColors withDirection:(GradientDirection)direction withGradientLocations:(nullable NSArray*)gradientLocations;
 
 - (void) zt_gradientWithGradientColors:(NSMutableArray<UIColor*>*)gradientColors withDirection:(GradientDirection)direction;
+
 
 @end
 

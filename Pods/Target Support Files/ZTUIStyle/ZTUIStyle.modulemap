@@ -1,0 +1,6 @@
+framework module ZTUIStyle {
+  umbrella header "ZTUIStyle-umbrella.h"
+
+  export *
+  module * { export * }
+}
