@@ -6,7 +6,7 @@
 //
 
 #import "UIView+ZTMVVM.h"
-#import "kvo/ZTKVO.h"
+#import "ZTKVO.h"
 
 @implementation UIView (ZTMVVM)
 
