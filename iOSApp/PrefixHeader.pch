@@ -21,6 +21,13 @@
 #import "mvvm/UIView+ZTMVVM.h"
 #import "UIView+ZTUIStyle.h" //导入样式分类
 
+#import "AppDelegate.h"
+
+#import "ResValue.h"
+#import "NSString+Common.h"
+#import "UIImage+Common.h"
+
+
 #endif
 
 #endif /* PrefixHeader_pch */

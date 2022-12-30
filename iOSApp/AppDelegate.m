@@ -6,10 +6,8 @@
 //
 
 #import "AppDelegate.h"
-
-#import "demo/mvvm/DemoController.h"
-
-#import "demo/ui_style/DemoListController.h"
+#import "LaunchController.h"
+#import "modules/main/controller/MainController.h"
 
 @interface AppDelegate ()
 
@@ -24,15 +22,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     //2.创建根控制器
-//    DemoController *launchController = [[DemoController alloc]init];
     
-    DemoListController *launchController = [[DemoListController alloc]init];
-
-    
+    LaunchController *launchController = [[LaunchController alloc]init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:launchController];
-//    navController.navigationBarHidden = YES;
-    navController.navigationBar.translucent = NO;
-    navController.navigationBar.barTintColor = [UIColor orangeColor];
+    navController.navigationBarHidden = YES;
         
     //3.显示窗口
     self.window.rootViewController = navController;
@@ -45,6 +38,19 @@
 
 + (AppDelegate *)shareAppDelegate{
     return (AppDelegate *)[[UIApplication sharedApplication]delegate];
+}
+
+- (NSString *)language{
+    if (!_language) {
+        _language = Language_en;
+    }
+    return _language;
+}
+
+- (void)startToMainPage{
+    //首页控制器
+    MainController *mainController = [[MainController alloc]init];
+    self.window.rootViewController = mainController;
 }
 
 

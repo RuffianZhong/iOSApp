@@ -23,6 +23,16 @@
 		B42526952918B44C00E509BD /* iOSAppUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */; };
 		B462F311B1F5CCF91D5DDB51 /* Pods_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF97C20D7BB40226404D10B /* Pods_iOSApp.framework */; };
 		B46651E9295D4772009953B7 /* DemoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651E8295D4772009953B7 /* DemoListController.m */; };
+		B46651F7295D6F88009953B7 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651F6295D6F88009953B7 /* MainController.m */; };
+		B46651FC295D74C4009953B7 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651FB295D74C4009953B7 /* HomeController.m */; };
+		B4665200295D74DC009953B7 /* BookController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651FF295D74DC009953B7 /* BookController.m */; };
+		B4665204295D74F2009953B7 /* MeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665203295D74F2009953B7 /* MeController.m */; };
+		B4665208295D750D009953B7 /* ProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665207295D750D009953B7 /* ProjectController.m */; };
+		B466520D295D75F1009953B7 /* KnowledgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B466520C295D75F1009953B7 /* KnowledgeController.m */; };
+		B4665210295D865E009953B7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4665212295D865E009953B7 /* Localizable.strings */; };
+		B4665217295D8B6A009953B7 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665216295D8B6A009953B7 /* NSString+Common.m */; };
+		B466521A295DA398009953B7 /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665219295DA398009953B7 /* UIImage+Common.m */; };
+		B466521C295DA619009953B7 /* zh-Hans_image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B466521B295DA619009953B7 /* zh-Hans_image.bundle */; };
 		B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D12918E18C000C8D45 /* ZTKVO.m */; };
 		B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E22918FC65000C8D45 /* LaunchController.m */; };
 		B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E729191E9E000C8D45 /* ZTHttpManager.m */; };
@@ -88,6 +98,26 @@
 		B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITestsLaunchTests.m; sourceTree = "<group>"; };
 		B46651E7295D4772009953B7 /* DemoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoListController.h; sourceTree = "<group>"; };
 		B46651E8295D4772009953B7 /* DemoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoListController.m; sourceTree = "<group>"; };
+		B46651F5295D6F88009953B7 /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		B46651F6295D6F88009953B7 /* MainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		B46651F8295D72A3009953B7 /* ResValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResValue.h; sourceTree = "<group>"; };
+		B46651FA295D74C4009953B7 /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		B46651FB295D74C4009953B7 /* HomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		B46651FE295D74DC009953B7 /* BookController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookController.h; sourceTree = "<group>"; };
+		B46651FF295D74DC009953B7 /* BookController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookController.m; sourceTree = "<group>"; };
+		B4665202295D74F2009953B7 /* MeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeController.h; sourceTree = "<group>"; };
+		B4665203295D74F2009953B7 /* MeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeController.m; sourceTree = "<group>"; };
+		B4665206295D750D009953B7 /* ProjectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectController.h; sourceTree = "<group>"; };
+		B4665207295D750D009953B7 /* ProjectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectController.m; sourceTree = "<group>"; };
+		B466520B295D75F1009953B7 /* KnowledgeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KnowledgeController.h; sourceTree = "<group>"; };
+		B466520C295D75F1009953B7 /* KnowledgeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnowledgeController.m; sourceTree = "<group>"; };
+		B4665211295D865E009953B7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B4665213295D8665009953B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B4665215295D8B6A009953B7 /* NSString+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
+		B4665216295D8B6A009953B7 /* NSString+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
+		B4665218295DA398009953B7 /* UIImage+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Common.h"; sourceTree = "<group>"; };
+		B4665219295DA398009953B7 /* UIImage+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Common.m"; sourceTree = "<group>"; };
+		B466521B295DA619009953B7 /* zh-Hans_image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "zh-Hans_image.bundle"; sourceTree = "<group>"; };
 		B469C4D02918E18C000C8D45 /* ZTKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTKVO.h; sourceTree = "<group>"; };
 		B469C4D12918E18C000C8D45 /* ZTKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTKVO.m; sourceTree = "<group>"; };
 		B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -216,6 +246,7 @@
 		B425266B2918B44A00E509BD /* iOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				B46651EA295D6E86009953B7 /* modules */,
 				B469C4EF2919ED7B000C8D45 /* demo */,
 				B469C4E429190DBB000C8D45 /* common */,
 				B469C4C82918E18C000C8D45 /* mvvm */,
@@ -227,6 +258,8 @@
 				B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */,
 				B469C4E12918FC65000C8D45 /* LaunchController.h */,
 				B469C4E22918FC65000C8D45 /* LaunchController.m */,
+				B4665212295D865E009953B7 /* Localizable.strings */,
+				B466521B295DA619009953B7 /* zh-Hans_image.bundle */,
 			);
 			path = iOSApp;
 			sourceTree = "<group>";
@@ -248,10 +281,169 @@
 			path = iOSAppUITests;
 			sourceTree = "<group>";
 		};
+		B46651EA295D6E86009953B7 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				B4665209295D75D6009953B7 /* knowledge */,
+				B46651F1295D6EDE009953B7 /* project */,
+				B46651F0295D6ED5009953B7 /* search */,
+				B46651EF295D6EC8009953B7 /* me */,
+				B46651EE295D6EC2009953B7 /* book */,
+				B46651ED295D6EB8009953B7 /* home */,
+				B46651EC295D6EB0009953B7 /* account */,
+				B46651EB295D6EA9009953B7 /* main */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		B46651EB295D6EA9009953B7 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				B46651F4295D6F68009953B7 /* model */,
+				B46651F3295D6F59009953B7 /* view_model */,
+				B46651F2295D6F4C009953B7 /* controller */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		B46651EC295D6EB0009953B7 /* account */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = account;
+			sourceTree = "<group>";
+		};
+		B46651ED295D6EB8009953B7 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				B46651F9295D74A3009953B7 /* controller */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		B46651EE295D6EC2009953B7 /* book */ = {
+			isa = PBXGroup;
+			children = (
+				B46651FD295D74CB009953B7 /* controller */,
+			);
+			path = book;
+			sourceTree = "<group>";
+		};
+		B46651EF295D6EC8009953B7 /* me */ = {
+			isa = PBXGroup;
+			children = (
+				B4665201295D74E2009953B7 /* controller */,
+			);
+			path = me;
+			sourceTree = "<group>";
+		};
+		B46651F0295D6ED5009953B7 /* search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		B46651F1295D6EDE009953B7 /* project */ = {
+			isa = PBXGroup;
+			children = (
+				B4665205295D74F9009953B7 /* controller */,
+			);
+			path = project;
+			sourceTree = "<group>";
+		};
+		B46651F2295D6F4C009953B7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B46651F5295D6F88009953B7 /* MainController.h */,
+				B46651F6295D6F88009953B7 /* MainController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		B46651F3295D6F59009953B7 /* view_model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view_model;
+			sourceTree = "<group>";
+		};
+		B46651F4295D6F68009953B7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B46651F9295D74A3009953B7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B46651FA295D74C4009953B7 /* HomeController.h */,
+				B46651FB295D74C4009953B7 /* HomeController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		B46651FD295D74CB009953B7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B46651FE295D74DC009953B7 /* BookController.h */,
+				B46651FF295D74DC009953B7 /* BookController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		B4665201295D74E2009953B7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4665202295D74F2009953B7 /* MeController.h */,
+				B4665203295D74F2009953B7 /* MeController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		B4665205295D74F9009953B7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4665206295D750D009953B7 /* ProjectController.h */,
+				B4665207295D750D009953B7 /* ProjectController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		B4665209295D75D6009953B7 /* knowledge */ = {
+			isa = PBXGroup;
+			children = (
+				B466520A295D75DC009953B7 /* controller */,
+			);
+			path = knowledge;
+			sourceTree = "<group>";
+		};
+		B466520A295D75DC009953B7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B466520B295D75F1009953B7 /* KnowledgeController.h */,
+				B466520C295D75F1009953B7 /* KnowledgeController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		B4665214295D8B1C009953B7 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				B4665215295D8B6A009953B7 /* NSString+Common.h */,
+				B4665216295D8B6A009953B7 /* NSString+Common.m */,
+				B4665218295DA398009953B7 /* UIImage+Common.h */,
+				B4665219295DA398009953B7 /* UIImage+Common.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
 		B469C4C82918E18C000C8D45 /* mvvm */ = {
 			isa = PBXGroup;
 			children = (
-				B469C4CF2918E18C000C8D45 /* kvo */,
+				B469C4D02918E18C000C8D45 /* ZTKVO.h */,
+				B469C4D12918E18C000C8D45 /* ZTKVO.m */,
 				B469C503291B8993000C8D45 /* UIViewController+ZTMVVM.h */,
 				B469C504291B8993000C8D45 /* UIViewController+ZTMVVM.m */,
 				B469C506291B89C1000C8D45 /* UIView+ZTMVVM.h */,
@@ -260,19 +452,12 @@
 			path = mvvm;
 			sourceTree = "<group>";
 		};
-		B469C4CF2918E18C000C8D45 /* kvo */ = {
-			isa = PBXGroup;
-			children = (
-				B469C4D02918E18C000C8D45 /* ZTKVO.h */,
-				B469C4D12918E18C000C8D45 /* ZTKVO.m */,
-			);
-			path = kvo;
-			sourceTree = "<group>";
-		};
 		B469C4E429190DBB000C8D45 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				B4665214295D8B1C009953B7 /* category */,
 				B469C4E529191E5D000C8D45 /* http */,
+				B46651F8295D72A3009953B7 /* ResValue.h */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -408,6 +593,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = B42526602918B44A00E509BD;
 			productRefGroup = B425266A2918B44A00E509BD /* Products */;
@@ -427,6 +613,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42526792918B44B00E509BD /* Assets.xcassets in Resources */,
+				B466521C295DA619009953B7 /* zh-Hans_image.bundle in Resources */,
+				B4665210295D865E009953B7 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,21 +742,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B466520D295D75F1009953B7 /* KnowledgeController.m in Sources */,
 				B469C4F32919EDCC000C8D45 /* DemoController.m in Sources */,
 				B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */,
 				B469C4F62919EF77000C8D45 /* DemoViewModel.m in Sources */,
+				B4665200295D74DC009953B7 /* BookController.m in Sources */,
 				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
 				B46651E9295D4772009953B7 /* DemoListController.m in Sources */,
 				B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */,
 				B41723992950613A008C568E /* DemoShadowController.m in Sources */,
+				B4665217295D8B6A009953B7 /* NSString+Common.m in Sources */,
 				B469C4FC2919F0D7000C8D45 /* UserModel.m in Sources */,
 				B425266E2918B44A00E509BD /* AppDelegate.m in Sources */,
 				B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */,
+				B4665204295D74F2009953B7 /* MeController.m in Sources */,
 				B4172393295050B0008C568E /* DemoCornerController.m in Sources */,
+				B46651F7295D6F88009953B7 /* MainController.m in Sources */,
+				B466521A295DA398009953B7 /* UIImage+Common.m in Sources */,
 				B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
 				B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */,
 				B469C502291A679C000C8D45 /* UserChild.m in Sources */,
+				B4665208295D750D009953B7 /* ProjectController.m in Sources */,
+				B46651FC295D74C4009953B7 /* HomeController.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
 				B417238D29504D6D008C568E /* DemoBaseController.m in Sources */,
 				B469C4FF291A0312000C8D45 /* DemoView.m in Sources */,
@@ -610,6 +806,18 @@
 			targetProxy = B425268F2918B44C00E509BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B4665212295D865E009953B7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4665211295D865E009953B7 /* zh-Hans */,
+				B4665213295D8665009953B7 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B42526962918B44C00E509BD /* Debug */ = {
