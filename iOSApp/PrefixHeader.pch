@@ -26,6 +26,8 @@
 #import "ResValue.h"
 #import "NSString+Common.h"
 #import "UIImage+Common.h"
+#import "ZTHttpManager.h"
+
 
 
 #endif

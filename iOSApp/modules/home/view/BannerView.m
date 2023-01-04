@@ -74,7 +74,7 @@
         
         imageView = [[UIImageView alloc] initWithFrame:frame];
         [imageView setContentMode:UIViewContentModeScaleAspectFit];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:bannerArray[i % bannerArray.count].url]];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:bannerArray[i % bannerArray.count].imagePath]];
         
         [_loopScrollerView addSubview:imageView];
     }

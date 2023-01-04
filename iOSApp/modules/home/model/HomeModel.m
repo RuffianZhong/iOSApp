@@ -1,0 +1,68 @@
+//
+//  HomeModel.m
+//  iOSApp
+//
+//  Created by 钟达烽 on 2023/1/4.
+//
+
+#import "HomeModel.h"
+#import "ArtcleData.h"
+#import "BannerData.h"
+
+@implementation HomeModel
+
+-(void)getArticleList:(NSInteger)pageIndex
+            onSuccess:(void (^)(NSMutableArray<ArtcleData*> *response))success
+              onError:(void (^)(NSNumber *code,NSString *msg))error{
+    
+    NSString *api = [NSString stringWithFormat:@"article/list/%ld/json", pageIndex];
+    
+    [[ZTHttpManager shareManager] get:api parseClass:[NSDictionary class] success:^(id  _Nonnull response) {
+        
+        NSArray *array = [response objectForKey:@"datas"];
+        NSMutableArray<ArtcleData*> *dataArray = [ArtcleData mj_objectArrayWithKeyValuesArray:array];
+        
+        success(dataArray);
+    } error:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
+        error(code,msg);
+    }];
+}
+
+-(void)getArticleTopListOnSuccess:(void (^)(NSMutableArray<ArtcleData*> *response))success
+              onError:(void (^)(NSNumber *code,NSString *msg))error{
+    
+    NSString *api = @"article/top/json";
+    
+    [[ZTHttpManager shareManager] get:api parseClass:[NSDictionary class] success:^(id  _Nonnull response) {
+        
+        NSMutableArray<ArtcleData*> *dataArray = [ArtcleData mj_objectArrayWithKeyValuesArray:response];
+        
+        ArtcleData *data;
+        for (int i = 0; i < dataArray.count; i++) {
+            data = dataArray[i];
+            dataArray[i] = data;
+        }
+        
+        success(dataArray);
+    } error:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
+        error(code,msg);
+    }];
+}
+
+
+-(void)getBannerListOnSuccess:(void (^)(NSMutableArray<BannerData*> *response))success
+              onError:(void (^)(NSNumber *code,NSString *msg))error{
+    
+    NSString *api = @"banner/json";
+    
+    [[ZTHttpManager shareManager] get:api parseClass:[NSDictionary class] success:^(id  _Nonnull response) {
+        
+        NSMutableArray<BannerData*> *dataArray = [BannerData mj_objectArrayWithKeyValuesArray:response];
+
+        success(dataArray);
+    } error:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
+        error(code,msg);
+    }];
+}
+
+@end

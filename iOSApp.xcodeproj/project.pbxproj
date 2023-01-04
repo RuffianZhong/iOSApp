@@ -33,6 +33,13 @@
 		B4665217295D8B6A009953B7 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665216295D8B6A009953B7 /* NSString+Common.m */; };
 		B466521A295DA398009953B7 /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665219295DA398009953B7 /* UIImage+Common.m */; };
 		B466521C295DA619009953B7 /* zh-Hans_image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B466521B295DA619009953B7 /* zh-Hans_image.bundle */; };
+		B4665221295EC3AC009953B7 /* ArtcleData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665220295EC3AC009953B7 /* ArtcleData.m */; };
+		B4665225295ECA15009953B7 /* BannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665224295ECA15009953B7 /* BannerData.m */; };
+		B4665229295EDC62009953B7 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665228295EDC62009953B7 /* BannerView.m */; };
+		B466522C295EEF5B009953B7 /* ArtcleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B466522B295EEF5B009953B7 /* ArtcleCell.m */; };
+		B466523529657E1D009953B7 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B466523429657E1C009953B7 /* HomeModel.m */; };
+		B4665238296582DC009953B7 /* HttpConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665237296582DC009953B7 /* HttpConfig.m */; };
+		B466523C29659254009953B7 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B466523B29659253009953B7 /* HomeViewModel.m */; };
 		B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D12918E18C000C8D45 /* ZTKVO.m */; };
 		B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E22918FC65000C8D45 /* LaunchController.m */; };
 		B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E729191E9E000C8D45 /* ZTHttpManager.m */; };
@@ -118,6 +125,20 @@
 		B4665218295DA398009953B7 /* UIImage+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Common.h"; sourceTree = "<group>"; };
 		B4665219295DA398009953B7 /* UIImage+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Common.m"; sourceTree = "<group>"; };
 		B466521B295DA619009953B7 /* zh-Hans_image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "zh-Hans_image.bundle"; sourceTree = "<group>"; };
+		B466521F295EC3AC009953B7 /* ArtcleData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtcleData.h; sourceTree = "<group>"; };
+		B4665220295EC3AC009953B7 /* ArtcleData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtcleData.m; sourceTree = "<group>"; };
+		B4665223295ECA15009953B7 /* BannerData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerData.h; sourceTree = "<group>"; };
+		B4665224295ECA15009953B7 /* BannerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerData.m; sourceTree = "<group>"; };
+		B4665227295EDC62009953B7 /* BannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
+		B4665228295EDC62009953B7 /* BannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
+		B466522A295EEF5B009953B7 /* ArtcleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtcleCell.h; sourceTree = "<group>"; };
+		B466522B295EEF5B009953B7 /* ArtcleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtcleCell.m; sourceTree = "<group>"; };
+		B466523329657E1C009953B7 /* HomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		B466523429657E1C009953B7 /* HomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		B4665236296582DC009953B7 /* HttpConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpConfig.h; sourceTree = "<group>"; };
+		B4665237296582DC009953B7 /* HttpConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpConfig.m; sourceTree = "<group>"; };
+		B466523A29659253009953B7 /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		B466523B29659253009953B7 /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		B469C4D02918E18C000C8D45 /* ZTKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTKVO.h; sourceTree = "<group>"; };
 		B469C4D12918E18C000C8D45 /* ZTKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTKVO.m; sourceTree = "<group>"; };
 		B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -284,6 +305,7 @@
 		B46651EA295D6E86009953B7 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				B466521D295EC37A009953B7 /* article */,
 				B4665209295D75D6009953B7 /* knowledge */,
 				B46651F1295D6EDE009953B7 /* project */,
 				B46651F0295D6ED5009953B7 /* search */,
@@ -316,6 +338,9 @@
 		B46651ED295D6EB8009953B7 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				B466523929659236009953B7 /* viewModel */,
+				B4665226295EDC43009953B7 /* view */,
+				B4665222295ECA05009953B7 /* model */,
 				B46651F9295D74A3009953B7 /* controller */,
 			);
 			path = home;
@@ -439,6 +464,54 @@
 			path = category;
 			sourceTree = "<group>";
 		};
+		B466521D295EC37A009953B7 /* article */ = {
+			isa = PBXGroup;
+			children = (
+				B466521E295EC38C009953B7 /* model */,
+			);
+			path = article;
+			sourceTree = "<group>";
+		};
+		B466521E295EC38C009953B7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B466521F295EC3AC009953B7 /* ArtcleData.h */,
+				B4665220295EC3AC009953B7 /* ArtcleData.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B4665222295ECA05009953B7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B4665223295ECA15009953B7 /* BannerData.h */,
+				B4665224295ECA15009953B7 /* BannerData.m */,
+				B466523329657E1C009953B7 /* HomeModel.h */,
+				B466523429657E1C009953B7 /* HomeModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B4665226295EDC43009953B7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B4665227295EDC62009953B7 /* BannerView.h */,
+				B4665228295EDC62009953B7 /* BannerView.m */,
+				B466522A295EEF5B009953B7 /* ArtcleCell.h */,
+				B466522B295EEF5B009953B7 /* ArtcleCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		B466523929659236009953B7 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B466523A29659253009953B7 /* HomeViewModel.h */,
+				B466523B29659253009953B7 /* HomeViewModel.m */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		B469C4C82918E18C000C8D45 /* mvvm */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +544,8 @@
 				B469C4EA2919281A000C8D45 /* ZTResponse.m */,
 				B469C4EC29192856000C8D45 /* ParseHelper.h */,
 				B469C4ED29192856000C8D45 /* ParseHelper.m */,
+				B4665236296582DC009953B7 /* HttpConfig.h */,
+				B4665237296582DC009953B7 /* HttpConfig.m */,
 			);
 			path = http;
 			sourceTree = "<group>";
@@ -746,6 +821,8 @@
 				B469C4F32919EDCC000C8D45 /* DemoController.m in Sources */,
 				B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */,
 				B469C4F62919EF77000C8D45 /* DemoViewModel.m in Sources */,
+				B466522C295EEF5B009953B7 /* ArtcleCell.m in Sources */,
+				B466523529657E1D009953B7 /* HomeModel.m in Sources */,
 				B4665200295D74DC009953B7 /* BookController.m in Sources */,
 				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
 				B46651E9295D4772009953B7 /* DemoListController.m in Sources */,
@@ -753,6 +830,7 @@
 				B41723992950613A008C568E /* DemoShadowController.m in Sources */,
 				B4665217295D8B6A009953B7 /* NSString+Common.m in Sources */,
 				B469C4FC2919F0D7000C8D45 /* UserModel.m in Sources */,
+				B466523C29659254009953B7 /* HomeViewModel.m in Sources */,
 				B425266E2918B44A00E509BD /* AppDelegate.m in Sources */,
 				B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */,
 				B4665204295D74F2009953B7 /* MeController.m in Sources */,
@@ -765,13 +843,17 @@
 				B469C502291A679C000C8D45 /* UserChild.m in Sources */,
 				B4665208295D750D009953B7 /* ProjectController.m in Sources */,
 				B46651FC295D74C4009953B7 /* HomeController.m in Sources */,
+				B4665225295ECA15009953B7 /* BannerData.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
 				B417238D29504D6D008C568E /* DemoBaseController.m in Sources */,
+				B4665229295EDC62009953B7 /* BannerView.m in Sources */,
+				B4665238296582DC009953B7 /* HttpConfig.m in Sources */,
 				B469C4FF291A0312000C8D45 /* DemoView.m in Sources */,
 				B40C0E0E295A932F00C0BC9A /* DemoMixedController.m in Sources */,
 				B417239029504E6C008C568E /* DemoBorderController.m in Sources */,
 				B469C4F92919EF96000C8D45 /* UserData.m in Sources */,
 				B417239629505498008C568E /* DemoGradientController.m in Sources */,
+				B4665221295EC3AC009953B7 /* ArtcleData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
