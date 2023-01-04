@@ -31,7 +31,7 @@
             result.data = (NSString*)data;
         }
     } else if ([responseObject isKindOfClass:[NSString class]]){
-        result.code = @1;//code
+        result.code = @0;//code
         result.data = responseObject;
     }
     

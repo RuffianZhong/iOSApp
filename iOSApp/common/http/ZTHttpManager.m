@@ -7,6 +7,7 @@
 
 #import "ZTHttpManager.h"
 #import "ParseHelper.h"
+#import "HttpConfig.h"
 
 @implementation ZTHttpManager
 
@@ -40,13 +41,19 @@ static id _instance;
 }
 
 
+- (void)get:(NSString *)URLString parseClass:(Class)clazz success:(void (^)(id response))successBlock error:(void (^)(NSNumber *code,NSString *msg))errorBlock{
+    
+    [self get:URLString parameters:@{} parseClass:clazz success:successBlock error:errorBlock];
+}
+
 - (void)get:(NSString *)URLString parameters:(NSDictionary *)parameters parseClass:(Class)clazz success:(void (^)(id response))successBlock error:(void (^)(NSNumber *code,NSString *msg))errorBlock{
     
     NSData *parametersData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:0];
     NSString *parametersString = [[NSString alloc] initWithData:parametersData encoding:NSUTF8StringEncoding];
     
-    NSLog(@"Request-post:%@",parametersString);
-    
+    URLString = [[HttpConfig sharedHttpConfig].baseUrl stringByAppendingString:URLString];
+
+    NSLog(@"Request-get:%@",parametersString);
     
     ///底层使用 AFNetworking
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -56,17 +63,20 @@ static id _instance;
         NSLog(@"Respone-success:%@",(NSString *)responseObject);
         
         ZTResponse *ztResponse= [ParseHelper parseResponse:responseObject class:clazz];
-        if([ztResponse.code isEqual:@1]){//成功
+        if([ztResponse.code isEqual:@0]){//成功
             successBlock(ztResponse.data);//调用block
         }else{//失败
             errorBlock(ztResponse.code,ztResponse.msg);
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSNumber *code = [NSNumber numberWithInteger:error.code];
+        NSString *msg = error.userInfo[@"NSLocalizedDescription"];
         
-        NSLog(@"Respone-error:code:%li;msg:%@",error.code,error.userInfo);
-        
-        errorBlock([NSNumber numberWithInteger:error.code],@"something error");
+        NSLog(@"Respone-error>>>code:%@",code);
+        NSLog(@"Respone-error>>>msg:%@",msg);
+
+        errorBlock(code,msg);
     }];
     
 }
@@ -77,8 +87,9 @@ static id _instance;
     NSData *parametersData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:0];
     NSString *parametersString = [[NSString alloc] initWithData:parametersData encoding:NSUTF8StringEncoding];
     
-    NSLog(@"Request-post:%@",parametersString);
+    URLString = [[HttpConfig sharedHttpConfig].baseUrl stringByAppendingString:URLString];
     
+    NSLog(@"Request-post:%@",parametersString);
     
     ///底层使用 AFNetworking
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -95,10 +106,13 @@ static id _instance;
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSNumber *code = [NSNumber numberWithInteger:error.code];
+        NSString *msg = error.userInfo[@"NSLocalizedDescription"];
         
-        NSLog(@"Respone-error:code:%li;msg:%@",error.code,error.userInfo);
-        
-        errorBlock([NSNumber numberWithInteger:error.code],@"something error");
+        NSLog(@"Respone-error>>>code:%@",code);
+        NSLog(@"Respone-error>>>msg:%@",msg);
+
+        errorBlock(code,msg);
     }];
     
 }

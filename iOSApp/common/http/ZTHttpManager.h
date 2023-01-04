@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 //网络请求
 
+- (void)get:(NSString *)URLString parseClass:(Class)clazz success:(void (^)(id response))successBlock error:(void (^)(NSNumber *code,NSString *msg))errorBlock;
+
 - (void)get:(NSString *)URLString parameters:(NSDictionary *)parameters parseClass:(Class)clazz success:(void (^)(id response))successBlock error:(void (^)(NSNumber *code,NSString *msg))errorBlock;
 
 - (void)post:(NSString *)URLString parameters:(NSDictionary *)parameters parseClass:(Class)clazz success:(void (^)(id response))successBlock error:(void (^)(NSNumber *code,NSString *msg))errorBlock;
