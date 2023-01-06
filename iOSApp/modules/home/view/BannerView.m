@@ -73,8 +73,10 @@
         CGRect frame = CGRectMake(offsetX, 0, self.frame.size.width, self.frame.size.height);
         
         imageView = [[UIImageView alloc] initWithFrame:frame];
-        [imageView setContentMode:UIViewContentModeScaleAspectFit];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:bannerArray[i % bannerArray.count].imagePath]];
+        imageView.backgroundColor=[UIColor redColor];
+        [imageView setContentMode:UIViewContentModeScaleAspectFill];
+        imageView.clipsToBounds = YES;
+        [imageView setImageWithURL:bannerArray[i % bannerArray.count].imagePath];
         
         [_loopScrollerView addSubview:imageView];
     }

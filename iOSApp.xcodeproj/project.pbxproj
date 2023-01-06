@@ -40,6 +40,7 @@
 		B466523529657E1D009953B7 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B466523429657E1C009953B7 /* HomeModel.m */; };
 		B4665238296582DC009953B7 /* HttpConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665237296582DC009953B7 /* HttpConfig.m */; };
 		B466523C29659254009953B7 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B466523B29659253009953B7 /* HomeViewModel.m */; };
+		B466523F2966690C009953B7 /* UIImageView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B466523E2966690C009953B7 /* UIImageView+Common.m */; };
 		B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4D12918E18C000C8D45 /* ZTKVO.m */; };
 		B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E22918FC65000C8D45 /* LaunchController.m */; };
 		B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4E729191E9E000C8D45 /* ZTHttpManager.m */; };
@@ -139,6 +140,8 @@
 		B4665237296582DC009953B7 /* HttpConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpConfig.m; sourceTree = "<group>"; };
 		B466523A29659253009953B7 /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
 		B466523B29659253009953B7 /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
+		B466523D2966690C009953B7 /* UIImageView+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Common.h"; sourceTree = "<group>"; };
+		B466523E2966690C009953B7 /* UIImageView+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Common.m"; sourceTree = "<group>"; };
 		B469C4D02918E18C000C8D45 /* ZTKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTKVO.h; sourceTree = "<group>"; };
 		B469C4D12918E18C000C8D45 /* ZTKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTKVO.m; sourceTree = "<group>"; };
 		B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -460,6 +463,8 @@
 				B4665216295D8B6A009953B7 /* NSString+Common.m */,
 				B4665218295DA398009953B7 /* UIImage+Common.h */,
 				B4665219295DA398009953B7 /* UIImage+Common.m */,
+				B466523D2966690C009953B7 /* UIImageView+Common.h */,
+				B466523E2966690C009953B7 /* UIImageView+Common.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -842,6 +847,7 @@
 				B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */,
 				B469C502291A679C000C8D45 /* UserChild.m in Sources */,
 				B4665208295D750D009953B7 /* ProjectController.m in Sources */,
+				B466523F2966690C009953B7 /* UIImageView+Common.m in Sources */,
 				B46651FC295D74C4009953B7 /* HomeController.m in Sources */,
 				B4665225295ECA15009953B7 /* BannerData.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,

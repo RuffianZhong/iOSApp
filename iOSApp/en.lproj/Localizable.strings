@@ -17,7 +17,7 @@
 "user_psw" = "Password";
 "user_psw_confirm" = "Confirm Password";
 "topping" = "Topping";
-"label_group" = "{main} - {sub}";
+"label_group" = "%@ - %@";
 "search_hint" = "separate multiple keywords with spaces";
 "search_hot_title" = "Popular search";
 "search_local_title" = "Historical search";

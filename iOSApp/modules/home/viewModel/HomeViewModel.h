@@ -19,10 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) NSMutableArray<BannerData*> *bannerArray;
 
 @property(nonatomic,assign) NSInteger pageIndex;
-@property(nonatomic,assign) BOOL finishRefresh;//完成加载
+@property(nonatomic,assign) NSInteger refreshState; //刷新状态：0:没有刷新 1:下啦刷新 2:上来加载
 
 
-- (void)getArtcleList;
+/// 加载数据
+/// @param refresh 是否下拉刷新
+- (void)getArtcleListWithRefresh:(BOOL)refresh;
 
 - (void)getBannerList;
 
