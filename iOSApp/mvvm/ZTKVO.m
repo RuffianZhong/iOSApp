@@ -2,6 +2,16 @@
 //  ZTKVO.m
 //  mvvm
 //
+//  备注：
+//      KVO 属性更新 实现 MVVM
+//
+//      触发 KVO 属性更新的方式：
+//      self.dataState = 0
+//      [[self mutableArrayValueForKey:@"dataArray"] addObjectsFromArray:response];
+//
+//      不会触发 KVO 属性更新的方式：
+//      _refreshState = 0; 不会触发 MVVM 属性更新
+//
 //  Created by 钟达烽 on 2022/11/2.
 //
 
