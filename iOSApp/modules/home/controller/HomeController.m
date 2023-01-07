@@ -14,7 +14,6 @@
 
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) BannerView *bannerView;
-@property(nonatomic,strong) UIButton *floatButton;//悬浮按钮：搜索和回到顶部
 
 @property(nonatomic,strong) HomeViewModel *homeViewModel;
 
@@ -29,10 +28,12 @@
     [self initDataNotify];
     [self initHeaderView];
     [self initTableView];
-    [self initFloatButton];
+    [self initNavigationItem];
     
     [self loadData];
 }
+
+#pragma mark -init
 
 - (void)initDataNotify{
     _homeViewModel = [[HomeViewModel alloc] init];
@@ -41,19 +42,6 @@
         [weakSelf updateUI:observable keyPath:keyPath];
     }];
 }
-
--(void)updateUI:(HomeViewModel *)homeViewModel keyPath:(NSString*) keyPath{
-
-    if(homeViewModel.refreshState == 1){
-        [_tableView.mj_header endRefreshing];
-    }else if(homeViewModel.refreshState == 2){
-        [_tableView.mj_footer endRefreshing];
-    }
-    
-    [_bannerView updateBanner:homeViewModel.bannerArray];
-    [_tableView reloadData];
-}
-
 
 - (void)initTableView{
     _tableView = [[UITableView alloc] init];
@@ -83,15 +71,31 @@
     [self.view addSubview:_bannerView];
 }
 
-- (void)initFloatButton{
-    _floatButton = [[UIButton alloc] init];
-    _floatButton.backgroundColor = [UIColor redColor];
-    [self.view addSubview:_floatButton];
-    [_floatButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.width.mas_equalTo(50);
-        make.right.mas_equalTo(_tableView.mas_right).offset(-20);
-        make.bottom.mas_equalTo(_tableView.mas_bottom).offset(-20);
-    }];
+- (void)initNavigationItem{
+    
+    //右侧按钮
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_tab_home"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonAction)];
+    
+    self.navigationItem.title = L(@"tab_home");
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+}
+
+#pragma mark -selector
+
+- (void)rightBarButtonAction{
+    NSLog(@"---------action");
+}
+
+-(void)updateUI:(HomeViewModel *)homeViewModel keyPath:(NSString*) keyPath{
+
+    if(homeViewModel.refreshState == 1){
+        [_tableView.mj_header endRefreshing];
+    }else if(homeViewModel.refreshState == 2){
+        [_tableView.mj_footer endRefreshing];
+    }
+    
+    [_bannerView updateBanner:homeViewModel.bannerArray];
+    [_tableView reloadData];
 }
 
 #pragma mark -data

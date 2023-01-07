@@ -73,7 +73,6 @@
         CGRect frame = CGRectMake(offsetX, 0, self.frame.size.width, self.frame.size.height);
         
         imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.backgroundColor=[UIColor redColor];
         [imageView setContentMode:UIViewContentModeScaleAspectFill];
         imageView.clipsToBounds = YES;
         [imageView setImageWithURL:bannerArray[i % bannerArray.count].imagePath];
