@@ -1,22 +1,20 @@
 //
-//  UITabView.m
+//  ZTUITabView.m
 //  iOSApp
 //
-//  Created by 钟达烽 on 2023/1/7.
+//  Created by 钟达烽 on 2023/1/10.
 //
 
-#import "UITabView.h"
-#import "UITabChildView.h"
+#import "ZTUITabView.h"
+#import "ZTUITabChildView.h"
 
-@interface UITabView()<UIScrollViewDelegate>
 
+@interface ZTUITabView()<ZTUITabChildViewDelegate>
 @property(nonatomic,strong) UIScrollView *tabScrollerView;
-@property(nonatomic,strong) NSMutableArray<UITabChildView*> *viewArray;
-
-@property(nonatomic,strong) NSMutableArray<NSString*> *dataArray;
+@property(nonatomic,strong) NSMutableArray<ZTUITabChildView*> *viewArray;
 @end
 
-@implementation UITabView
+@implementation ZTUITabView
 
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -36,7 +34,6 @@
     _tabScrollerView.showsHorizontalScrollIndicator = NO;
     _tabScrollerView.bounces = NO;
     _tabScrollerView.clipsToBounds = NO;
-    _tabScrollerView.delegate = self;
     [self addSubview:_tabScrollerView];
     [_tabScrollerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.width.mas_equalTo(self);
@@ -48,35 +45,44 @@
     
     if(!dataArray) return;
 
-    UITabChildView *tabChild = nil;
+    CGRect frame;
     CGFloat offsetX = 0;
-    CGFloat width = 150;
-    
+    ZTUITabChildView *tabChild = nil;
     for (int i = 0; i < dataArray.count; i++) {
-        offsetX = i * width;
-        CGRect frame = CGRectMake(offsetX, 0, width, self.frame.size.height);
         
-        tabChild = [[UITabChildView alloc] initWithFrame:frame];
-        tabChild.backgroundColor=[UIColor blueColor];
-        [tabChild.button setTitle:dataArray[i] forState:UIControlStateNormal];
-        [tabChild.button addTarget:self action:@selector(onTabClick:) forControlEvents:UIControlEventTouchUpInside];
+        tabChild = [[ZTUITabChildView alloc] init];
+        tabChild.delegate = self;
+        [tabChild setTitle:dataArray[i]];
+        
+        frame = CGRectMake(offsetX, 0, tabChild.viewWidth, self.frame.size.height);
+        tabChild.frame = frame;
+        offsetX += tabChild.viewWidth;
+                
         [_viewArray addObject:tabChild];
         [_tabScrollerView addSubview:tabChild];
     }
-
+    
+    _tabScrollerView.contentSize = CGSizeMake(offsetX, self.frame.size.height);
 }
 
-- (void)onTabClick:(UIButton*)button{
 
-    UITabChildView *targetTabChild = (UITabChildView*)[button superview];
- 
-    UITabChildView *tabChild;
+- (void)onTabChildViewSelected:(ZTUITabChildView *)tabChildView notifyDelegate:(BOOL)notify{
+    
+    BOOL isTarget = NO;
+    ZTUITabChildView *tabChild;
     for (int i = 0; i < _viewArray.count; i++) {
         tabChild = _viewArray[i];
-        tabChild.select = tabChild == targetTabChild;
+        isTarget = tabChild == tabChildView;
+        tabChild.select = isTarget;
+        if(isTarget){
+            _index = i;
+            if(notify && [_delegate respondsToSelector:@selector(tabViewDidSelected:index:)]){
+                [_delegate tabViewDidSelected:self index:_index];
+            }
+        }
     }
 
-    [self scrollTabChildView:targetTabChild];
+    [self scrollTabChildView:tabChildView];
 }
 
 - (void)scrollTabChildView:(UIView*)tabChildView{
@@ -105,15 +111,21 @@
     [_tabScrollerView setContentOffset: CGPointMake(targetOffsetX, 0) animated:YES];
 }
 
-- (void)updateTabView:(NSMutableArray *)dataArray{
+#pragma mark - 对外方法
+- (void)tabViewDataArray:(NSMutableArray *)dataArray{
     _dataArray = dataArray;
-    _tabScrollerView.contentSize = CGSizeMake(150 * dataArray.count, self.frame.size.height);
-    
     [self initTabScrollerViewChild:dataArray];
 }
 
+- (void)tabViewSelectIndex:(NSInteger)index{
+    ZTUITabChildView *tabChildView = _viewArray[index];
+    [self onTabChildViewSelected:tabChildView notifyDelegate:NO];
+}
 
+#pragma mark - ZTUITabChildViewDelegate
+
+- (void)tabChildViewDidClick:(ZTUITabChildView *)tabChildView{
+    [self onTabChildViewSelected:tabChildView notifyDelegate:YES];
+}
 
 @end
-
-
