@@ -41,7 +41,7 @@
 }
 
 
-- (void)initTabScrollerViewChild:(NSMutableArray *)dataArray{
+- (void)initTabScrollerViewChild:(NSMutableArray<NSString*> *)dataArray{
     
     if(!dataArray) return;
 
@@ -112,7 +112,7 @@
 }
 
 #pragma mark - 对外方法
-- (void)tabViewDataArray:(NSMutableArray *)dataArray{
+- (void)tabViewDataArray:(NSMutableArray<NSString*> *)dataArray{
     _dataArray = dataArray;
     [self initTabScrollerViewChild:dataArray];
 }

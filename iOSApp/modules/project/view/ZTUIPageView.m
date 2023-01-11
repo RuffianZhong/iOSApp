@@ -40,9 +40,11 @@ static const char *zt_key_index_property = "zt_key_index_property";
     _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageViewController.dataSource = self;
     _pageViewController.delegate = self;
-    _pageViewController.view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-
+//    _pageViewController.view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     [self addSubview:_pageViewController.view];
+    [_pageViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.width.mas_equalTo(self);
+    }];
 }
 
 

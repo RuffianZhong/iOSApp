@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 设置数据
 /// @param dataArray 数据源
-- (void)tabViewDataArray:(NSMutableArray *)dataArray;
+- (void)tabViewDataArray:(NSMutableArray<NSString*> *)dataArray;
 
 /// 选中某个下标
 /// @param index 下标
