@@ -22,6 +22,15 @@
 		B42526932918B44C00E509BD /* iOSAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526922918B44C00E509BD /* iOSAppUITests.m */; };
 		B42526952918B44C00E509BD /* iOSAppUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */; };
 		B462F311B1F5CCF91D5DDB51 /* Pods_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF97C20D7BB40226404D10B /* Pods_iOSApp.framework */; };
+		B4634DA9296BF65100EBCFB2 /* ZTUIPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DA8296BF65100EBCFB2 /* ZTUIPageView.m */; };
+		B4634DAC296D05A400EBCFB2 /* ZTUITabView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DAB296D05A400EBCFB2 /* ZTUITabView.m */; };
+		B4634DAF296D05C100EBCFB2 /* ZTUITabChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DAE296D05C100EBCFB2 /* ZTUITabChildView.m */; };
+		B4634DB2296D7AB800EBCFB2 /* ArtcleListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DB1296D7AB800EBCFB2 /* ArtcleListController.m */; };
+		B4634DB6296D7B8B00EBCFB2 /* ArtcleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DB5296D7B8B00EBCFB2 /* ArtcleListViewModel.m */; };
+		B4634DBE296D7C9A00EBCFB2 /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DBD296D7C9A00EBCFB2 /* ImageHelper.m */; };
+		B4634DC1296D7FCA00EBCFB2 /* ProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DC0296D7FCA00EBCFB2 /* ProjectModel.m */; };
+		B4634DC4296D809400EBCFB2 /* CategoryData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DC3296D809400EBCFB2 /* CategoryData.m */; };
+		B4634DC7296D876B00EBCFB2 /* ProjectViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DC6296D876B00EBCFB2 /* ProjectViewModel.m */; };
 		B46651E9295D4772009953B7 /* DemoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651E8295D4772009953B7 /* DemoListController.m */; };
 		B46651F7295D6F88009953B7 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651F6295D6F88009953B7 /* MainController.m */; };
 		B46651FC295D74C4009953B7 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651FB295D74C4009953B7 /* HomeController.m */; };
@@ -104,6 +113,24 @@
 		B425268E2918B44C00E509BD /* iOSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42526922918B44C00E509BD /* iOSAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITests.m; sourceTree = "<group>"; };
 		B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITestsLaunchTests.m; sourceTree = "<group>"; };
+		B4634DA7296BF65100EBCFB2 /* ZTUIPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUIPageView.h; sourceTree = "<group>"; };
+		B4634DA8296BF65100EBCFB2 /* ZTUIPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUIPageView.m; sourceTree = "<group>"; };
+		B4634DAA296D05A400EBCFB2 /* ZTUITabView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITabView.h; sourceTree = "<group>"; };
+		B4634DAB296D05A400EBCFB2 /* ZTUITabView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUITabView.m; sourceTree = "<group>"; };
+		B4634DAD296D05C000EBCFB2 /* ZTUITabChildView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITabChildView.h; sourceTree = "<group>"; };
+		B4634DAE296D05C100EBCFB2 /* ZTUITabChildView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUITabChildView.m; sourceTree = "<group>"; };
+		B4634DB0296D7AB800EBCFB2 /* ArtcleListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtcleListController.h; sourceTree = "<group>"; };
+		B4634DB1296D7AB800EBCFB2 /* ArtcleListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtcleListController.m; sourceTree = "<group>"; };
+		B4634DB4296D7B8B00EBCFB2 /* ArtcleListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtcleListViewModel.h; sourceTree = "<group>"; };
+		B4634DB5296D7B8B00EBCFB2 /* ArtcleListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtcleListViewModel.m; sourceTree = "<group>"; };
+		B4634DBC296D7C9A00EBCFB2 /* ImageHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageHelper.h; sourceTree = "<group>"; };
+		B4634DBD296D7C9A00EBCFB2 /* ImageHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageHelper.m; sourceTree = "<group>"; };
+		B4634DBF296D7FCA00EBCFB2 /* ProjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectModel.h; sourceTree = "<group>"; };
+		B4634DC0296D7FCA00EBCFB2 /* ProjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectModel.m; sourceTree = "<group>"; };
+		B4634DC2296D809400EBCFB2 /* CategoryData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryData.h; sourceTree = "<group>"; };
+		B4634DC3296D809400EBCFB2 /* CategoryData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryData.m; sourceTree = "<group>"; };
+		B4634DC5296D876B00EBCFB2 /* ProjectViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectViewModel.h; sourceTree = "<group>"; };
+		B4634DC6296D876B00EBCFB2 /* ProjectViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectViewModel.m; sourceTree = "<group>"; };
 		B46651E7295D4772009953B7 /* DemoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoListController.h; sourceTree = "<group>"; };
 		B46651E8295D4772009953B7 /* DemoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoListController.m; sourceTree = "<group>"; };
 		B46651F5295D6F88009953B7 /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
@@ -305,9 +332,54 @@
 			path = iOSAppUITests;
 			sourceTree = "<group>";
 		};
+		B4634D9D2969525800EBCFB2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B4634DA7296BF65100EBCFB2 /* ZTUIPageView.h */,
+				B4634DA8296BF65100EBCFB2 /* ZTUIPageView.m */,
+				B4634DAA296D05A400EBCFB2 /* ZTUITabView.h */,
+				B4634DAB296D05A400EBCFB2 /* ZTUITabView.m */,
+				B4634DAD296D05C000EBCFB2 /* ZTUITabChildView.h */,
+				B4634DAE296D05C100EBCFB2 /* ZTUITabChildView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		B4634DB3296D7B6200EBCFB2 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B4634DB4296D7B8B00EBCFB2 /* ArtcleListViewModel.h */,
+				B4634DB5296D7B8B00EBCFB2 /* ArtcleListViewModel.m */,
+				B4634DC5296D876B00EBCFB2 /* ProjectViewModel.h */,
+				B4634DC6296D876B00EBCFB2 /* ProjectViewModel.m */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		B4634DB7296D7BD300EBCFB2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B4634DBF296D7FCA00EBCFB2 /* ProjectModel.h */,
+				B4634DC0296D7FCA00EBCFB2 /* ProjectModel.m */,
+				B4634DC2296D809400EBCFB2 /* CategoryData.h */,
+				B4634DC3296D809400EBCFB2 /* CategoryData.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B4634DBB296D7C8000EBCFB2 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				B4634DBC296D7C9A00EBCFB2 /* ImageHelper.h */,
+				B4634DBD296D7C9A00EBCFB2 /* ImageHelper.m */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		B46651EA295D6E86009953B7 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				B4634DBB296D7C8000EBCFB2 /* common */,
 				B466521D295EC37A009953B7 /* article */,
 				B4665209295D75D6009953B7 /* knowledge */,
 				B46651F1295D6EDE009953B7 /* project */,
@@ -325,7 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				B46651F4295D6F68009953B7 /* model */,
-				B46651F3295D6F59009953B7 /* view_model */,
+				B46651F3295D6F59009953B7 /* viewModel */,
 				B46651F2295D6F4C009953B7 /* controller */,
 			);
 			path = main;
@@ -375,6 +447,9 @@
 		B46651F1295D6EDE009953B7 /* project */ = {
 			isa = PBXGroup;
 			children = (
+				B4634DB7296D7BD300EBCFB2 /* model */,
+				B4634DB3296D7B6200EBCFB2 /* viewModel */,
+				B4634D9D2969525800EBCFB2 /* view */,
 				B4665205295D74F9009953B7 /* controller */,
 			);
 			path = project;
@@ -389,11 +464,11 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
-		B46651F3295D6F59009953B7 /* view_model */ = {
+		B46651F3295D6F59009953B7 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = view_model;
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		B46651F4295D6F68009953B7 /* model */ = {
@@ -435,6 +510,8 @@
 			children = (
 				B4665206295D750D009953B7 /* ProjectController.h */,
 				B4665207295D750D009953B7 /* ProjectController.m */,
+				B4634DB0296D7AB800EBCFB2 /* ArtcleListController.h */,
+				B4634DB1296D7AB800EBCFB2 /* ArtcleListController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -825,6 +902,7 @@
 				B466520D295D75F1009953B7 /* KnowledgeController.m in Sources */,
 				B469C4F32919EDCC000C8D45 /* DemoController.m in Sources */,
 				B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */,
+				B4634DA9296BF65100EBCFB2 /* ZTUIPageView.m in Sources */,
 				B469C4F62919EF77000C8D45 /* DemoViewModel.m in Sources */,
 				B466522C295EEF5B009953B7 /* ArtcleCell.m in Sources */,
 				B466523529657E1D009953B7 /* HomeModel.m in Sources */,
@@ -833,16 +911,22 @@
 				B46651E9295D4772009953B7 /* DemoListController.m in Sources */,
 				B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */,
 				B41723992950613A008C568E /* DemoShadowController.m in Sources */,
+				B4634DB2296D7AB800EBCFB2 /* ArtcleListController.m in Sources */,
 				B4665217295D8B6A009953B7 /* NSString+Common.m in Sources */,
 				B469C4FC2919F0D7000C8D45 /* UserModel.m in Sources */,
 				B466523C29659254009953B7 /* HomeViewModel.m in Sources */,
 				B425266E2918B44A00E509BD /* AppDelegate.m in Sources */,
+				B4634DAC296D05A400EBCFB2 /* ZTUITabView.m in Sources */,
 				B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */,
 				B4665204295D74F2009953B7 /* MeController.m in Sources */,
+				B4634DB6296D7B8B00EBCFB2 /* ArtcleListViewModel.m in Sources */,
 				B4172393295050B0008C568E /* DemoCornerController.m in Sources */,
 				B46651F7295D6F88009953B7 /* MainController.m in Sources */,
+				B4634DC1296D7FCA00EBCFB2 /* ProjectModel.m in Sources */,
 				B466521A295DA398009953B7 /* UIImage+Common.m in Sources */,
+				B4634DBE296D7C9A00EBCFB2 /* ImageHelper.m in Sources */,
 				B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */,
+				B4634DC4296D809400EBCFB2 /* CategoryData.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
 				B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */,
 				B469C502291A679C000C8D45 /* UserChild.m in Sources */,
@@ -851,6 +935,7 @@
 				B46651FC295D74C4009953B7 /* HomeController.m in Sources */,
 				B4665225295ECA15009953B7 /* BannerData.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
+				B4634DC7296D876B00EBCFB2 /* ProjectViewModel.m in Sources */,
 				B417238D29504D6D008C568E /* DemoBaseController.m in Sources */,
 				B4665229295EDC62009953B7 /* BannerView.m in Sources */,
 				B4665238296582DC009953B7 /* HttpConfig.m in Sources */,
@@ -859,6 +944,7 @@
 				B417239029504E6C008C568E /* DemoBorderController.m in Sources */,
 				B469C4F92919EF96000C8D45 /* UserData.m in Sources */,
 				B417239629505498008C568E /* DemoGradientController.m in Sources */,
+				B4634DAF296D05C100EBCFB2 /* ZTUITabChildView.m in Sources */,
 				B4665221295EC3AC009953B7 /* ArtcleData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
