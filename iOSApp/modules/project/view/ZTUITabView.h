@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol ZTUITabViewDelegate;
 
 @interface ZTUITabView : UIView
-
+@property(nonatomic,strong) UIScrollView *tabScrollerView;
 @property(nonatomic,assign) NSInteger index;
 @property(nonatomic,strong) NSMutableArray<NSString*> *dataArray;
 @property(nonatomic,weak) id<ZTUITabViewDelegate> delegate;

@@ -10,7 +10,6 @@
 
 
 @interface ZTUITabView()<ZTUITabChildViewDelegate>
-@property(nonatomic,strong) UIScrollView *tabScrollerView;
 @property(nonatomic,strong) NSMutableArray<ZTUITabChildView*> *viewArray;
 @end
 
