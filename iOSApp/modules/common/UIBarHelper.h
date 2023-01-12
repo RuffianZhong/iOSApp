@@ -20,6 +20,31 @@ NS_ASSUME_NONNULL_BEGIN
 /// 顶部状态栏高度（包括安全区）
 + (CGFloat)statusBarHeight;
 
+#pragma mark - NavigationBar
+
++ (UINavigationController*)navigationController:(UIViewController*)controller;
+
+
+/// 设置导航栏透明度
+/// @param alpha 透明度
+/// @param controller controller
++ (void)navigationBarAlpha:(CGFloat)alpha controller:(UIViewController*)controller;
+
+/// 隐藏导航栏
+/// @param hidden 是否隐藏
+/// @param controller controller
++ (void)navigationBarHidden:(BOOL)hidden controller:(UIViewController*)controller;
+
+/// 设置导航栏背景色
+/// @param color 颜色值
+/// @param controller controller
++ (void)navigationBarBackgroundColor:(UIColor*)color controller:(UIViewController*)controller;
+
+/// 设置导航栏标题样式
+/// @param color 标题颜色
+/// @param font 标题字体
+/// @param controller controller
++ (void)navigationBarTitleColor:(UIColor*)color font:(UIFont *)font controller:(UIViewController*)controller;
 
 #pragma mark - 安全区域高度
 

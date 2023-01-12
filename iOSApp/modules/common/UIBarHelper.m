@@ -2,6 +2,10 @@
 //  UIBarHelper.m
 //  iOSApp
 //  各种XXBar帮助类
+//  https://www.jianshu.com/p/b2585c37e14b
+//  https://blog.csdn.net/weixin_42292229/article/details/124054651
+//  https://www.jianshu.com/p/454b06590cf1
+//  https://www.jianshu.com/p/e3ca1b7b6cec
 //  Created by 钟达烽 on 2023/1/12.
 //
 
@@ -42,6 +46,78 @@
     }
 }
 
+#pragma mark - NavigationBar
+
++ (UINavigationController*)navigationController:(UIViewController*)controller{
+    UINavigationController *navigationController;
+    if( [controller isKindOfClass:[UINavigationController class]] ){
+        navigationController = (UINavigationController*)controller;
+    }else{
+        navigationController = controller.navigationController;
+    }
+    return navigationController;
+}
+
+/// 设置导航栏透明度
+/// @param alpha 透明度
+/// @param controller controller
++ (void)navigationBarAlpha:(CGFloat)alpha controller:(UIViewController*)controller{
+    UINavigationController *navigationController = [UIBarHelper navigationController:controller];
+    [[[navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:alpha];
+}
+
+/// 隐藏导航栏
+/// @param hidden 是否隐藏
+/// @param controller controller
++ (void)navigationBarHidden:(BOOL)hidden controller:(UIViewController*)controller{
+    UINavigationController *navigationController = [UIBarHelper navigationController:controller];
+
+    navigationController.navigationBar.hidden = hidden;
+}
+
+/// 设置导航栏背景色
+/// @param color 颜色值
+/// @param controller controller
++ (void)navigationBarBackgroundColor:(UIColor*)color controller:(UIViewController*)controller{
+    UINavigationController *navigationController = [UIBarHelper navigationController:controller];
+
+    ///导航栏背景颜色
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *appperance = [[UINavigationBarAppearance alloc] init];
+        appperance.backgroundColor = color;
+
+        navigationController.navigationBar.standardAppearance = appperance;
+        navigationController.navigationBar.scrollEdgeAppearance = appperance;
+    }else{
+        navigationController.navigationBar.translucent = NO;
+        navigationController.navigationBar.tintColor = color;//前景颜色，按钮颜色
+        navigationController.navigationBar.barTintColor = color;//背景颜色，导航条背景色
+    }
+}
+
+/// 设置导航栏标题样式
+/// @param color 标题颜色
+/// @param font 标题字体
+/// @param controller controller
++ (void)navigationBarTitleColor:(UIColor*)color font:(UIFont *)font controller:(UIViewController*)controller{
+    UINavigationController *navigationController = [UIBarHelper navigationController:controller];
+
+    //设置字体颜色&大小
+    NSDictionary<NSAttributedStringKey, id> *titleTextAttributes = @{
+        NSForegroundColorAttributeName:color,
+        NSFontAttributeName:font
+    };
+    
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *appperance = [[UINavigationBarAppearance alloc] init];
+        appperance.titleTextAttributes = titleTextAttributes;
+
+        navigationController.navigationBar.standardAppearance = appperance;
+        navigationController.navigationBar.scrollEdgeAppearance = appperance;
+    }else{
+        navigationController.navigationBar.titleTextAttributes = titleTextAttributes;
+    }
+}
 
 #pragma mark - 安全区域高度
 
