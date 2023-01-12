@@ -58,4 +58,24 @@
     return result;
 }
 
+/// 根据颜色生成纯色 Image
+/// @param size 大小
+/// @param color 颜色值
+/// @param cornerRadius 圆角
++ (UIImage *)imageWithSize:(CGSize)size color:(UIColor *)color cornerRadius:(CGFloat)cornerRadius{
+    
+    UIView *renderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    renderView.layer.cornerRadius = cornerRadius;
+    renderView.backgroundColor = color;
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [renderView.layer renderInContext:context];
+    
+    UIImage *renderImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    return renderImage;
+}
+
 @end
