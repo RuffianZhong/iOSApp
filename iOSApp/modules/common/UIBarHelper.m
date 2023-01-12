@@ -90,7 +90,6 @@
         navigationController.navigationBar.scrollEdgeAppearance = appperance;
     }else{
         navigationController.navigationBar.translucent = NO;
-        navigationController.navigationBar.tintColor = color;//前景颜色，按钮颜色
         navigationController.navigationBar.barTintColor = color;//背景颜色，导航条背景色
     }
 }
@@ -118,6 +117,24 @@
         navigationController.navigationBar.titleTextAttributes = titleTextAttributes;
     }
 }
+
+#pragma mark - UITabBar
+
+/// 设置 UITabBar 背景色
+/// @param tabBar UITabBar
+/// @param color 颜色
++ (void)tabBarBackgroundColor:(UITabBar*)tabBar color:(UIColor*)color{
+    UIImage *image = [UIImage imageWithSize:tabBar.frame.size color:color cornerRadius:0.f];
+    [UIBarHelper tabBarBackgroundImage:tabBar image:image];
+}
+
+/// 设置 UITabBar 背景图片
+/// @param tabBar UITabBar
+/// @param image 图片
++ (void)tabBarBackgroundImage:(UITabBar*)tabBar image:(UIImage*)image{
+    tabBar.backgroundImage = image;
+}
+
 
 #pragma mark - 安全区域高度
 

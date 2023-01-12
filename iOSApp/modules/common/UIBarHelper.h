@@ -46,6 +46,18 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param controller controller
 + (void)navigationBarTitleColor:(UIColor*)color font:(UIFont *)font controller:(UIViewController*)controller;
 
+#pragma mark - UITabBar
+
+/// 设置 UITabBar 背景色
+/// @param tabBar UITabBar
+/// @param color 颜色
++ (void)tabBarBackgroundColor:(UITabBar*)tabBar color:(UIColor*)color;
+
+/// 设置 UITabBar 背景图片
+/// @param tabBar UITabBar
+/// @param image 图片
++ (void)tabBarBackgroundImage:(UITabBar*)tabBar image:(UIImage*)image;
+
 #pragma mark - 安全区域高度
 
 /// 顶部安全区高度
