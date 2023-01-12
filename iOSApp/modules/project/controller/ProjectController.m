@@ -35,18 +35,23 @@
 }
 
 - (void)initNavigationItem{
+    [UIBarHelper navigationBarHidden:YES controller:self];
+    [UIBarHelper statusBarBackgroundColor:kColorDarkGreen];
+    
     self.navigationItem.title = L(@"tab_project");
 }
 
+
 - (void)initTabView{
     _tabView = [[ZTUITabView alloc] init];
-    _tabView.backgroundColor = [UIColor grayColor];
+    _tabView.backgroundColor = kColorDarkGreen;
     _tabView.delegate = self;
+    [_tabView.tabScrollerView setContentInsetAdjustmentBehaviorNO];
     [self.view addSubview:_tabView];
     [_tabView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(60);
         make.width.mas_equalTo(self.view);
-        make.top.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view).offset([UIBarHelper statusBarHeight]);
         make.left.mas_equalTo(self.view);
     }];
 }

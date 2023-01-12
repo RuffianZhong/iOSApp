@@ -15,13 +15,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self initNavigationBar];
 }
 
 #pragma mark -StatusBar
 //iOS7之后只有顶部VC能够修改StatusBar，需要重写此方法
 - (UIViewController *)childViewControllerForStatusBarStyle{
     return self.topViewController;
+}
+
+#pragma mark -NavigationBar
+//初始化NavigationBar
+- (void)initNavigationBar{
+    [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
 }
 
 @end

@@ -31,6 +31,11 @@
 		B4634DC1296D7FCA00EBCFB2 /* ProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DC0296D7FCA00EBCFB2 /* ProjectModel.m */; };
 		B4634DC4296D809400EBCFB2 /* CategoryData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DC3296D809400EBCFB2 /* CategoryData.m */; };
 		B4634DC7296D876B00EBCFB2 /* ProjectViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DC6296D876B00EBCFB2 /* ProjectViewModel.m */; };
+		B4634DCA296FA06200EBCFB2 /* BaseUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DC9296FA06200EBCFB2 /* BaseUINavigationController.m */; };
+		B4634DD0296FAC2F00EBCFB2 /* BaseUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DCF296FAC2F00EBCFB2 /* BaseUIViewController.m */; };
+		B4634DD3296FF22500EBCFB2 /* UIBarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DD2296FF22500EBCFB2 /* UIBarHelper.m */; };
+		B4634DD6297004DB00EBCFB2 /* UIViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DD5297004DA00EBCFB2 /* UIViewHelper.m */; };
+		B4634DD9297006BF00EBCFB2 /* UIScrollView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DD8297006BF00EBCFB2 /* UIScrollView+Common.m */; };
 		B46651E9295D4772009953B7 /* DemoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651E8295D4772009953B7 /* DemoListController.m */; };
 		B46651F7295D6F88009953B7 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651F6295D6F88009953B7 /* MainController.m */; };
 		B46651FC295D74C4009953B7 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651FB295D74C4009953B7 /* HomeController.m */; };
@@ -131,6 +136,16 @@
 		B4634DC3296D809400EBCFB2 /* CategoryData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryData.m; sourceTree = "<group>"; };
 		B4634DC5296D876B00EBCFB2 /* ProjectViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectViewModel.h; sourceTree = "<group>"; };
 		B4634DC6296D876B00EBCFB2 /* ProjectViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectViewModel.m; sourceTree = "<group>"; };
+		B4634DC8296FA06100EBCFB2 /* BaseUINavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseUINavigationController.h; sourceTree = "<group>"; };
+		B4634DC9296FA06200EBCFB2 /* BaseUINavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseUINavigationController.m; sourceTree = "<group>"; };
+		B4634DCE296FAC2F00EBCFB2 /* BaseUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseUIViewController.h; sourceTree = "<group>"; };
+		B4634DCF296FAC2F00EBCFB2 /* BaseUIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseUIViewController.m; sourceTree = "<group>"; };
+		B4634DD1296FF22500EBCFB2 /* UIBarHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBarHelper.h; sourceTree = "<group>"; };
+		B4634DD2296FF22500EBCFB2 /* UIBarHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIBarHelper.m; sourceTree = "<group>"; };
+		B4634DD4297004DA00EBCFB2 /* UIViewHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewHelper.h; sourceTree = "<group>"; };
+		B4634DD5297004DA00EBCFB2 /* UIViewHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewHelper.m; sourceTree = "<group>"; };
+		B4634DD7297006BF00EBCFB2 /* UIScrollView+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Common.h"; sourceTree = "<group>"; };
+		B4634DD8297006BF00EBCFB2 /* UIScrollView+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Common.m"; sourceTree = "<group>"; };
 		B46651E7295D4772009953B7 /* DemoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoListController.h; sourceTree = "<group>"; };
 		B46651E8295D4772009953B7 /* DemoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoListController.m; sourceTree = "<group>"; };
 		B46651F5295D6F88009953B7 /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
@@ -372,6 +387,14 @@
 			children = (
 				B4634DBC296D7C9A00EBCFB2 /* ImageHelper.h */,
 				B4634DBD296D7C9A00EBCFB2 /* ImageHelper.m */,
+				B4634DC8296FA06100EBCFB2 /* BaseUINavigationController.h */,
+				B4634DC9296FA06200EBCFB2 /* BaseUINavigationController.m */,
+				B4634DCE296FAC2F00EBCFB2 /* BaseUIViewController.h */,
+				B4634DCF296FAC2F00EBCFB2 /* BaseUIViewController.m */,
+				B4634DD1296FF22500EBCFB2 /* UIBarHelper.h */,
+				B4634DD2296FF22500EBCFB2 /* UIBarHelper.m */,
+				B4634DD4297004DA00EBCFB2 /* UIViewHelper.h */,
+				B4634DD5297004DA00EBCFB2 /* UIViewHelper.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -542,6 +565,8 @@
 				B4665219295DA398009953B7 /* UIImage+Common.m */,
 				B466523D2966690C009953B7 /* UIImageView+Common.h */,
 				B466523E2966690C009953B7 /* UIImageView+Common.m */,
+				B4634DD7297006BF00EBCFB2 /* UIScrollView+Common.h */,
+				B4634DD8297006BF00EBCFB2 /* UIScrollView+Common.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -907,6 +932,7 @@
 				B466522C295EEF5B009953B7 /* ArtcleCell.m in Sources */,
 				B466523529657E1D009953B7 /* HomeModel.m in Sources */,
 				B4665200295D74DC009953B7 /* BookController.m in Sources */,
+				B4634DD3296FF22500EBCFB2 /* UIBarHelper.m in Sources */,
 				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
 				B46651E9295D4772009953B7 /* DemoListController.m in Sources */,
 				B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */,
@@ -919,6 +945,7 @@
 				B4634DAC296D05A400EBCFB2 /* ZTUITabView.m in Sources */,
 				B469C4E829191E9E000C8D45 /* ZTHttpManager.m in Sources */,
 				B4665204295D74F2009953B7 /* MeController.m in Sources */,
+				B4634DD6297004DB00EBCFB2 /* UIViewHelper.m in Sources */,
 				B4634DB6296D7B8B00EBCFB2 /* ArtcleListViewModel.m in Sources */,
 				B4172393295050B0008C568E /* DemoCornerController.m in Sources */,
 				B46651F7295D6F88009953B7 /* MainController.m in Sources */,
@@ -927,6 +954,7 @@
 				B4634DBE296D7C9A00EBCFB2 /* ImageHelper.m in Sources */,
 				B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */,
 				B4634DC4296D809400EBCFB2 /* CategoryData.m in Sources */,
+				B4634DD0296FAC2F00EBCFB2 /* BaseUIViewController.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
 				B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */,
 				B469C502291A679C000C8D45 /* UserChild.m in Sources */,
@@ -935,10 +963,12 @@
 				B46651FC295D74C4009953B7 /* HomeController.m in Sources */,
 				B4665225295ECA15009953B7 /* BannerData.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
+				B4634DCA296FA06200EBCFB2 /* BaseUINavigationController.m in Sources */,
 				B4634DC7296D876B00EBCFB2 /* ProjectViewModel.m in Sources */,
 				B417238D29504D6D008C568E /* DemoBaseController.m in Sources */,
 				B4665229295EDC62009953B7 /* BannerView.m in Sources */,
 				B4665238296582DC009953B7 /* HttpConfig.m in Sources */,
+				B4634DD9297006BF00EBCFB2 /* UIScrollView+Common.m in Sources */,
 				B469C4FF291A0312000C8D45 /* DemoView.m in Sources */,
 				B40C0E0E295A932F00C0BC9A /* DemoMixedController.m in Sources */,
 				B417239029504E6C008C568E /* DemoBorderController.m in Sources */,
