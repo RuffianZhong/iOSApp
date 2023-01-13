@@ -28,7 +28,6 @@
 @property(nonatomic,strong) KnowledgeController *knowledgeCtl;
 @property(nonatomic,strong) MeController *meCtl;
 
-
 @end
 
 @implementation MainController
@@ -36,73 +35,107 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initTabBarController];
-    
 }
 
 -(void)initTabBarController{
-    
-//    [UIBarHelper tabBarBackgroundColor:self.tabBar color:kColorDarkGreen];
-    
+      
     //home
     _homeCtl = [[HomeController alloc] init];
     _homeNavCtl = [[BaseUINavigationController alloc] initWithRootViewController:_homeCtl];
-    [self initTabBarItem:_homeNavCtl setTitle:L(@"tab_home") setNormalImage:@"ic_tab_home" setSelectedImage:@"ic_tab_home"];
 
     
     //project
     _projectCtl = [[ProjectController alloc] init];
     _projectNavCtl =[[BaseUINavigationController alloc] initWithRootViewController:_projectCtl];
-    [self initTabBarItem:_projectNavCtl setTitle:L(@"tab_project") setNormalImage:@"ic_tab_project" setSelectedImage:@"ic_tab_project"];
        
     //book
     _bookCtl = [[BookController alloc] init];
     _bookNavCtl = [[BaseUINavigationController alloc] initWithRootViewController:_bookCtl];
-    [self initTabBarItem:_bookNavCtl setTitle:L(@"tab_book") setNormalImage:@"ic_tab_book" setSelectedImage:@"ic_tab_book"];
-       
+      
     
     //knowledge
     _knowledgeCtl = [[KnowledgeController alloc] init];
     _knowledgeNavCtl = [[BaseUINavigationController alloc] initWithRootViewController:_knowledgeCtl];
-    [self initTabBarItem:_knowledgeNavCtl setTitle:L(@"tab_knowledge") setNormalImage:@"ic_tab_knowledge" setSelectedImage:@"ic_tab_knowledge"];
     
     // me
     _meCtl = [[MeController alloc] init];
     _meNavCtl = [[BaseUINavigationController alloc] initWithRootViewController:_meCtl];
-    [self initTabBarItem:_meNavCtl setTitle:L(@"tab_me") setNormalImage:@"ic_tab_me" setSelectedImage:@"ic_tab_me"];
     
+    [self setTabBarItems];
            
     [self addChildViewController:_homeNavCtl];
     [self addChildViewController:_projectNavCtl];
     [self addChildViewController:_bookNavCtl];
     [self addChildViewController:_knowledgeNavCtl];
     [self addChildViewController:_meNavCtl];
+    
+    self.selectedIndex = 2;
 }
 
 
--(void)initTabBarItem:(UINavigationController *) controller setTitle:(NSString *)title setNormalImage:(NSString *)normalImage setSelectedImage:(NSString *)selectedImage{
+-(void)initTabBarItem:(UINavigationController *) controller title:(NSString *)title imageName:(NSString *)imageName{
+    //UITabBar 背景颜色
+    UIColor *colorBG = [SystemUtils isDarkAppearance] ? kColorDarkGrey : kColorWhite;
+    UIColor *normalColor = [SystemUtils isDarkAppearance] ? kColorDarkWhite : [UIColor grayColor];
+    UIColor *selectedColor = kColorDarkGreen;
     
+    UIImage *normalImage =
+    [[[UIImage imageNamed:imageName]
+                imageWithColor:normalColor]
+                imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    UIImage *normal = [[UIImage imageNamed:normalImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-//    UIImage *selected = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    [selected imageWithTint:UIColorFromRGB(0x00A08C)];
-    
+    UIImage *selectedImage =
+    [[[UIImage imageNamed:imageName]
+                imageWithColor:selectedColor]
+                imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     UITabBarItem *tabBarItem = controller.tabBarItem;
-    
     tabBarItem.title = title;
-    tabBarItem.image = normal;
-    tabBarItem.selectedImage = normal;
-
-    [tabBarItem  setTitleTextAttributes:
-     @{NSForegroundColorAttributeName:UIColorFromRGB(0x78A0AA)} forState:UIControlStateNormal];
-    [tabBarItem  setTitleTextAttributes:
-     @{NSForegroundColorAttributeName:UIColorFromRGB(0x00A08C)} forState:UIControlStateSelected];
+    tabBarItem.image = normalImage;
+    tabBarItem.selectedImage = selectedImage;
     
-    controller.tabBarItem = tabBarItem;
+    
+    if (@available(iOS 13.0, *)) {
         
+        UITabBarAppearance *appearance = [[UITabBarAppearance alloc] init];
+        UITabBarItemAppearance *itemAppearance = [[UITabBarItemAppearance alloc] init];
+
+        [itemAppearance.normal setTitleTextAttributes:@{NSForegroundColorAttributeName:normalColor}];
+        [itemAppearance.selected setTitleTextAttributes:@{NSForegroundColorAttributeName:selectedColor}];
+
+        appearance.stackedLayoutAppearance = itemAppearance;
+        appearance.backgroundColor = colorBG;
+        
+        self.tabBar.standardAppearance = appearance;
+    } else {
+        
+        [tabBarItem  setTitleTextAttributes:@{NSForegroundColorAttributeName:normalColor}
+                                   forState:UIControlStateNormal];
+        [tabBarItem  setTitleTextAttributes:@{NSForegroundColorAttributeName:selectedColor}
+                                   forState:UIControlStateSelected];
+
+        [UIBarHelper tabBarBackgroundColor:self.tabBar color:colorBG];
+    }
+    controller.tabBarItem = tabBarItem;
+
 }
 
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection{
+    [super traitCollectionDidChange:previousTraitCollection];
+    if (@available(iOS 13.0, *)) {
+        //（暗黑模式）模式变化
+        if ([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection]) {
+            [self setTabBarItems];
+        }
+    }
+}
 
+- (void)setTabBarItems{
+    [self initTabBarItem:_homeNavCtl title:L(@"tab_home") imageName:@"ic_tab_home"];
+    [self initTabBarItem:_projectNavCtl title:L(@"tab_project") imageName:@"ic_tab_project"];
+    [self initTabBarItem:_bookNavCtl title:L(@"tab_book") imageName:@"ic_tab_book"];
+    [self initTabBarItem:_knowledgeNavCtl title:L(@"tab_knowledge") imageName:@"ic_tab_knowledge"];
+    [self initTabBarItem:_meNavCtl title:L(@"tab_me") imageName:@"ic_tab_me"];
+}
 
 @end

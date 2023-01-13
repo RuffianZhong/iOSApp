@@ -28,6 +28,10 @@
 #define kColorBgPage         UIColorFromRGB(0x001C29) //背景色-通用页面
 #define kColorBgBlock         UIColorFromRGB(0x00434D) //背景色-item块
 #define kColorSpliteLine     UIColorFromRGB(0x121E23)//分割线颜色
+#define kColorDarkGrey     UIColorFromRGB(0x121212)//暗黑灰色
+#define kColorDarkWhite     UIColorFromRGBWithAlpha(0xFFFFFF,0.87f)//暗黑白色
+#define kColorGrey     UIColorFromRGBWithAlpha(0x838383,0.70f)//暗黑白色
+
 
 
 #define UIColorFromRGBWithAlpha(rgbValue,alp) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alp]

@@ -36,6 +36,7 @@
 		B4634DD3296FF22500EBCFB2 /* UIBarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DD2296FF22500EBCFB2 /* UIBarHelper.m */; };
 		B4634DD6297004DB00EBCFB2 /* UIViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DD5297004DA00EBCFB2 /* UIViewHelper.m */; };
 		B4634DD9297006BF00EBCFB2 /* UIScrollView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DD8297006BF00EBCFB2 /* UIScrollView+Common.m */; };
+		B4634DDC2970FCDC00EBCFB2 /* SystemUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DDB2970FCDB00EBCFB2 /* SystemUtils.m */; };
 		B46651E9295D4772009953B7 /* DemoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651E8295D4772009953B7 /* DemoListController.m */; };
 		B46651F7295D6F88009953B7 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651F6295D6F88009953B7 /* MainController.m */; };
 		B46651FC295D74C4009953B7 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46651FB295D74C4009953B7 /* HomeController.m */; };
@@ -146,6 +147,8 @@
 		B4634DD5297004DA00EBCFB2 /* UIViewHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewHelper.m; sourceTree = "<group>"; };
 		B4634DD7297006BF00EBCFB2 /* UIScrollView+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Common.h"; sourceTree = "<group>"; };
 		B4634DD8297006BF00EBCFB2 /* UIScrollView+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Common.m"; sourceTree = "<group>"; };
+		B4634DDA2970FCDB00EBCFB2 /* SystemUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemUtils.h; sourceTree = "<group>"; };
+		B4634DDB2970FCDB00EBCFB2 /* SystemUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemUtils.m; sourceTree = "<group>"; };
 		B46651E7295D4772009953B7 /* DemoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoListController.h; sourceTree = "<group>"; };
 		B46651E8295D4772009953B7 /* DemoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoListController.m; sourceTree = "<group>"; };
 		B46651F5295D6F88009953B7 /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
@@ -395,6 +398,8 @@
 				B4634DD2296FF22500EBCFB2 /* UIBarHelper.m */,
 				B4634DD4297004DA00EBCFB2 /* UIViewHelper.h */,
 				B4634DD5297004DA00EBCFB2 /* UIViewHelper.m */,
+				B4634DDA2970FCDB00EBCFB2 /* SystemUtils.h */,
+				B4634DDB2970FCDB00EBCFB2 /* SystemUtils.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -976,6 +981,7 @@
 				B417239629505498008C568E /* DemoGradientController.m in Sources */,
 				B4634DAF296D05C100EBCFB2 /* ZTUITabChildView.m in Sources */,
 				B4665221295EC3AC009953B7 /* ArtcleData.m in Sources */,
+				B4634DDC2970FCDC00EBCFB2 /* SystemUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
