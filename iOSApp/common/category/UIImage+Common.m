@@ -41,21 +41,26 @@
 }
 
 
-/// UIImage 着色
+/// Image 着色
 /// @param color 目标颜色
-- (UIImage*)imageWithTint:(UIColor*)color{
-
+-(UIImage*)imageWithColor:(UIColor*)color{
+    
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, self.scale);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, 0, self.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    
     CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, self.scale);
-    CGContextRef c = UIGraphicsGetCurrentContext();
-    [self drawInRect:rect];
-    CGContextSetFillColorWithColor(c, [color CGColor]);
-    CGContextSetBlendMode(c, kCGBlendModeSourceAtop);
-    CGContextFillRect(c, rect);
-    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    CGContextClipToMask(context, rect, self.CGImage);
+    [color setFill];
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-
-    return result;
+    
+    return image;
 }
 
 /// 根据颜色生成纯色 Image

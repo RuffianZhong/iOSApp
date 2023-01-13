@@ -133,6 +133,7 @@
 /// @param image 图片
 + (void)tabBarBackgroundImage:(UITabBar*)tabBar image:(UIImage*)image{
     tabBar.backgroundImage = image;
+    tabBar.translucent = NO;
 }
 
 
