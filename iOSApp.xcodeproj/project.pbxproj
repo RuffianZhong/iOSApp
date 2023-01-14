@@ -21,6 +21,10 @@
 		B42526892918B44C00E509BD /* iOSAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526882918B44C00E509BD /* iOSAppTests.m */; };
 		B42526932918B44C00E509BD /* iOSAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526922918B44C00E509BD /* iOSAppUITests.m */; };
 		B42526952918B44C00E509BD /* iOSAppUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */; };
+		B45173762972905B004DA03F /* BookCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B45173752972905B004DA03F /* BookCollectionViewCell.m */; };
+		B451737A29729248004DA03F /* BookViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B451737929729248004DA03F /* BookViewModel.m */; };
+		B451737E297292B6004DA03F /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B451737D297292B6004DA03F /* BookModel.m */; };
+		B4517381297292F9004DA03F /* BookData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4517380297292F9004DA03F /* BookData.m */; };
 		B462F311B1F5CCF91D5DDB51 /* Pods_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF97C20D7BB40226404D10B /* Pods_iOSApp.framework */; };
 		B4634DA9296BF65100EBCFB2 /* ZTUIPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DA8296BF65100EBCFB2 /* ZTUIPageView.m */; };
 		B4634DAC296D05A400EBCFB2 /* ZTUITabView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4634DAB296D05A400EBCFB2 /* ZTUITabView.m */; };
@@ -119,6 +123,14 @@
 		B425268E2918B44C00E509BD /* iOSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42526922918B44C00E509BD /* iOSAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITests.m; sourceTree = "<group>"; };
 		B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITestsLaunchTests.m; sourceTree = "<group>"; };
+		B45173742972905B004DA03F /* BookCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCollectionViewCell.h; sourceTree = "<group>"; };
+		B45173752972905B004DA03F /* BookCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCollectionViewCell.m; sourceTree = "<group>"; };
+		B451737829729248004DA03F /* BookViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewModel.h; sourceTree = "<group>"; };
+		B451737929729248004DA03F /* BookViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewModel.m; sourceTree = "<group>"; };
+		B451737C297292B6004DA03F /* BookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
+		B451737D297292B6004DA03F /* BookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
+		B451737F297292F9004DA03F /* BookData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookData.h; sourceTree = "<group>"; };
+		B4517380297292F9004DA03F /* BookData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookData.m; sourceTree = "<group>"; };
 		B4634DA7296BF65100EBCFB2 /* ZTUIPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUIPageView.h; sourceTree = "<group>"; };
 		B4634DA8296BF65100EBCFB2 /* ZTUIPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUIPageView.m; sourceTree = "<group>"; };
 		B4634DAA296D05A400EBCFB2 /* ZTUITabView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITabView.h; sourceTree = "<group>"; };
@@ -350,6 +362,35 @@
 			path = iOSAppUITests;
 			sourceTree = "<group>";
 		};
+		B45173732972902F004DA03F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B45173742972905B004DA03F /* BookCollectionViewCell.h */,
+				B45173752972905B004DA03F /* BookCollectionViewCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		B45173772972922C004DA03F /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B451737829729248004DA03F /* BookViewModel.h */,
+				B451737929729248004DA03F /* BookViewModel.m */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		B451737B2972924F004DA03F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B451737C297292B6004DA03F /* BookModel.h */,
+				B451737D297292B6004DA03F /* BookModel.m */,
+				B451737F297292F9004DA03F /* BookData.h */,
+				B4517380297292F9004DA03F /* BookData.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		B4634D9D2969525800EBCFB2 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +493,9 @@
 		B46651EE295D6EC2009953B7 /* book */ = {
 			isa = PBXGroup;
 			children = (
+				B451737B2972924F004DA03F /* model */,
+				B45173772972922C004DA03F /* viewModel */,
+				B45173732972902F004DA03F /* view */,
 				B46651FD295D74CB009953B7 /* controller */,
 			);
 			path = book;
@@ -940,9 +984,11 @@
 				B4634DD3296FF22500EBCFB2 /* UIBarHelper.m in Sources */,
 				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
 				B46651E9295D4772009953B7 /* DemoListController.m in Sources */,
+				B45173762972905B004DA03F /* BookCollectionViewCell.m in Sources */,
 				B469C4E32918FC65000C8D45 /* LaunchController.m in Sources */,
 				B41723992950613A008C568E /* DemoShadowController.m in Sources */,
 				B4634DB2296D7AB800EBCFB2 /* ArtcleListController.m in Sources */,
+				B451737A29729248004DA03F /* BookViewModel.m in Sources */,
 				B4665217295D8B6A009953B7 /* NSString+Common.m in Sources */,
 				B469C4FC2919F0D7000C8D45 /* UserModel.m in Sources */,
 				B466523C29659254009953B7 /* HomeViewModel.m in Sources */,
@@ -958,6 +1004,7 @@
 				B466521A295DA398009953B7 /* UIImage+Common.m in Sources */,
 				B4634DBE296D7C9A00EBCFB2 /* ImageHelper.m in Sources */,
 				B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */,
+				B4517381297292F9004DA03F /* BookData.m in Sources */,
 				B4634DC4296D809400EBCFB2 /* CategoryData.m in Sources */,
 				B4634DD0296FAC2F00EBCFB2 /* BaseUIViewController.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
@@ -977,6 +1024,7 @@
 				B469C4FF291A0312000C8D45 /* DemoView.m in Sources */,
 				B40C0E0E295A932F00C0BC9A /* DemoMixedController.m in Sources */,
 				B417239029504E6C008C568E /* DemoBorderController.m in Sources */,
+				B451737E297292B6004DA03F /* BookModel.m in Sources */,
 				B469C4F92919EF96000C8D45 /* UserData.m in Sources */,
 				B417239629505498008C568E /* DemoGradientController.m in Sources */,
 				B4634DAF296D05C100EBCFB2 /* ZTUITabChildView.m in Sources */,
