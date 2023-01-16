@@ -13,8 +13,8 @@
     self = [super init];
     if(!self)return nil;
     
-    _userModel = [[UserModel alloc]init];
-    _userData = [[UserData alloc]init];
+    _userModel = [[DemoUserModel alloc]init];
+    _userData = [[DemoUserData alloc]init];
     
     return self;
 }

@@ -6,15 +6,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserData.h"
-#import "UserModel.h"
+#import "DemoUserData.h"
+#import "DemoUserModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DemoViewModel : NSObject
 
-@property(nonatomic,strong) UserModel *userModel;
-@property(nonatomic,strong) UserData *userData;
+@property(nonatomic,strong) DemoUserModel *userModel;
+@property(nonatomic,strong) DemoUserData *userData;
 @property(nonatomic,assign) NSInteger updateCount;
 
 - (void)showUserInfo;
