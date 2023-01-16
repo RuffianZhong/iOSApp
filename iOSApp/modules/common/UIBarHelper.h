@@ -40,6 +40,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param controller controller
 + (void)navigationBarBackgroundColor:(UIColor*)color controller:(UIViewController*)controller;
 
+/// 设置导航栏底部阴影图片
+/// @param image 图片
+/// @param controller controller
++ (void)navigationBarBackgroundShadowImage:(UIImage*)image controller:(UIViewController*)controller;
+
 /// 设置导航栏标题样式
 /// @param color 标题颜色
 /// @param font 标题字体

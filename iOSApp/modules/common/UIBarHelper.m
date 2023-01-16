@@ -94,6 +94,25 @@
     }
 }
 
+/// 设置导航栏底部阴影图片
+/// @param image 图片
+/// @param controller controller
++ (void)navigationBarBackgroundShadowImage:(UIImage*)image controller:(UIViewController*)controller{
+    UINavigationController *navigationController = [UIBarHelper navigationController:controller];
+
+    ///导航栏背景颜色
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *appperance = [[UINavigationBarAppearance alloc] init];
+        appperance.shadowImage = image;
+
+        navigationController.navigationBar.standardAppearance = appperance;
+        navigationController.navigationBar.scrollEdgeAppearance = appperance;
+    }else{
+        navigationController.navigationBar.translucent = NO;
+        navigationController.navigationBar.shadowImage = image;
+    }
+}
+
 /// 设置导航栏标题样式
 /// @param color 标题颜色
 /// @param font 标题字体
