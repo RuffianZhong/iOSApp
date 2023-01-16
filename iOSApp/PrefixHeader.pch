@@ -21,8 +21,6 @@
 #import "mvvm/UIView+ZTMVVM.h"
 #import "UIView+ZTUIStyle.h" //导入样式分类
 
-#import "AppDelegate.h"
-
 #import "ResValue.h"
 #import "NSString+Common.h"
 #import "UIImage+Common.h"
@@ -31,6 +29,8 @@
 #import "ZTHttpManager.h"
 #import "UIBarHelper.h"
 #import "SystemUtils.h"
+#import "NSUserDefaultsUtils.h"
+#import "CommonValue.h"
 
 
 

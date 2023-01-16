@@ -67,12 +67,16 @@
 		B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4ED29192856000C8D45 /* ParseHelper.m */; };
 		B469C4F32919EDCC000C8D45 /* DemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4F22919EDCC000C8D45 /* DemoController.m */; };
 		B469C4F62919EF77000C8D45 /* DemoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4F52919EF77000C8D45 /* DemoViewModel.m */; };
-		B469C4F92919EF96000C8D45 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4F82919EF96000C8D45 /* UserData.m */; };
-		B469C4FC2919F0D7000C8D45 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4FB2919F0D7000C8D45 /* UserModel.m */; };
+		B469C4F92919EF96000C8D45 /* DemoUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4F82919EF96000C8D45 /* DemoUserData.m */; };
+		B469C4FC2919F0D7000C8D45 /* DemoUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4FB2919F0D7000C8D45 /* DemoUserModel.m */; };
 		B469C4FF291A0312000C8D45 /* DemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C4FE291A0312000C8D45 /* DemoView.m */; };
 		B469C502291A679C000C8D45 /* UserChild.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C501291A679B000C8D45 /* UserChild.m */; };
 		B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C504291B8993000C8D45 /* UIViewController+ZTMVVM.m */; };
 		B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C507291B89C1000C8D45 /* UIView+ZTMVVM.m */; };
+		B4D2605A297549E10002E748 /* NSUserDefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D26059297549E10002E748 /* NSUserDefaultsUtils.m */; };
+		B4D26067297557B10002E748 /* MeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D26066297557B10002E748 /* MeViewModel.m */; };
+		B4D2606A29755B6C0002E748 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D2606929755B6C0002E748 /* UserData.m */; };
+		B4D2606D29755B8D0002E748 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D2606C29755B8D0002E748 /* UserModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,10 +218,10 @@
 		B469C4F22919EDCC000C8D45 /* DemoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoController.m; sourceTree = "<group>"; };
 		B469C4F42919EF77000C8D45 /* DemoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewModel.h; sourceTree = "<group>"; };
 		B469C4F52919EF77000C8D45 /* DemoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewModel.m; sourceTree = "<group>"; };
-		B469C4F72919EF96000C8D45 /* UserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
-		B469C4F82919EF96000C8D45 /* UserData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
-		B469C4FA2919F0D7000C8D45 /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
-		B469C4FB2919F0D7000C8D45 /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		B469C4F72919EF96000C8D45 /* DemoUserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoUserData.h; sourceTree = "<group>"; };
+		B469C4F82919EF96000C8D45 /* DemoUserData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUserData.m; sourceTree = "<group>"; };
+		B469C4FA2919F0D7000C8D45 /* DemoUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoUserModel.h; sourceTree = "<group>"; };
+		B469C4FB2919F0D7000C8D45 /* DemoUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUserModel.m; sourceTree = "<group>"; };
 		B469C4FD291A0312000C8D45 /* DemoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoView.h; sourceTree = "<group>"; };
 		B469C4FE291A0312000C8D45 /* DemoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoView.m; sourceTree = "<group>"; };
 		B469C500291A679B000C8D45 /* UserChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserChild.h; sourceTree = "<group>"; };
@@ -226,6 +230,15 @@
 		B469C504291B8993000C8D45 /* UIViewController+ZTMVVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZTMVVM.m"; sourceTree = "<group>"; };
 		B469C506291B89C1000C8D45 /* UIView+ZTMVVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZTMVVM.h"; sourceTree = "<group>"; };
 		B469C507291B89C1000C8D45 /* UIView+ZTMVVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZTMVVM.m"; sourceTree = "<group>"; };
+		B4D26058297549E10002E748 /* NSUserDefaultsUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultsUtils.h; sourceTree = "<group>"; };
+		B4D26059297549E10002E748 /* NSUserDefaultsUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsUtils.m; sourceTree = "<group>"; };
+		B4D2605C29754D300002E748 /* CommonValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonValue.h; sourceTree = "<group>"; };
+		B4D26065297557B10002E748 /* MeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeViewModel.h; sourceTree = "<group>"; };
+		B4D26066297557B10002E748 /* MeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeViewModel.m; sourceTree = "<group>"; };
+		B4D2606829755B6C0002E748 /* UserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		B4D2606929755B6C0002E748 /* UserData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		B4D2606B29755B8D0002E748 /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		B4D2606C29755B8D0002E748 /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		B56EEB33ED61568700BCDA64 /* Pods-iOSAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSAppTests.release.xcconfig"; path = "Target Support Files/Pods-iOSAppTests/Pods-iOSAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		E0620F9F25D8892207FA4EFC /* Pods-iOSApp-iOSAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp-iOSAppUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSApp-iOSAppUITests/Pods-iOSApp-iOSAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -504,6 +517,8 @@
 		B46651EF295D6EC8009953B7 /* me */ = {
 			isa = PBXGroup;
 			children = (
+				B4D2605E297557790002E748 /* model */,
+				B4D2605D297557690002E748 /* viewModel */,
 				B4665201295D74E2009953B7 /* controller */,
 			);
 			path = me;
@@ -684,9 +699,11 @@
 		B469C4E429190DBB000C8D45 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				B4D26057297549BE0002E748 /* utils */,
 				B4665214295D8B1C009953B7 /* category */,
 				B469C4E529191E5D000C8D45 /* http */,
 				B46651F8295D72A3009953B7 /* ResValue.h */,
+				B4D2605C29754D300002E748 /* CommonValue.h */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -722,16 +739,45 @@
 				B469C4F22919EDCC000C8D45 /* DemoController.m */,
 				B469C4F42919EF77000C8D45 /* DemoViewModel.h */,
 				B469C4F52919EF77000C8D45 /* DemoViewModel.m */,
-				B469C4F72919EF96000C8D45 /* UserData.h */,
-				B469C4F82919EF96000C8D45 /* UserData.m */,
-				B469C4FA2919F0D7000C8D45 /* UserModel.h */,
-				B469C4FB2919F0D7000C8D45 /* UserModel.m */,
+				B469C4F72919EF96000C8D45 /* DemoUserData.h */,
+				B469C4F82919EF96000C8D45 /* DemoUserData.m */,
+				B469C4FA2919F0D7000C8D45 /* DemoUserModel.h */,
+				B469C4FB2919F0D7000C8D45 /* DemoUserModel.m */,
 				B469C4FD291A0312000C8D45 /* DemoView.h */,
 				B469C4FE291A0312000C8D45 /* DemoView.m */,
 				B469C500291A679B000C8D45 /* UserChild.h */,
 				B469C501291A679B000C8D45 /* UserChild.m */,
 			);
 			path = mvvm;
+			sourceTree = "<group>";
+		};
+		B4D26057297549BE0002E748 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				B4D26058297549E10002E748 /* NSUserDefaultsUtils.h */,
+				B4D26059297549E10002E748 /* NSUserDefaultsUtils.m */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		B4D2605D297557690002E748 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B4D26065297557B10002E748 /* MeViewModel.h */,
+				B4D26066297557B10002E748 /* MeViewModel.m */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		B4D2605E297557790002E748 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B4D2606829755B6C0002E748 /* UserData.h */,
+				B4D2606929755B6C0002E748 /* UserData.m */,
+				B4D2606B29755B8D0002E748 /* UserModel.h */,
+				B4D2606C29755B8D0002E748 /* UserModel.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -989,8 +1035,10 @@
 				B41723992950613A008C568E /* DemoShadowController.m in Sources */,
 				B4634DB2296D7AB800EBCFB2 /* ArtcleListController.m in Sources */,
 				B451737A29729248004DA03F /* BookViewModel.m in Sources */,
+				B4D2606A29755B6C0002E748 /* UserData.m in Sources */,
+				B4D26067297557B10002E748 /* MeViewModel.m in Sources */,
 				B4665217295D8B6A009953B7 /* NSString+Common.m in Sources */,
-				B469C4FC2919F0D7000C8D45 /* UserModel.m in Sources */,
+				B469C4FC2919F0D7000C8D45 /* DemoUserModel.m in Sources */,
 				B466523C29659254009953B7 /* HomeViewModel.m in Sources */,
 				B425266E2918B44A00E509BD /* AppDelegate.m in Sources */,
 				B4634DAC296D05A400EBCFB2 /* ZTUITabView.m in Sources */,
@@ -1012,6 +1060,8 @@
 				B469C502291A679C000C8D45 /* UserChild.m in Sources */,
 				B4665208295D750D009953B7 /* ProjectController.m in Sources */,
 				B466523F2966690C009953B7 /* UIImageView+Common.m in Sources */,
+				B4D2605A297549E10002E748 /* NSUserDefaultsUtils.m in Sources */,
+				B4D2606D29755B8D0002E748 /* UserModel.m in Sources */,
 				B46651FC295D74C4009953B7 /* HomeController.m in Sources */,
 				B4665225295ECA15009953B7 /* BannerData.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
@@ -1025,7 +1075,7 @@
 				B40C0E0E295A932F00C0BC9A /* DemoMixedController.m in Sources */,
 				B417239029504E6C008C568E /* DemoBorderController.m in Sources */,
 				B451737E297292B6004DA03F /* BookModel.m in Sources */,
-				B469C4F92919EF96000C8D45 /* UserData.m in Sources */,
+				B469C4F92919EF96000C8D45 /* DemoUserData.m in Sources */,
 				B417239629505498008C568E /* DemoGradientController.m in Sources */,
 				B4634DAF296D05C100EBCFB2 /* ZTUITabChildView.m in Sources */,
 				B4665221295EC3AC009953B7 /* ArtcleData.m in Sources */,

@@ -3,7 +3,7 @@
 "tab_knowledge" = "Knowledge";
 "tab_book" = "Book";
 "tab_me" = "Me";
-"integral" = "Integral：{value}";
+"integral" = "Integral：%li";
 "collect" = "Collect";
 "dark_style" = "Dark Mode";
 "color_theme" = "Color Theme";

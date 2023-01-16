@@ -15,7 +15,10 @@ static const Language Language_en = @"en";
 
 @property(nonatomic,strong) UIWindow *window;
 @property(nonatomic,strong) UINavigationController *navController;
-@property(nonatomic,strong) NSString *language;
+@property(nonatomic,copy) NSString *language;
+
+/// 修改多语言
+- (void)setAppLanguage:(NSString *)language;
 
 
 + (AppDelegate *)shareAppDelegate;

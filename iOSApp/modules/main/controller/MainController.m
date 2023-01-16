@@ -69,7 +69,7 @@
     [self addChildViewController:_knowledgeNavCtl];
     [self addChildViewController:_meNavCtl];
     
-    self.selectedIndex = 2;
+    self.selectedIndex = 4;
 }
 
 

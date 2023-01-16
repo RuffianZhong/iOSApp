@@ -3,7 +3,7 @@
 "tab_knowledge" = "知识";
 "tab_book" = "教程";
 "tab_me" = "我的";
-"integral" = "积分：{value}";
+"integral" = "积分：%li";
 "collect" = "收藏";
 "dark_style" = "暗黑模式";
 "color_theme" = "彩色主题";

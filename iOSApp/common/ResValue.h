@@ -18,6 +18,7 @@
 #define kColorGreenWallet    UIColorFromRGB(0x00A366)
 #define kColorDarkGreen      UIColorFromRGB(0x17bda7) //深绿色
 #define kColorWhite          UIColorFromRGB(0xffffff) //白色
+#define kColorBlack          UIColorFromRGB(0x000000) //黑色
 #define kColorWhite30        UIColorFromRGBWithAlpha(0xffffff,0.3f) //白色
 #define kColorWhite50        UIColorFromRGBWithAlpha(0xffffff,0.5f) //白色
 #define kColorTextMainBlue       UIColorFromRGB(0x557479) //文本主颜色-蓝色

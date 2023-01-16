@@ -36,15 +36,27 @@
     return YES;
 }
 
-+ (AppDelegate *)shareAppDelegate{
-    return (AppDelegate *)[[UIApplication sharedApplication]delegate];
-}
+#pragma mark -语言
 
 - (NSString *)language{
     if (!_language) {
-        _language = Language_en;
+        _language = [NSUserDefaultsUtils objectForKey:languageKey];
+        if(!_language){
+            _language = Language_zh;
+        }
     }
     return _language;
+}
+
+- (void)setAppLanguage:(NSString *)language{
+    _language = language;
+    [NSUserDefaultsUtils setObject:language forKey:languageKey];
+}
+
+
+
++ (AppDelegate *)shareAppDelegate{
+    return (AppDelegate *)[[UIApplication sharedApplication]delegate];
 }
 
 - (void)startToMainPage{
