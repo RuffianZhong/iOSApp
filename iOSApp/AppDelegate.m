@@ -48,11 +48,30 @@
     return _language;
 }
 
+
+/// 设置应用语言
+/// 1.更改 NSBundle
+/// 2.更改本地存储
+/// 3.重新赋值根控制器 / 响应通知重新赋值
+/// @param language 语言
 - (void)setAppLanguage:(NSString *)language{
     _language = language;
+    
     [NSUserDefaultsUtils setObject:language forKey:languageKey];
+    
+    [self restartRootController];
 }
 
+/// 重新设置根控制器
+- (void)restartRootController{
+    UIViewController *oldRootVC = self.window.rootViewController;
+
+    oldRootVC = nil;
+    
+    MainController *newRootVC = [[MainController alloc]init];
+
+    self.window.rootViewController = newRootVC;
+}
 
 
 + (AppDelegate *)shareAppDelegate{
