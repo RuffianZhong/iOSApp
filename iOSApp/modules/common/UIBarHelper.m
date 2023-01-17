@@ -22,13 +22,32 @@
     static UIView *statusBar = nil;
     static dispatch_once_t onceToken;
     if (@available(iOS 13.0, *)) {  //iOS 13不允许使用valueForKey、setValue: forKey获取和设置私有属性
+        /// 1.常规情况：dispatch_once（执行一次） 中创建 statusBar 并且添加到 keyWindow
+        /// 2.特殊情况：（例如根控制器重置）static  statusBar 已经存在并且添加到 keyWindow；此时 statusBar 被 UITransitionView（keyWindow 其他子View）覆盖，所以表现出来的情况是设置 statusBar 颜色无效；兜底处理，每次先移除 statusBar 再添加
+        
         dispatch_once(&onceToken, ^{
             statusBar = [[UIView alloc] initWithFrame:[UIApplication sharedApplication].statusBarFrame];
-            [[UIApplication sharedApplication].keyWindow addSubview:statusBar];
+            //[[UIApplication sharedApplication].keyWindow addSubview:statusBar];
         });
+        
+        BOOL hasStatusBar = NO;
+        NSArray<__kindof UIView *> *subviews = [[UIApplication sharedApplication].keyWindow subviews];
+        for (int i = 0; i < subviews.count; i++) {
+            if(subviews[i] == statusBar){
+                hasStatusBar = YES;
+            }
+        }
+        
+        if(hasStatusBar){
+            [statusBar removeFromSuperview];
+        }
+        
+        [[UIApplication sharedApplication].keyWindow addSubview:statusBar];
+
      } else {
          statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
     }
+    
     if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
         statusBar.backgroundColor = color;
     }
