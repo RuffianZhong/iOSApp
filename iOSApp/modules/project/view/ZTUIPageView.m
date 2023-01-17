@@ -159,4 +159,9 @@ static const char *zt_key_index_property = "zt_key_index_property";
                                         completion:nil];
 }
 
+/// 释放资源
+- (void)releaseResource{
+    [_pageViewController.view removeFromSuperview];
+}
+
 @end

@@ -28,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param index 下标
 - (void)pageViewSelectIndex:(NSInteger)index;
 
+/// 释放资源
+- (void)releaseResource;
+
 @end
 
 @protocol ZTUIPageViewDelegate<NSObject>

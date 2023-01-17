@@ -129,5 +129,7 @@
     return cell;
 }
 
-
+- (void)dealloc{
+    [_bannerView releaseResource];
+}
 @end

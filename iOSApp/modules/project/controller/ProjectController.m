@@ -110,5 +110,8 @@
     [_pageView pageViewSelectIndex:index];
 }
 
+- (void)dealloc{
+    [_pageView releaseResource];
+}
 
 @end

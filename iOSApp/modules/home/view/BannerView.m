@@ -177,5 +177,9 @@
    return minIndex;
  }
 
+- (void)releaseResource{
+    [_timer invalidate];
+    _timer = nil;
+}
 
 @end
