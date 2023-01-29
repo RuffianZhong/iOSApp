@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ArtcleData.h"
+#import "ArticleData.h"
 #import "ProjectModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) ProjectModel *projectModel;
 
 
-@property(nonatomic,strong) NSMutableArray<ArtcleData*> *artcleArray;
+@property(nonatomic,strong) NSMutableArray<ArticleData*> *artcleArray;
 
 @property(nonatomic,assign) NSInteger pageIndex;
 @property(nonatomic,assign) NSInteger refreshState; //刷新状态：0:没有刷新 1:下啦刷新 2:上来加载

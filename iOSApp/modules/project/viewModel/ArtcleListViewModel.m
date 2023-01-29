@@ -25,7 +25,7 @@
     
     _refreshState = 0;
     if(refresh) _pageIndex = 0;
-    [_projectModel getArticleList:_pageIndex categoryId:categoryId onSuccess:^(NSMutableArray<ArtcleData *> * _Nonnull response) {
+    [_projectModel getArticleList:_pageIndex categoryId:categoryId onSuccess:^(NSMutableArray<ArticleData *> * _Nonnull response) {
         if(refresh){
             //直接覆盖更新
             self.artcleArray = response;

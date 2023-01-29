@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class ArtcleData;
+@class ArticleData;
 
 @interface ArtcleCell : UITableViewCell
 
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) UILabel *labelChapter;//主-副标签
 @property(nonatomic,strong) UIImageView *ivCollect;//收藏
 
-@property(nonatomic,strong) ArtcleData *data;
+@property(nonatomic,strong) ArticleData *data;
 
 @end
 

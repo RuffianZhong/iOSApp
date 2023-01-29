@@ -8,16 +8,16 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class ArtcleData;
+@class ArticleData;
 @class BannerData;
 
 @interface HomeModel : NSObject
 
 -(void)getArticleList:(NSInteger)pageIndex
-            onSuccess:(void (^)(NSMutableArray<ArtcleData*> *response))success
+            onSuccess:(void (^)(NSMutableArray<ArticleData*> *response))success
               onError:(void (^)(NSNumber *code,NSString *msg))error;
 
--(void)getArticleTopListOnSuccess:(void (^)(NSMutableArray<ArtcleData*> *response))success
+-(void)getArticleTopListOnSuccess:(void (^)(NSMutableArray<ArticleData*> *response))success
                           onError:(void (^)(NSNumber *code,NSString *msg))error;
 
 -(void)getBannerListOnSuccess:(void (^)(NSMutableArray<BannerData*> *response))success

@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HomeModel.h"
-#import "ArtcleData.h"
+#import "ArticleData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong) HomeModel *homeModel;
 
-@property(nonatomic,strong) NSMutableArray<ArtcleData*> *artcleArray;
+@property(nonatomic,strong) NSMutableArray<ArticleData*> *artcleArray;
 @property(nonatomic,strong) NSMutableArray<BannerData*> *bannerArray;
 
 @property(nonatomic,assign) NSInteger pageIndex;

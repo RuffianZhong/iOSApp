@@ -6,7 +6,7 @@
 //
 
 #import "ArtcleCell.h"
-#import "ArtcleData.h"
+#import "ArticleData.h"
 
 @implementation ArtcleCell
 
@@ -103,12 +103,12 @@
     }];
 }
 
-- (void)setData:(ArtcleData *)data{
+- (void)setData:(ArticleData *)data{
     _data = data;
     [self updateUI:data];
 }
 
-- (void)updateUI:(ArtcleData *)data{
+- (void)updateUI:(ArticleData *)data{
     //设置UI数据
     [_ivUserIcon setImageWithURL:data.userIcon];
     _labelUserName.text = data.userName;

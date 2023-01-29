@@ -6,14 +6,14 @@
 //
 
 #import "HomeModel.h"
-#import "ArtcleData.h"
+#import "ArticleData.h"
 #import "BannerData.h"
 #import "ImageHelper.h"
 
 @implementation HomeModel
 
 -(void)getArticleList:(NSInteger)pageIndex
-            onSuccess:(void (^)(NSMutableArray<ArtcleData*> *response))success
+            onSuccess:(void (^)(NSMutableArray<ArticleData*> *response))success
               onError:(void (^)(NSNumber *code,NSString *msg))error{
     
     NSString *api = [NSString stringWithFormat:@"article/list/%ld/json", pageIndex];
@@ -21,9 +21,9 @@
     [[ZTHttpManager shareManager] get:api parseClass:[NSDictionary class] success:^(id  _Nonnull response) {
         
         NSArray *array = [response objectForKey:@"datas"];
-        NSMutableArray<ArtcleData*> *dataArray = [ArtcleData mj_objectArrayWithKeyValuesArray:array];
+        NSMutableArray<ArticleData*> *dataArray = [ArticleData mj_objectArrayWithKeyValuesArray:array];
         
-        ArtcleData *data;
+        ArticleData *data;
         for (int i = 0; i < dataArray.count; i++) {
             data = dataArray[i];
             data.userIcon = [ImageHelper randomUrl];
@@ -39,16 +39,16 @@
     }];
 }
 
--(void)getArticleTopListOnSuccess:(void (^)(NSMutableArray<ArtcleData*> *response))success
+-(void)getArticleTopListOnSuccess:(void (^)(NSMutableArray<ArticleData*> *response))success
               onError:(void (^)(NSNumber *code,NSString *msg))error{
     
     NSString *api = @"article/top/json";
     
     [[ZTHttpManager shareManager] get:api parseClass:[NSDictionary class] success:^(id  _Nonnull response) {
         
-        NSMutableArray<ArtcleData*> *dataArray = [ArtcleData mj_objectArrayWithKeyValuesArray:response];
+        NSMutableArray<ArticleData*> *dataArray = [ArticleData mj_objectArrayWithKeyValuesArray:response];
         
-        ArtcleData *data;
+        ArticleData *data;
         for (int i = 0; i < dataArray.count; i++) {
             data = dataArray[i];
             data.isTop = YES;

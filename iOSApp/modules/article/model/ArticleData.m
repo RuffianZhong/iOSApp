@@ -5,9 +5,9 @@
 //  Created by 钟达烽 on 2022/12/30.
 //
 
-#import "ArtcleData.h"
+#import "ArticleData.h"
 
-@implementation ArtcleData
+@implementation ArticleData
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
     return @{

@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ArtcleData : NSObject
+@interface ArticleData : NSObject
 
 @property(nonatomic,assign) NSInteger aid;
 @property(nonatomic,copy) NSString *userName;

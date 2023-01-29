@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ArtcleData.h"
+#import "ArticleData.h"
 #import "CategoryData.h"
 
 
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(void)getArticleList:(NSInteger)pageIndex categoryId:(NSInteger)categoryId
-            onSuccess:(void (^)(NSMutableArray<ArtcleData*> *response))success
+            onSuccess:(void (^)(NSMutableArray<ArticleData*> *response))success
               onError:(void (^)(NSNumber *code,NSString *msg))error;
 
 -(void)getCategoryListOnSuccess:(void (^)(NSMutableArray<CategoryData*> *response))success

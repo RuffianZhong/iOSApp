@@ -35,7 +35,7 @@
     
     _refreshState = 0;
     if(refresh) _pageIndex = 0;
-    [_homeModel getArticleList:_pageIndex onSuccess:^(NSMutableArray<ArtcleData *> * _Nonnull response) {
+    [_homeModel getArticleList:_pageIndex onSuccess:^(NSMutableArray<ArticleData *> * _Nonnull response) {
        
         if(refresh){
             //直接覆盖更新
