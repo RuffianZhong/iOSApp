@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,weak) id<ZTUITagViewDelegate> delegate;
 
+- (instancetype)initWithWidth:(CGFloat)width;
+
 - (void)tagViewDataArray:(NSMutableArray<NSString*> *)dataArray;
 
 @end
