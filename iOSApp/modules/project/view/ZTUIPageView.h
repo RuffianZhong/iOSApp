@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 设置数据
 /// @param dataArray 数据源
-- (void)pageViewDataArray:(NSMutableArray *)dataArray;
+- (void)pageViewDataArray:(NSArray *)dataArray;
 
 /// 选中某个下标
 /// @param index 下标

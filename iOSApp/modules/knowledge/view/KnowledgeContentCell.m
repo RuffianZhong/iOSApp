@@ -20,7 +20,6 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
-        self.backgroundColor = [UIColor purpleColor];
         [self initViews];
     }
     return self;
@@ -28,32 +27,28 @@
 
 - (void)initViews{
     _labelTitle = [[UILabel alloc] init];
-    _labelTitle.backgroundColor = [UIColor greenColor];
     _labelTitle.font = kFontText18;
-    [self addSubview:_labelTitle];
- 
+    [self.contentView addSubview:_labelTitle];
+    [_labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(40);
+        make.width.mas_equalTo(self.contentView);
+        make.left.mas_equalTo(self.contentView).offset(10);
+        make.top.mas_equalTo(self.contentView);
+        
+    }];
     
     _tagView = [[ZTUITagView alloc] initWithWidth:kScreenWidth - 40];
-    _tagView.backgroundColor = [UIColor redColor];
-    [self addSubview:_tagView];
-    
-    [_labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(60);
-        make.width.mas_equalTo(self);
-        make.left.top.mas_equalTo(self);
-    }];
-
-
+    [self.contentView addSubview:_tagView];
     [_tagView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self).offset(20);
-        make.right.mas_equalTo(self).offset(-20);
-        make.top.mas_equalTo(_labelTitle.mas_bottom).offset(20).priority(MASLayoutPriorityDefaultHigh);
-        make.bottom.mas_equalTo(self.mas_bottom).offset(-20);
+        make.left.mas_equalTo(self.contentView).offset(20);
+        make.right.mas_equalTo(self.contentView).offset(-20);
+        make.top.mas_equalTo(_labelTitle.mas_bottom).priority(MASLayoutPriorityDefaultHigh);
+        make.bottom.mas_equalTo(self.contentView.mas_bottom);
     }];
 
 }
 
-- (void)setTitle:(NSString *)title tagArray:(NSMutableArray<NSString*> *)tagArray{
+- (void)setTitle:(NSString *)title tagArray:(NSArray<NSString*> *)tagArray{
     _title = title;
     _tagArray = tagArray;
     [self updateUI];
@@ -64,12 +59,6 @@
     //设置UI数据
     _labelTitle.text = _title;
     [_tagView tagViewDataArray:_tagArray];
-//    [_tagView tagViewWidth:kScreenWidth - 40];
-
-    
-//    [_tagView setFrame:CGRectMake(20, 60, kScreenWidth - 40, 100)];
-    
 }
-
 
 @end

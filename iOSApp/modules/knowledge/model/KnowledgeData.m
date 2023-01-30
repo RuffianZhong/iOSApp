@@ -9,10 +9,4 @@
 
 @implementation KnowledgeData
 
-+ (NSDictionary *)mj_replacedKeyFromPropertyName{
-    return @{
-        @"categoryArray" : @"categoryList",
-        @"navArray" : @"navList"
-    };
-}
 @end

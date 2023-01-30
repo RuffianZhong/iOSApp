@@ -13,14 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZTUITagView : UIView
 
-@property(nonatomic,strong) NSMutableArray<NSString*> *dataArray;
+@property(nonatomic,strong) NSArray<NSString*> *dataArray;
 @property(nonatomic,assign) NSInteger index;
 
 @property(nonatomic,weak) id<ZTUITagViewDelegate> delegate;
 
 - (instancetype)initWithWidth:(CGFloat)width;
 
-- (void)tagViewDataArray:(NSMutableArray<NSString*> *)dataArray;
+- (void)tagViewDataArray:(NSArray<NSString*> *)dataArray;
 
 @end
 

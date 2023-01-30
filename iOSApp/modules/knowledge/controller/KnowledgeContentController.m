@@ -7,10 +7,12 @@
 
 #import "KnowledgeContentController.h"
 #import "KnowledgeContentCell.h"
+#import "KnowledgeViewModel.h"
 
 
-@interface KnowledgeContentController ()<UITableViewDelegate,UITableViewDataSource>
+@interface KnowledgeContentController ()<UITableViewDelegate,UITableViewDataSource,ZTUITagViewDelegate>
 @property(nonatomic,strong) UITableView *tableView;
+@property(nonatomic,strong) KnowledgeViewModel *viewModel;
 
 @end
 
@@ -18,8 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initTableView]; 
-    [_tableView reloadData];
+    [self initDataNotify];
+    [self initTableView];
+    [self initData];
 }
 
 - (void)initTableView{
@@ -29,6 +32,8 @@
     _tableView.rowHeight = UITableViewAutomaticDimension;//自动计算高度
     _tableView.estimatedRowHeight = 50;//估算高度
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    _tableView.delaysContentTouches = NO;//解决：按钮点击无按下效果
+
 
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -38,55 +43,52 @@
     
 }
 
+- (void)initDataNotify{
+    _viewModel = [[KnowledgeViewModel alloc] init];
+    MJWeakSelf
+    [self observe:_viewModel notify:^(KnowledgeViewModel *observable, NSString *keyPath) {
+        [weakSelf.tableView reloadData];
+    }];
+}
+
+- (void)initData{
+    if(_type == 0){
+        [_viewModel getCategoryList];
+    }else{
+        [_viewModel getNavList];
+    }
+}
+
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return  10;
+    return  _type == 0 ? _viewModel.knowledgeData.categoryArray.count : _viewModel.knowledgeData.navArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-   NSMutableArray *_array = [NSMutableArray array];
-       [_array addObject:@"例如常量"];
-       [_array addObject:@"基类"];
-       [_array addObject:@"account_model"];
-       [_array addObject:@"例如常量"];
-       [_array addObject:@"网络"];
-       [_array addObject:@"core"];
-       [_array addObject:@"账户模块"];
-       [_array addObject:@"全局通用控件"];
-       [_array addObject:@"modules"];
-       [_array addObject:@"本地数据"];
-       [_array addObject:@"数据"];
-       [_array addObject:@"本地core数据"];
-       [_array addObject:@"--分割--"];
-       [_array addObject:@"基类"];
-       [_array addObject:@"account_model"];
-       [_array addObject:@"例如常量"];
-       [_array addObject:@"网络"];
-       [_array addObject:@"core"];
-       [_array addObject:@"账户模块"];
-       [_array addObject:@"全局通用控件"];
-       [_array addObject:@"modules"];
-       [_array addObject:@"本地数据"];
-       [_array addObject:@"数据"];
-       [_array addObject:@"本地core数据"];
-   
     
     static NSString *identifier = @"KnowledgeContentCell";
     KnowledgeContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if(!cell){
         cell = [[KnowledgeContentCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
-//    cell.data = [_artcleListViewModel.artcleArray objectAtIndex:indexPath.row];
-//    cell.title = @"title";
-//    cell.tagArray = _array;
-    [cell setTitle:@"title" tagArray:_array];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    //setData
+    NSString *title = [_viewModel titleForIndex:indexPath.row withType:_type];
+    NSArray<NSString*> *tagArray = [_viewModel tagArrayForIndex:indexPath.row withType:_type];
+    [cell setTitle:title tagArray:tagArray];
     
+    cell.tagView.delegate = self;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
 }
 
+#pragma mark - ZTUITagViewDelegate
+
+- (void)tagViewDidSelected:(ZTUITagView *)tabView index:(NSInteger)index{
+//    NSInteger count = _type == 0 ? _viewModel.knowledgeData.categoryArray.count : _viewModel.knowledgeData.navArray.count;
+    
+    NSLog(@"-----:%li",index);
+}
 
 @end

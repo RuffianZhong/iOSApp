@@ -23,7 +23,7 @@
     _imageView = [[UIImageView alloc] initWithFrame:frame];
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.clipsToBounds = YES;
-    [self addSubview:_imageView];
+    [self.contentView addSubview:_imageView];
 }
 
 - (void)setData:(NSString *)data{

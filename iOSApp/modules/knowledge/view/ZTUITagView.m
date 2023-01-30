@@ -30,11 +30,29 @@
     return _viewSize;
 }
 
-- (void)initTagViews:(NSMutableArray<NSString*> *)dataArray{
-    
-    NSArray<UIView*> *subViews = [self subviews];
-    if(subViews.count > 0) return;
+- (void)initTagViews:(NSArray<NSString*> *)dataArray{
+    if(dataArray == nil || dataArray.count ==0) return;
+    //对比数据
+    NSArray<ZTUITagChildView*> *subViews = [self subviews];
+    if(subViews.count != 0){
+        BOOL dataChange = NO;
+        if(dataArray.count == subViews.count){
+            for (int i = 0; i < subViews.count; i++) {
+                if(![subViews[i].title isEqualToString:dataArray[i]]){
+                    dataChange = YES;
+                    break;
+                }
+            }
+        }else{
+            dataChange = YES;
+        }
+        if(dataChange){
+            //清除旧数据
+            [subViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        }
+    }
 
+    //添加标签
     ZTUITagChildView *tagChild;
     for (int i = 0; i < dataArray.count; i++) {
         
@@ -48,20 +66,20 @@
 
 - (void)layoutTagViews{
     
-    CGFloat height = 0.0;
+    NSArray<ZTUITagChildView*> *subViews = [self subviews];
+    if(subViews.count == 0) return;
     
     CGRect frame;
     int lineNumber = 0;
     CGFloat offsetX = 0;
     CGFloat offsetY = 0;
-
-    CGFloat totalWith = 0;
-    CGFloat maxWidth = _viewWidth;//self.frame.size.width;
     CGFloat childHeight = 0;
     CGFloat childWidth = 0;
-
-    NSArray<ZTUITagChildView*> *subViews = [self subviews];
     
+    CGFloat height = 0.0;
+    CGFloat totalWith = 0;
+    CGFloat maxWidth = _viewWidth;//self.frame.size.width;
+
     ZTUITagChildView *tagChild;
     for (int i = 0; i < subViews.count; i++) {
         
@@ -93,7 +111,7 @@
 
 /// 设置数据
 /// @param dataArray 数据源
-- (void)tagViewDataArray:(NSMutableArray<NSString*> *)dataArray{
+- (void)tagViewDataArray:(NSArray<NSString*> *)dataArray{
     _dataArray = dataArray;
     
     [self initTagViews:_dataArray];

@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) ZTUITagView *tagView;
 
 @property(nonatomic,copy) NSString *title;
-@property(nonatomic,strong) NSMutableArray<NSString*> *tagArray;
+@property(nonatomic,strong) NSArray<NSString*> *tagArray;
 
-- (void)setTitle:(NSString *)title tagArray:(NSMutableArray<NSString*> *)tagArray;
+- (void)setTitle:(NSString *)title tagArray:(NSArray<NSString*> *)tagArray;
 
 @end
 

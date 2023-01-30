@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KnowledgeContentController : UIViewController
-@property(nonatomic,assign) NSInteger categoryId;
+@property(nonatomic,assign) NSInteger type;//0:system,1:nav
 @end
 
 NS_ASSUME_NONNULL_END

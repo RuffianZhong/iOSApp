@@ -28,9 +28,13 @@
 
 - (void)initViews{
     _button = [[UIButton alloc] init];
-    _button.backgroundColor = [UIColor grayColor];
     [_button.titleLabel setFont:[UIFont systemFontOfSize:16]];
     [_button addTarget:self action:@selector(onButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIImage *imageNormal = [UIImage imageWithSize:CGSizeMake(100, 50) color:UIColorFromRGB(0xFF9E9E9E) cornerRadius:0];
+    UIImage *imageSelected = [UIImage imageWithSize:CGSizeMake(100, 50) color:UIColorFromRGB(0xFF424242) cornerRadius:0];
+    [_button setBackgroundImage:imageNormal forState:UIControlStateNormal];
+    [_button setBackgroundImage:imageSelected forState:UIControlStateHighlighted];
 
     [self addSubview:_button];
     [_button mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -43,7 +47,7 @@
 - (void)setTitle:(NSString *)title{
     _title = title;
     [_button setTitle:title forState:UIControlStateNormal];
-    [_button zt_cornerWithCornerRadii:[self viewHeight] / 2.0f];
+    [_button zt_cornerWithCornerRadii:[self viewHeight]];
 }
 
 

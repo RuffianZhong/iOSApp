@@ -130,7 +130,7 @@ static const char *zt_key_index_property = "zt_key_index_property";
 
 #pragma mark -对外方法
 
-- (void)pageViewDataArray:(NSMutableArray *)dataArray{
+- (void)pageViewDataArray:(NSArray *)dataArray{
     _dataArray = dataArray;
     
     for (int i = 0; i < dataArray.count; i++) {
