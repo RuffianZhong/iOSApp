@@ -1,59 +1,48 @@
 //
-//  ProjectController.m
+//  KnowledgeChildController.m
 //  iOSApp
 //
-//  Created by 钟达烽 on 2022/12/29.
+//  Created by 钟达烽 on 2023/1/30.
 //
 
-#import "ProjectController.h"
+#import "KnowledgeChildController.h"
 #import "ArtcleListController.h"
 #import "ZTUITabView.h"
 #import "ZTUIPageView.h"
-#import "CategoryData.h"
-#import "ProjectViewModel.h"
 
-@interface ProjectController ()<ZTUIPageViewDelegate,ZTUITabViewDelegate>
-
-@property(nonatomic,strong) ProjectViewModel *projectViewModel;
+@interface KnowledgeChildController ()<ZTUIPageViewDelegate,ZTUITabViewDelegate>
 @property(nonatomic,strong) ZTUITabView *tabView;
 @property(nonatomic,strong) ZTUIPageView *pageView;
-
 @end
 
-@implementation ProjectController
+@implementation KnowledgeChildController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self initNavigationItem];
-    [self initDataNotify];
     [self initTabView];
     [self initPageView];
-    [self getCategoryList];
+    [self initUIData];
 
 }
 
 - (void)initNavigationItem{
-    [UIBarHelper navigationBarHidden:YES controller:self];
+    [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
+    [UIBarHelper navigationBarBackgroundShadowImage:[UIImage imageWithSize:CGSizeMake(1, 1) color:kColorDarkGreen cornerRadius:0] controller:self];
     [UIBarHelper statusBarBackgroundColor:kColorDarkGreen];
     
-    self.navigationItem.title = L(@"tab_project");
+    self.navigationItem.title = _categoryData.name;
 }
 
 
 - (void)initTabView{
-    _tabView = [[ZTUITabView alloc] init];
+    _tabView = [[ZTUITabView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];
     _tabView.backgroundColor = kColorDarkGreen;
     _tabView.delegate = self;
     [_tabView.tabScrollerView setContentInsetAdjustmentBehaviorNO];
     [self.view addSubview:_tabView];
-    [_tabView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(60);
-        make.width.mas_equalTo(self.view);
-        make.top.mas_equalTo(self.view).offset([UIBarHelper statusBarHeight]);
-        make.left.mas_equalTo(self.view);
-    }];
 }
 
 
@@ -68,27 +57,20 @@
     }];
 }
 
-- (void)initDataNotify{
-    _projectViewModel = [[ProjectViewModel alloc] init];
-    MJWeakSelf
-    [self observe:_projectViewModel notify:^(ProjectViewModel *observable, NSString *keyPath) {
-        [weakSelf updateUI:observable keyPath:keyPath];
-    }];
-}
 
-- (void)getCategoryList{
-    [_projectViewModel getCategoryList];
-}
-
-
--(void)updateUI:(ProjectViewModel *)projectViewModel keyPath:(NSString*) keyPath{
-    if([keyPath isEqual:@"categoryArray"]){
-        [_pageView pageViewDataArray:projectViewModel.categoryArray];
-        [_pageView pageViewSelectIndex:0];
-    }else if([keyPath isEqual:@"titleArray"]){
-        [_tabView tabViewDataArray:projectViewModel.titleArray];
-        [_tabView tabViewSelectIndex:0];
+-(void)initUIData{
+    //pageView
+    [_pageView pageViewDataArray:_categoryData.childArray];
+    [_pageView pageViewSelectIndex:_index];
+    
+    //tabView
+    NSMutableArray<NSString*>* titleArray= [NSMutableArray array];
+    for(int i = 0;i < _categoryData.childArray.count; i++){
+        [titleArray addObject:_categoryData.childArray[i].name];
     }
+    [_tabView tabViewDataArray:titleArray];
+    [_tabView tabViewSelectIndex:_index];
+    
 }
 
 
@@ -96,7 +78,7 @@
 - (UIViewController *)pageViewChildViewController:(ZTUIPageView *)pageView index:(NSInteger)index{
     
     ArtcleListController *controller = [[ArtcleListController alloc] init];
-    controller.categoryId = _projectViewModel.categoryArray[index].cid;
+    controller.categoryId = _categoryData.childArray[index].cid;
     
     return controller;
 }

@@ -34,6 +34,7 @@
     _segmentedControl = [[UISegmentedControl alloc] initWithItems:_titleArray];
     _segmentedControl.frame = CGRectMake(0, 0, 100, 35);
     _segmentedControl.selectedSegmentIndex = 0;
+    _segmentedControl.translatesAutoresizingMaskIntoConstraints = NO;//must:否则页面回退时崩溃
     [_segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
     
     self.navigationItem.titleView = _segmentedControl;
@@ -42,7 +43,7 @@
 
 - (void)initPageView{
     //initUI
-    _pageView = [[ZTUIPageView alloc] init];
+    _pageView = [[ZTUIPageView alloc] initWithController:self];
     _pageView.delegate = self;
     [self.view addSubview:_pageView];
     [_pageView mas_makeConstraints:^(MASConstraintMaker *make) {

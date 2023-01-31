@@ -8,12 +8,11 @@
 #import "KnowledgeContentController.h"
 #import "KnowledgeContentCell.h"
 #import "KnowledgeViewModel.h"
-
+#import "KnowledgeChildController.h"
 
 @interface KnowledgeContentController ()<UITableViewDelegate,UITableViewDataSource,ZTUITagViewDelegate>
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) KnowledgeViewModel *viewModel;
-
 @end
 
 @implementation KnowledgeContentController
@@ -86,9 +85,20 @@
 #pragma mark - ZTUITagViewDelegate
 
 - (void)tagViewDidSelected:(ZTUITagView *)tabView index:(NSInteger)index{
-//    NSInteger count = _type == 0 ? _viewModel.knowledgeData.categoryArray.count : _viewModel.knowledgeData.navArray.count;
     
-    NSLog(@"-----:%li",index);
+    //cell -> cell.contentView -> tabView
+    UITableViewCell *cell = (UITableViewCell*) tabView.superview.superview;
+    NSIndexPath *indexPath = [_tableView indexPathForCell:cell];
+    
+    if(_type == 0){
+        KnowledgeChildController *controller = [[KnowledgeChildController alloc] init];
+        controller.categoryData = _viewModel.knowledgeData.categoryArray[indexPath.row];
+        controller.index = index;
+        controller.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:controller animated:YES];
+    }else{
+        
+    }
 }
 
 @end
