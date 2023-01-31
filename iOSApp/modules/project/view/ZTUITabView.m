@@ -86,6 +86,9 @@
 
 - (void)scrollTabChildView:(UIView*)tabChildView{
     
+    //可滚动内容小于控件宽度：无需滚动
+    if(_tabScrollerView.contentSize.width <= self.frame.size.width) return;
+    
     CGFloat offsetMin = 0;//最小内容偏移量
     CGFloat offsetMax = _tabScrollerView.contentSize.width - self.frame.size.width;//最大内容偏移量
     
