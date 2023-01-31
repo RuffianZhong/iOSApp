@@ -15,10 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZTUIPageView : UIView
 
 @property(nonatomic,assign) NSInteger index;
-@property(nonatomic,strong) NSMutableArray *dataArray;
+@property(nonatomic,strong) NSArray *dataArray;
 
 //代理
 @property (nonatomic,weak) id<ZTUIPageViewDelegate> delegate;
+
+/// 初始化
+- (instancetype)initWithController:(UIViewController*)controller;
 
 /// 设置数据
 /// @param dataArray 数据源

@@ -16,16 +16,19 @@
 @property(nonatomic,strong) NSMutableArray<NSString*> *indexNameArray;
 //缓存controller
 @property(nonatomic,strong) NSMutableDictionary *controllerCache;
+//依附的目标controller
+@property(nonatomic,strong) UIViewController *controller;
 @end
 
 @implementation ZTUIPageView
 
 static const char *zt_key_index_property = "zt_key_index_property";
 
-
-- (instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
+- (instancetype)initWithController:(UIViewController*)controller{
+    self = [super init];
     if (self) {
+        _controller = controller;
+        
         _index = -1;
         _indexNameArray = [NSMutableArray array];
         _controllerCache = [NSMutableDictionary dictionary];
@@ -35,13 +38,15 @@ static const char *zt_key_index_property = "zt_key_index_property";
     return self;
 }
 
-
 - (void)initPageViewController{
     _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageViewController.dataSource = self;
     _pageViewController.delegate = self;
-//    _pageViewController.view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+
+    [_controller addChildViewController:self.pageViewController];
     [self addSubview:_pageViewController.view];
+    [self.pageViewController didMoveToParentViewController:_controller];
+
     [_pageViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.width.mas_equalTo(self);
     }];
