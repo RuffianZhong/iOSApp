@@ -33,7 +33,7 @@
 - (void)initSegmentedControl{
     _segmentedControl = [[UISegmentedControl alloc] initWithItems:_titleArray];
     _segmentedControl.frame = CGRectMake(0, 0, 100, 35);
-    _segmentedControl.selectedSegmentIndex = 0;
+    _segmentedControl.selectedSegmentIndex = 1;
     _segmentedControl.translatesAutoresizingMaskIntoConstraints = NO;//must:否则页面回退时崩溃
     [_segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
     
@@ -51,7 +51,7 @@
     }];
     //initData
     [_pageView pageViewDataArray:_titleArray];
-    [_pageView pageViewSelectIndex:0];
+    [_pageView pageViewSelectIndex:1];
 }
 
 #pragma mark -辅助函数

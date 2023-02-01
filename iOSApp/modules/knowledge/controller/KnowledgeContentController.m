@@ -9,6 +9,7 @@
 #import "KnowledgeContentCell.h"
 #import "KnowledgeViewModel.h"
 #import "KnowledgeChildController.h"
+#import "ArticleDetailsController.h"
 
 @interface KnowledgeContentController ()<UITableViewDelegate,UITableViewDataSource,ZTUITagViewDelegate>
 @property(nonatomic,strong) UITableView *tableView;
@@ -97,7 +98,10 @@
         controller.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:controller animated:YES];
     }else{
-        
+        ArticleDetailsController *controller = [[ArticleDetailsController alloc] init];
+        controller.articleData = _viewModel.knowledgeData.navArray[indexPath.row].articleArray[index];
+        controller.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 
