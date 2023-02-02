@@ -25,7 +25,7 @@
 "clean_all" = "Clear all";
 "done" = "Done";
 "loading_content" = "content loading...";
-"learn_progress" = "Learned{progress}%";
+"learn_progress" = "Learned%li%%";
 "learn_no" = "No learned";
 "multi_language" = "Multi language";
 "language_chinese" = "Chinese";

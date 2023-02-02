@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StudyData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -32,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///是否收藏
 @property(nonatomic,assign) BOOL collect;
 
+@property(nonatomic,strong) StudyData *studyData;
 @end
 
 NS_ASSUME_NONNULL_END

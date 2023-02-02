@@ -83,6 +83,12 @@
 		B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = B469C507291B89C1000C8D45 /* UIView+ZTMVVM.m */; };
 		B48FADE62987C7BF009671DA /* KnowledgeChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48FADE52987C7BF009671DA /* KnowledgeChildController.m */; };
 		B48FADF02989F7FC009671DA /* ArticleDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48FADEF2989F7FC009671DA /* ArticleDetailsController.m */; };
+		B48FADF3298B94D0009671DA /* BookDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48FADF2298B94D0009671DA /* BookDetailsController.m */; };
+		B48FADF6298B95B1009671DA /* BookHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B48FADF5298B95B1009671DA /* BookHeaderView.m */; };
+		B48FADF9298B9D70009671DA /* BookDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B48FADF8298B9D70009671DA /* BookDetailsCell.m */; };
+		B48FADFC298BA3ED009671DA /* StudyData.m in Sources */ = {isa = PBXBuildFile; fileRef = B48FADFB298BA3ED009671DA /* StudyData.m */; };
+		B48FADFF298BB25C009671DA /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B48FADFE298BB25C009671DA /* DateUtils.m */; };
+		B48FAE02298BC7D3009671DA /* BookDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B48FAE01298BC7D3009671DA /* BookDetailsViewModel.m */; };
 		B4D2605A297549E10002E748 /* NSUserDefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D26059297549E10002E748 /* NSUserDefaultsUtils.m */; };
 		B4D26067297557B10002E748 /* MeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D26066297557B10002E748 /* MeViewModel.m */; };
 		B4D2606A29755B6C0002E748 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D2606929755B6C0002E748 /* UserData.m */; };
@@ -260,6 +266,18 @@
 		B48FADE52987C7BF009671DA /* KnowledgeChildController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnowledgeChildController.m; sourceTree = "<group>"; };
 		B48FADEE2989F7FC009671DA /* ArticleDetailsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleDetailsController.h; sourceTree = "<group>"; };
 		B48FADEF2989F7FC009671DA /* ArticleDetailsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailsController.m; sourceTree = "<group>"; };
+		B48FADF1298B94D0009671DA /* BookDetailsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailsController.h; sourceTree = "<group>"; };
+		B48FADF2298B94D0009671DA /* BookDetailsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailsController.m; sourceTree = "<group>"; };
+		B48FADF4298B95B1009671DA /* BookHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookHeaderView.h; sourceTree = "<group>"; };
+		B48FADF5298B95B1009671DA /* BookHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookHeaderView.m; sourceTree = "<group>"; };
+		B48FADF7298B9D70009671DA /* BookDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailsCell.h; sourceTree = "<group>"; };
+		B48FADF8298B9D70009671DA /* BookDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailsCell.m; sourceTree = "<group>"; };
+		B48FADFA298BA3ED009671DA /* StudyData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyData.h; sourceTree = "<group>"; };
+		B48FADFB298BA3ED009671DA /* StudyData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyData.m; sourceTree = "<group>"; };
+		B48FADFD298BB25C009671DA /* DateUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateUtils.h; sourceTree = "<group>"; };
+		B48FADFE298BB25C009671DA /* DateUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateUtils.m; sourceTree = "<group>"; };
+		B48FAE00298BC7D3009671DA /* BookDetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailsViewModel.h; sourceTree = "<group>"; };
+		B48FAE01298BC7D3009671DA /* BookDetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailsViewModel.m; sourceTree = "<group>"; };
 		B4D26058297549E10002E748 /* NSUserDefaultsUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultsUtils.h; sourceTree = "<group>"; };
 		B4D26059297549E10002E748 /* NSUserDefaultsUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsUtils.m; sourceTree = "<group>"; };
 		B4D2605C29754D300002E748 /* CommonValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonValue.h; sourceTree = "<group>"; };
@@ -445,6 +463,10 @@
 			children = (
 				B45173742972905B004DA03F /* BookCollectionViewCell.h */,
 				B45173752972905B004DA03F /* BookCollectionViewCell.m */,
+				B48FADF4298B95B1009671DA /* BookHeaderView.h */,
+				B48FADF5298B95B1009671DA /* BookHeaderView.m */,
+				B48FADF7298B9D70009671DA /* BookDetailsCell.h */,
+				B48FADF8298B9D70009671DA /* BookDetailsCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -454,6 +476,8 @@
 			children = (
 				B451737829729248004DA03F /* BookViewModel.h */,
 				B451737929729248004DA03F /* BookViewModel.m */,
+				B48FAE00298BC7D3009671DA /* BookDetailsViewModel.h */,
+				B48FAE01298BC7D3009671DA /* BookDetailsViewModel.m */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -465,6 +489,8 @@
 				B451737D297292B6004DA03F /* BookModel.m */,
 				B451737F297292F9004DA03F /* BookData.h */,
 				B4517380297292F9004DA03F /* BookData.m */,
+				B48FADFA298BA3ED009671DA /* StudyData.h */,
+				B48FADFB298BA3ED009671DA /* StudyData.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -644,6 +670,8 @@
 			children = (
 				B46651FE295D74DC009953B7 /* BookController.h */,
 				B46651FF295D74DC009953B7 /* BookController.m */,
+				B48FADF1298B94D0009671DA /* BookDetailsController.h */,
+				B48FADF2298B94D0009671DA /* BookDetailsController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -838,6 +866,8 @@
 			children = (
 				B4D26058297549E10002E748 /* NSUserDefaultsUtils.h */,
 				B4D26059297549E10002E748 /* NSUserDefaultsUtils.m */,
+				B48FADFD298BB25C009671DA /* DateUtils.h */,
+				B48FADFE298BB25C009671DA /* DateUtils.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1107,12 +1137,14 @@
 				B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */,
 				B445F0C82977939E00D97D60 /* NavData.m in Sources */,
 				B4634DA9296BF65100EBCFB2 /* ZTUIPageView.m in Sources */,
+				B48FADF6298B95B1009671DA /* BookHeaderView.m in Sources */,
 				B469C4F62919EF77000C8D45 /* DemoViewModel.m in Sources */,
 				B466522C295EEF5B009953B7 /* ArtcleCell.m in Sources */,
 				B466523529657E1D009953B7 /* HomeModel.m in Sources */,
 				B4665200295D74DC009953B7 /* BookController.m in Sources */,
 				B4634DD3296FF22500EBCFB2 /* UIBarHelper.m in Sources */,
 				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
+				B48FADFF298BB25C009671DA /* DateUtils.m in Sources */,
 				B46651E9295D4772009953B7 /* DemoListController.m in Sources */,
 				B445F0BD297685D600D97D60 /* ZTUITagView.m in Sources */,
 				B45173762972905B004DA03F /* BookCollectionViewCell.m in Sources */,
@@ -1123,6 +1155,7 @@
 				B451737A29729248004DA03F /* BookViewModel.m in Sources */,
 				B4D2606A29755B6C0002E748 /* UserData.m in Sources */,
 				B4D26067297557B10002E748 /* MeViewModel.m in Sources */,
+				B48FADF9298B9D70009671DA /* BookDetailsCell.m in Sources */,
 				B4665217295D8B6A009953B7 /* NSString+Common.m in Sources */,
 				B445F0C32976A71100D97D60 /* ZTUITagChildView.m in Sources */,
 				B469C4FC2919F0D7000C8D45 /* DemoUserModel.m in Sources */,
@@ -1156,10 +1189,12 @@
 				B46651FC295D74C4009953B7 /* HomeController.m in Sources */,
 				B4665225295ECA15009953B7 /* BannerData.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
+				B48FADF3298B94D0009671DA /* BookDetailsController.m in Sources */,
 				B4634DCA296FA06200EBCFB2 /* BaseUINavigationController.m in Sources */,
 				B4634DC7296D876B00EBCFB2 /* ProjectViewModel.m in Sources */,
 				B445F0CE297795C200D97D60 /* KnowledgeModel.m in Sources */,
 				B417238D29504D6D008C568E /* DemoBaseController.m in Sources */,
+				B48FAE02298BC7D3009671DA /* BookDetailsViewModel.m in Sources */,
 				B4665229295EDC62009953B7 /* BannerView.m in Sources */,
 				B4665238296582DC009953B7 /* HttpConfig.m in Sources */,
 				B4634DD9297006BF00EBCFB2 /* UIScrollView+Common.m in Sources */,
@@ -1167,6 +1202,7 @@
 				B40C0E0E295A932F00C0BC9A /* DemoMixedController.m in Sources */,
 				B417239029504E6C008C568E /* DemoBorderController.m in Sources */,
 				B451737E297292B6004DA03F /* BookModel.m in Sources */,
+				B48FADFC298BA3ED009671DA /* StudyData.m in Sources */,
 				B469C4F92919EF96000C8D45 /* DemoUserData.m in Sources */,
 				B417239629505498008C568E /* DemoGradientController.m in Sources */,
 				B4634DAF296D05C100EBCFB2 /* ZTUITabChildView.m in Sources */,

@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BookData.h"
+#import "ArticleData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getBookLisOnSuccess:(void (^)(NSMutableArray<BookData*> *response))success
                     onError:(void (^)(NSNumber *code,NSString *msg))error;
 
+///获取书本教程列表
+///projectId：项目分类ID
+-(void)getBookArticleList:(NSInteger)categoryId
+            onSuccess:(void (^)(NSMutableArray<ArticleData*> *response))success
+                  onError:(void (^)(NSNumber *code,NSString *msg))error;
 @end
 
 NS_ASSUME_NONNULL_END

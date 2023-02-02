@@ -25,7 +25,7 @@
 "clean_all" = "清除全部";
 "done" = "完成";
 "loading_content" = "内容加载中...";
-"learn_progress" = "已学{progress}%";
+"learn_progress" = "已学%li%%";
 "learn_no" = "未学习";
 "multi_language" = "多语言";
 "language_chinese" = "中文";

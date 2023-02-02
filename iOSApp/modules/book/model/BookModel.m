@@ -6,6 +6,7 @@
 //
 
 #import "BookModel.h"
+#import "KnowledgeModel.h"
 
 @implementation BookModel
 
@@ -23,5 +24,14 @@
     }];
 }
 
+
+///获取书本教程列表
+///projectId：项目分类ID
+-(void)getBookArticleList:(NSInteger)categoryId
+            onSuccess:(void (^)(NSMutableArray<ArticleData*> *response))success
+              onError:(void (^)(NSNumber *code,NSString *msg))error{
+    KnowledgeModel *model = [[KnowledgeModel alloc] init];
+    [model getArticleList:0 categoryId:categoryId onSuccess:success onError:error];
+}
 
 @end

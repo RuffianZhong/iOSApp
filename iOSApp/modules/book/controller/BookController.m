@@ -8,9 +8,10 @@
 #import "BookController.h"
 #import "BookCollectionViewCell.h"
 #import "BookViewModel.h"
+#import "BookDetailsController.h"
 
 
-@interface BookController ()<UICollectionViewDataSource>
+@interface BookController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong) UICollectionView *collectionView;
 @property(nonatomic,strong) UICollectionViewFlowLayout *collectionViewFlowLayout;
 
@@ -48,6 +49,7 @@ static NSString * const book_cell_id = @"book_cell_id";
     [_collectionView registerClass:[BookCollectionViewCell class] forCellWithReuseIdentifier:book_cell_id];
     _collectionView.showsVerticalScrollIndicator = NO;
     _collectionView.dataSource = self;
+    _collectionView.delegate = self;
     
     [self.view addSubview:_collectionView];
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -80,6 +82,14 @@ static NSString * const book_cell_id = @"book_cell_id";
     [cell setData: data.cover];
 
     return cell;
+}
+
+#pragma mark - <UICollectionViewDelegate>
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    BookData *data = [_bookViewModel.bookArray objectAtIndex:indexPath.row];
+    BookDetailsController *controller = [[BookDetailsController alloc] init];
+    controller.bookData = data;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 
