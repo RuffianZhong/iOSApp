@@ -106,7 +106,10 @@
     CGFloat tempProgress = scrolledOffset / totalOffset;
     
     //此处业务逻辑：进度只有不断增大
-    if(tempProgress > _progress) _progress = tempProgress;
+    if(tempProgress > _progress){
+        tempProgress = tempProgress > 1 ? 1 : tempProgress;//上拉“溢出”导致数值超过1
+        _progress = tempProgress;
+    }
 }
 
 //页面反向传值：通过Block传值

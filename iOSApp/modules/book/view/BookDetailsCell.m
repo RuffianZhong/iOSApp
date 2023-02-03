@@ -80,14 +80,7 @@
         _labelDate.hidden = NO;
         _progressView.hidden = NO;
         _progressView.progress = studyData.progress;
-        
-        
         NSString *string = [NSString stringWithFormat:@"%.0f", studyData.progress * 100];
-        NSString *string2 = [NSString stringWithFormat:@"%.2f", studyData.progress * 100];
-
-        NSLog(@"------:%@---:%@",string,string2);
-    
-        
         _labelProgress.text = [NSString stringWithFormat:L(@"learn_progress"), string];
         _labelDate.text = [DateUtils formatDateWithSecond: studyData.time];
     }else{
