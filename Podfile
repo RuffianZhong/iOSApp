@@ -12,6 +12,8 @@ target 'iOSApp' do
   pod 'MJRefresh', '~>3.6.1'
   pod 'SDWebImage', '~>5.0'
   pod 'ZTUIStyle', '~>0.0.1'
+  pod 'FMDB'
+
 
   target 'iOSAppTests' do
     inherit! :search_paths

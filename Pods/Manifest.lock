@@ -14,16 +14,20 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - Masonry (1.1.0)
   - MJExtension (3.0.17)
   - MJRefresh (3.6.1)
-  - SDWebImage (5.13.4):
-    - SDWebImage/Core (= 5.13.4)
-  - SDWebImage/Core (5.13.4)
+  - SDWebImage (5.15.0):
+    - SDWebImage/Core (= 5.15.0)
+  - SDWebImage/Core (5.15.0)
   - ZTUIStyle (0.0.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0.1)
+  - FMDB
   - Masonry (~> 1.1.0)
   - MJExtension (~> 3.0.15)
   - MJRefresh (~> 3.6.1)
@@ -33,6 +37,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - FMDB
     - Masonry
     - MJExtension
     - MJRefresh
@@ -40,13 +45,14 @@ SPEC REPOS:
     - ZTUIStyle
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
-  SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
+  SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
   ZTUIStyle: 97817621dc1f2823515509c0a2d44a71ae9e145c
 
-PODFILE CHECKSUM: 110c814d9f97d61cace5a7e072b317db350eb181
+PODFILE CHECKSUM: 8e75d559d21ddedb648270586cb0926661705b65
 
 COCOAPODS: 1.10.1
