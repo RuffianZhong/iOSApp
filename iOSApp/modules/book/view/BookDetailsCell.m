@@ -50,7 +50,7 @@
     
     //日期
     _labelDate = [[UILabel alloc] init];
-    _labelDate.font = kFontText14;
+    _labelDate.font = kFontText12;
     _labelDate.textColor = [UIColor grayColor];
     [self.contentView addSubview:_labelDate];
     [_labelDate mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -64,17 +64,11 @@
     _progressView.trackTintColor = [UIColor grayColor];
     [self.contentView addSubview:_progressView];
     [_progressView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(4);
+        make.height.mas_equalTo(6);
         make.centerY.mas_equalTo(_labelProgress.mas_centerY);
         make.left.mas_equalTo(_labelProgress.mas_right).offset(4);
         make.right.mas_equalTo(_labelDate.mas_left).offset(-4);
     }];
-    
-    _progressView.backgroundColor = [UIColor redColor];
-    _labelProgress.backgroundColor = [UIColor redColor];
-    _labelDate.backgroundColor = [UIColor redColor];
-    _labelTitle.backgroundColor = [UIColor redColor];
-
 }
 
 - (void)setArticleData:(ArticleData *)articleData{
@@ -86,7 +80,15 @@
         _labelDate.hidden = NO;
         _progressView.hidden = NO;
         _progressView.progress = studyData.progress;
-        _labelProgress.text = [NSString stringWithFormat:L(@"learn_progress"), studyData.progress * 100];
+        
+        
+        NSString *string = [NSString stringWithFormat:@"%.0f", studyData.progress * 100];
+        NSString *string2 = [NSString stringWithFormat:@"%.2f", studyData.progress * 100];
+
+        NSLog(@"------:%@---:%@",string,string2);
+    
+        
+        _labelProgress.text = [NSString stringWithFormat:L(@"learn_progress"), string];
         _labelDate.text = [DateUtils formatDateWithSecond: studyData.time];
     }else{
         _labelDate.hidden = YES;

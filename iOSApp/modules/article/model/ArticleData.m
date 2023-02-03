@@ -11,6 +11,7 @@
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
     return @{
+        @"aid" : @"id",
         @"userName" : @"shareUser",
         @"date" : @"niceDate",
         @"cover" : @"envelopePic"

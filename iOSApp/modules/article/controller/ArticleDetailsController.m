@@ -25,7 +25,7 @@
 }
 
 - (void)initWebView{
-    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 600)];//self.view.frame
+    _webView = [[WKWebView alloc] initWithFrame:self.view.frame];
     _webView.backgroundColor = kColorWhite;
     _webView.navigationDelegate = self;
     _webView.scrollView.delegate = self;
@@ -109,6 +109,12 @@
     if(tempProgress > _progress) _progress = tempProgress;
 }
 
+//页面反向传值：通过Block传值
+- (void)viewDidDisappear:(BOOL)animated{
+    if(_progressUpdateBlock){
+        _progressUpdateBlock(_progress);
+    }
+}
 
 - (void)dealloc{
     [_webView removeObserver:self forKeyPath:@"estimatedProgress"];

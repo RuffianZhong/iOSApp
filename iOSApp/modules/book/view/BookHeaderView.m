@@ -69,6 +69,7 @@
     //简介
     _labelDese = [[UILabel alloc] init];
     _labelDese.font = kFontText14;
+    _labelDese.numberOfLines = 0;
     [self addSubview:_labelDese];
     [_labelDese mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_labelName);
@@ -86,13 +87,6 @@
         make.right.mas_equalTo(self).offset(-20);
         make.bottom.mas_equalTo(self).offset(-10);
     }];
-    
-    _ivCover.backgroundColor = [UIColor redColor];
-    _labelName.backgroundColor = [UIColor redColor];
-    _labelAuthor.backgroundColor = [UIColor redColor];
-    _labelDese.backgroundColor = [UIColor redColor];
-    _labelLisense.backgroundColor = [UIColor redColor];
-
 }
 
 - (void)setBookData:(BookData *)bookData{

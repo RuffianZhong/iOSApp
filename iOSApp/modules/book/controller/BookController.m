@@ -26,6 +26,7 @@ static NSString * const book_cell_id = @"book_cell_id";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.title = L(@"tab_book");
     [self initDataNotify];
     [self initCollectionView];
     [self initData];
@@ -89,6 +90,7 @@ static NSString * const book_cell_id = @"book_cell_id";
     BookData *data = [_bookViewModel.bookArray objectAtIndex:indexPath.row];
     BookDetailsController *controller = [[BookDetailsController alloc] init];
     controller.bookData = data;
+    controller.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
