@@ -6,7 +6,7 @@
 //
 
 #import "ArtcleListController.h"
-#import "ArtcleCell.h"
+#import "ArticleCell.h"
 #import "ArtcleListViewModel.h"
 
 @interface ArtcleListController ()<UITableViewDelegate,UITableViewDataSource>
@@ -85,9 +85,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"ProjectArtcleListCell";
-    ArtcleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if(!cell){
-        cell = [[ArtcleCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        cell = [[ArticleCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
     cell.data = [_artcleListViewModel.artcleArray objectAtIndex:indexPath.row];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];

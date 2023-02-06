@@ -7,8 +7,9 @@
 
 #import "HomeController.h"
 #import "BannerView.h"
-#import "ArtcleCell.h"
+#import "ArticleCell.h"
 #import "HomeViewModel.h"
+#import "SearchController.h"
 
 @interface HomeController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -32,7 +33,7 @@
     [self initTableView];
     [self initNavigationItem];
     
-    [self loadData];
+//    [self loadData];
 }
 
 #pragma mark -init
@@ -86,6 +87,10 @@
 
 - (void)rightBarButtonAction{
     NSLog(@"---------action");
+    SearchController *controller = [[SearchController alloc] init];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+    
 }
 
 -(void)updateUI:(HomeViewModel *)homeViewModel keyPath:(NSString*) keyPath{
@@ -120,9 +125,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"HomeListCell";
-    ArtcleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if(!cell){
-        cell = [[ArtcleCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        cell = [[ArticleCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
     cell.data = [_homeViewModel.artcleArray objectAtIndex:indexPath.row];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];

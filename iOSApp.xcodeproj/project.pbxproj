@@ -21,6 +21,12 @@
 		B42526892918B44C00E509BD /* iOSAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526882918B44C00E509BD /* iOSAppTests.m */; };
 		B42526932918B44C00E509BD /* iOSAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526922918B44C00E509BD /* iOSAppUITests.m */; };
 		B42526952918B44C00E509BD /* iOSAppUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */; };
+		B43D734829909E5700A3BAFF /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D734729909E5700A3BAFF /* SearchController.m */; };
+		B43D734C29909F2100A3BAFF /* SearchKeywordView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D734B29909F2100A3BAFF /* SearchKeywordView.m */; };
+		B43D734F2990E37F00A3BAFF /* SearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D734E2990E37F00A3BAFF /* SearchViewModel.m */; };
+		B43D73522990E40D00A3BAFF /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73512990E40D00A3BAFF /* SearchModel.m */; };
+		B43D73552990E76E00A3BAFF /* SearchKeywordData.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73542990E76E00A3BAFF /* SearchKeywordData.m */; };
+		B43D7358299118F400A3BAFF /* SearchDao.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D7357299118F400A3BAFF /* SearchDao.m */; };
 		B445F0BD297685D600D97D60 /* ZTUITagView.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0BC297685D600D97D60 /* ZTUITagView.m */; };
 		B445F0C32976A71100D97D60 /* ZTUITagChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0C22976A71000D97D60 /* ZTUITagChildView.m */; };
 		B445F0C82977939E00D97D60 /* NavData.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0C72977939E00D97D60 /* NavData.m */; };
@@ -63,7 +69,7 @@
 		B4665221295EC3AC009953B7 /* ArticleData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665220295EC3AC009953B7 /* ArticleData.m */; };
 		B4665225295ECA15009953B7 /* BannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665224295ECA15009953B7 /* BannerData.m */; };
 		B4665229295EDC62009953B7 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665228295EDC62009953B7 /* BannerView.m */; };
-		B466522C295EEF5B009953B7 /* ArtcleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B466522B295EEF5B009953B7 /* ArtcleCell.m */; };
+		B466522C295EEF5B009953B7 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B466522B295EEF5B009953B7 /* ArticleCell.m */; };
 		B466523529657E1D009953B7 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B466523429657E1C009953B7 /* HomeModel.m */; };
 		B4665238296582DC009953B7 /* HttpConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B4665237296582DC009953B7 /* HttpConfig.m */; };
 		B466523C29659254009953B7 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B466523B29659253009953B7 /* HomeViewModel.m */; };
@@ -146,6 +152,18 @@
 		B425268E2918B44C00E509BD /* iOSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42526922918B44C00E509BD /* iOSAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITests.m; sourceTree = "<group>"; };
 		B42526942918B44C00E509BD /* iOSAppUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppUITestsLaunchTests.m; sourceTree = "<group>"; };
+		B43D734629909E5700A3BAFF /* SearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
+		B43D734729909E5700A3BAFF /* SearchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
+		B43D734A29909F2100A3BAFF /* SearchKeywordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchKeywordView.h; sourceTree = "<group>"; };
+		B43D734B29909F2100A3BAFF /* SearchKeywordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchKeywordView.m; sourceTree = "<group>"; };
+		B43D734D2990E37F00A3BAFF /* SearchViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewModel.h; sourceTree = "<group>"; };
+		B43D734E2990E37F00A3BAFF /* SearchViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewModel.m; sourceTree = "<group>"; };
+		B43D73502990E40D00A3BAFF /* SearchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
+		B43D73512990E40D00A3BAFF /* SearchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
+		B43D73532990E76E00A3BAFF /* SearchKeywordData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchKeywordData.h; sourceTree = "<group>"; };
+		B43D73542990E76E00A3BAFF /* SearchKeywordData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchKeywordData.m; sourceTree = "<group>"; };
+		B43D7356299118F400A3BAFF /* SearchDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchDao.h; sourceTree = "<group>"; };
+		B43D7357299118F400A3BAFF /* SearchDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchDao.m; sourceTree = "<group>"; };
 		B445F0BB297685D600D97D60 /* ZTUITagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITagView.h; sourceTree = "<group>"; };
 		B445F0BC297685D600D97D60 /* ZTUITagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUITagView.m; sourceTree = "<group>"; };
 		B445F0C12976A71000D97D60 /* ZTUITagChildView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITagChildView.h; sourceTree = "<group>"; };
@@ -228,8 +246,8 @@
 		B4665224295ECA15009953B7 /* BannerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerData.m; sourceTree = "<group>"; };
 		B4665227295EDC62009953B7 /* BannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
 		B4665228295EDC62009953B7 /* BannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
-		B466522A295EEF5B009953B7 /* ArtcleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtcleCell.h; sourceTree = "<group>"; };
-		B466522B295EEF5B009953B7 /* ArtcleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtcleCell.m; sourceTree = "<group>"; };
+		B466522A295EEF5B009953B7 /* ArticleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
+		B466522B295EEF5B009953B7 /* ArticleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
 		B466523329657E1C009953B7 /* HomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		B466523429657E1C009953B7 /* HomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		B4665236296582DC009953B7 /* HttpConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpConfig.h; sourceTree = "<group>"; };
@@ -432,6 +450,46 @@
 			path = iOSAppUITests;
 			sourceTree = "<group>";
 		};
+		B43D734229909E0900A3BAFF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B43D734629909E5700A3BAFF /* SearchController.h */,
+				B43D734729909E5700A3BAFF /* SearchController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		B43D734329909E2400A3BAFF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B43D73502990E40D00A3BAFF /* SearchModel.h */,
+				B43D73512990E40D00A3BAFF /* SearchModel.m */,
+				B43D73532990E76E00A3BAFF /* SearchKeywordData.h */,
+				B43D73542990E76E00A3BAFF /* SearchKeywordData.m */,
+				B43D7356299118F400A3BAFF /* SearchDao.h */,
+				B43D7357299118F400A3BAFF /* SearchDao.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B43D734429909E2B00A3BAFF /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B43D734D2990E37F00A3BAFF /* SearchViewModel.h */,
+				B43D734E2990E37F00A3BAFF /* SearchViewModel.m */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		B43D734929909ED400A3BAFF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B43D734A29909F2100A3BAFF /* SearchKeywordView.h */,
+				B43D734B29909F2100A3BAFF /* SearchKeywordView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		B445F0BA2976851100D97D60 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,6 +689,10 @@
 		B46651F0295D6ED5009953B7 /* search */ = {
 			isa = PBXGroup;
 			children = (
+				B43D734929909ED400A3BAFF /* view */,
+				B43D734429909E2B00A3BAFF /* viewModel */,
+				B43D734329909E2400A3BAFF /* model */,
+				B43D734229909E0900A3BAFF /* controller */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -782,8 +844,8 @@
 			children = (
 				B4665227295EDC62009953B7 /* BannerView.h */,
 				B4665228295EDC62009953B7 /* BannerView.m */,
-				B466522A295EEF5B009953B7 /* ArtcleCell.h */,
-				B466522B295EEF5B009953B7 /* ArtcleCell.m */,
+				B466522A295EEF5B009953B7 /* ArticleCell.h */,
+				B466522B295EEF5B009953B7 /* ArticleCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1163,11 +1225,12 @@
 				B48FADF6298B95B1009671DA /* BookHeaderView.m in Sources */,
 				B48FAE09298CBF29009671DA /* BaseDao.m in Sources */,
 				B469C4F62919EF77000C8D45 /* DemoViewModel.m in Sources */,
-				B466522C295EEF5B009953B7 /* ArtcleCell.m in Sources */,
+				B466522C295EEF5B009953B7 /* ArticleCell.m in Sources */,
 				B466523529657E1D009953B7 /* HomeModel.m in Sources */,
 				B4665200295D74DC009953B7 /* BookController.m in Sources */,
 				B4634DD3296FF22500EBCFB2 /* UIBarHelper.m in Sources */,
 				B469C4DD2918E18C000C8D45 /* ZTKVO.m in Sources */,
+				B43D7358299118F400A3BAFF /* SearchDao.m in Sources */,
 				B48FADFF298BB25C009671DA /* DateUtils.m in Sources */,
 				B46651E9295D4772009953B7 /* DemoListController.m in Sources */,
 				B445F0BD297685D600D97D60 /* ZTUITagView.m in Sources */,
@@ -1198,10 +1261,12 @@
 				B4634DC1296D7FCA00EBCFB2 /* ProjectModel.m in Sources */,
 				B466521A295DA398009953B7 /* UIImage+Common.m in Sources */,
 				B4634DBE296D7C9A00EBCFB2 /* ImageHelper.m in Sources */,
+				B43D73552990E76E00A3BAFF /* SearchKeywordData.m in Sources */,
 				B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */,
 				B4517381297292F9004DA03F /* BookData.m in Sources */,
 				B4634DC4296D809400EBCFB2 /* CategoryData.m in Sources */,
 				B445F0CB297793C600D97D60 /* KnowledgeData.m in Sources */,
+				B43D734C29909F2100A3BAFF /* SearchKeywordView.m in Sources */,
 				B4634DD0296FAC2F00EBCFB2 /* BaseUIViewController.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
 				B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */,
@@ -1212,8 +1277,10 @@
 				B4D2606D29755B8D0002E748 /* UserModel.m in Sources */,
 				B46651FC295D74C4009953B7 /* HomeController.m in Sources */,
 				B4665225295ECA15009953B7 /* BannerData.m in Sources */,
+				B43D73522990E40D00A3BAFF /* SearchModel.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
 				B48FADF3298B94D0009671DA /* BookDetailsController.m in Sources */,
+				B43D734829909E5700A3BAFF /* SearchController.m in Sources */,
 				B48FAE06298CA960009671DA /* DBHelper.m in Sources */,
 				B4634DCA296FA06200EBCFB2 /* BaseUINavigationController.m in Sources */,
 				B4634DC7296D876B00EBCFB2 /* ProjectViewModel.m in Sources */,
@@ -1233,6 +1300,7 @@
 				B417239629505498008C568E /* DemoGradientController.m in Sources */,
 				B4634DAF296D05C100EBCFB2 /* ZTUITabChildView.m in Sources */,
 				B4665221295EC3AC009953B7 /* ArticleData.m in Sources */,
+				B43D734F2990E37F00A3BAFF /* SearchViewModel.m in Sources */,
 				B4634DDC2970FCDC00EBCFB2 /* SystemUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
