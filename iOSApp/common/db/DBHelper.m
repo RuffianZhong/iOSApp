@@ -7,6 +7,7 @@
 
 #import "DBHelper.h"
 #import "StudyDao.h"
+#import "SearchDao.h"
 
 @interface DBHelper()
 @property(nonatomic,strong) FMDatabaseQueue *dbQueue;
@@ -60,6 +61,7 @@ static id _instance;
             [db open];
             //创建表
             [db executeUpdate:[StudyDao createTableSQL]];
+            [db executeUpdate:[SearchDao createTableSQL]];
             
             [db close];
         }];

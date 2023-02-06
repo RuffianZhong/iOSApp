@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 //选中事件
--(void)tagViewDidSelected:(ZTUITagView *)tabView index:(NSInteger)index;
+-(void)tagViewDidSelected:(ZTUITagView *)tagView index:(NSInteger)index;
 
 @end
 
