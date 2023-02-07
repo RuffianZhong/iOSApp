@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong) NSArray<NSString*> *dataArray;
 @property(nonatomic,assign) NSInteger index;
-
+@property(nonatomic) BOOL editing;//是否编辑状态
 @property(nonatomic,weak) id<ZTUITagViewDelegate> delegate;
 
 - (instancetype)initWithWidth:(CGFloat)width;
@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 //选中事件
 -(void)tagViewDidSelected:(ZTUITagView *)tagView index:(NSInteger)index;
+//编辑事件
+-(void)tagViewDidEdit:(ZTUITagView *)tagView index:(NSInteger)index;
 
 @end
 

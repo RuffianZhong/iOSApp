@@ -15,6 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) UIButton *button;
 @property(nonatomic,assign) NSString *title;
 
+@property(nonatomic,strong) UIButton *editButton;
+@property(nonatomic) BOOL editing;//编辑状态
+@property(nonatomic,strong) UIImage *editImage;
+
+
 //代理
 @property (nonatomic,weak) id<ZTUITagChildViewDelegate> delegate;
 
@@ -32,7 +37,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 //点击事件
--(void)tagChildViewDidClick:(ZTUITagChildView *)tabChildView;
+-(void)tagChildViewDidClick:(ZTUITagChildView *)tagChildView;
+//编辑事件
+-(void)tagChildViewDidEdit:(ZTUITagChildView *)tagChildView;
 
 @end
 

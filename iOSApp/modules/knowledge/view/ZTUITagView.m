@@ -11,16 +11,22 @@
 @interface ZTUITagView()<ZTUITagChildViewDelegate>
 @property(nonatomic,assign) CGSize viewSize;
 @property(nonatomic,assign) CGFloat viewWidth;
+@property(nonatomic,assign) CGFloat itemPadding;//子控件之间的间距
+
 @end
 
 @implementation ZTUITagView
 
-
 - (instancetype)initWithWidth:(CGFloat)width{
+    return [self initWithWidth:width itemPadding:6.0f];
+}
+
+- (instancetype)initWithWidth:(CGFloat)width itemPadding:(CGFloat)itemPadding{
     self = [super init];
     if (self) {
         _viewSize = CGSizeZero;
         _viewWidth = width;
+        _itemPadding = itemPadding;
     }
     return self;
 }
@@ -64,7 +70,7 @@
     }
 }
 
-- (void)layoutTagViews{
+- (void)layoutTagViews:(BOOL)editing{
     
     NSArray<ZTUITagChildView*> *subViews = [self subviews];
     if(subViews.count == 0) return;
@@ -84,11 +90,13 @@
     for (int i = 0; i < subViews.count; i++) {
         
         tagChild = subViews[i];
+        tagChild.editing = editing;
         
         childWidth = [tagChild viewWidth];
         childHeight = [tagChild viewHeight];
         
-        if((totalWith + childWidth) <= maxWidth){
+        if((totalWith + _itemPadding + childWidth) <= maxWidth){
+            if(totalWith > 0) totalWith += _itemPadding;//第1个不需要间距
             offsetX = totalWith;
             totalWith += childWidth;
         }else{
@@ -96,10 +104,13 @@
             offsetX = 0;//换行
             lineNumber ++;
         }
+        
         offsetY = childHeight * lineNumber;
+        if(lineNumber > 0) offsetY += (lineNumber * _itemPadding);//第1行不需要间距
+        
         frame = CGRectMake(offsetX, offsetY, childWidth, childHeight);
         
-        height = childHeight * (lineNumber + 1);
+        height = childHeight * (lineNumber + 1) +(lineNumber * _itemPadding);
         tagChild.frame = frame;
     }
    
@@ -116,15 +127,25 @@
     
     [self initTagViews:_dataArray];
     
-    [self layoutTagViews];
+    [self layoutTagViews:_editing];
 }
 
+- (void)setEditing:(BOOL)editing{
+    [self layoutTagViews:editing];
+}
 
 #pragma mark - ZTUITabChildViewDelegate
 - (void)tagChildViewDidClick:(ZTUITagChildView *)tagChildView{
     _index = [_dataArray indexOfObject:tagChildView.title];
     if([_delegate respondsToSelector:@selector(tagViewDidSelected:index:)]){
         [_delegate tagViewDidSelected:self index:_index];
+    }
+}
+
+-(void)tagChildViewDidEdit:(ZTUITagChildView *)tagChildView{
+    _index = [_dataArray indexOfObject:tagChildView.title];
+    if([_delegate respondsToSelector:@selector(tagViewDidEdit:index:)]){
+        [_delegate tagViewDidEdit:self index:_index];
     }
 }
 
