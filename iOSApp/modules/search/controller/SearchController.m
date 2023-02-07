@@ -57,11 +57,12 @@
         [self.navigationController popViewControllerAnimated:YES];
     }else{
         _searchViewModel.showSearchView = YES;
-//        _searchViewModel.artcleArray = nil;//清空数据
     }
 }
 
 - (void)navigationRightBarAction{
+    [KeyboardUtils hidenKeyboard];
+
     NSString *keyword = _searchTextField.text;
     if(keyword){
         //请求数据
@@ -69,8 +70,7 @@
         [_searchViewModel getArticleList:keyword];
         
         //保存/更新本地数据
-        SearchKeywordData *data = [[SearchKeywordData alloc] init];
-        data.value = keyword;
+        SearchKeywordData *data = [_searchViewModel getSearchKeywordDataWithKeyword:keyword];
         [_searchViewModel insertOrUpdateSearchKeyword:data];
     }
 }
@@ -82,7 +82,6 @@
     [self observe:_searchViewModel notify:^(SearchViewModel* observable, NSString * keyPath) {
         
         [weakSelf updateContentView:observable.showSearchView];
-        NSLog(@"----keypath:%@",keyPath);
         if([keyPath isEqualToString:@"hotKeywordArray"]){
             [weakSelf updateHotKeyword:observable.hotKeywordArray];
         }else if([keyPath isEqualToString:@"historyKeywordArray"]){
@@ -128,7 +127,6 @@
 }
 
 - (void)updateHistoryKeyword:(NSArray*)keywordArray{
-    NSLog(@"----keywordArray:%@",keywordArray);
     [_searchKeywordView setHistoryKeywordArray:keywordArray];
 }
 
@@ -162,21 +160,29 @@
 
 
 #pragma mark - SearchKeywordViewDelegate
-- (void)searchKeywordView:(SearchKeywordView *)searchKeywordView editButtonClickEvent:(UIButton *)button{
-    
-}
-
 - (void)searchKeywordView:(SearchKeywordView *)searchKeywordView tagViewDidSelected:(ZTUITagView *)tagView index:(NSInteger)index{
     
+    NSString *keyword = tagView.dataArray[index];
+    
+    _searchTextField.text = keyword;
     _searchViewModel.showSearchView = NO;
-
     [_searchViewModel getArticleList:tagView.dataArray[index]];
     
+    //保存/更新本地数据
+    SearchKeywordData *data = [_searchViewModel getSearchKeywordDataWithKeyword:keyword];
+    [_searchViewModel insertOrUpdateSearchKeyword:data];
+}
+
+- (void)searchKeywordView:(SearchKeywordView *)searchKeywordView tagViewDidEdit:(ZTUITagView *)tagView index:(NSInteger)index{
     if(tagView == _searchKeywordView.historyContentTagView){
-        SearchKeywordData *data = _searchViewModel.historySearchKeywordDataArray[index];
+        SearchKeywordData *data = _searchViewModel.searchKeywordDataArray[index];
         [_searchViewModel deleteSearchKeyword:data.kid];
     }
 }
 
+// 点击空白处收起键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [KeyboardUtils hidenKeyboard];
+}
 
 @end

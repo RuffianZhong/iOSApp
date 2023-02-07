@@ -28,6 +28,7 @@
     _hotTitleLabel = [[UILabel alloc] init];
     _hotTitleLabel.font = kFontText16;
     _hotTitleLabel.text= L(@"search_hot_title");
+    _hotTitleLabel.textColor = kColorDarkGreen;
     [self addSubview:_hotTitleLabel];
     [_hotTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(50);
@@ -60,6 +61,7 @@
     //标题
     _historyTitleLabel = [[UILabel alloc] init];
     _historyTitleLabel.font = kFontText16;
+    _historyTitleLabel.textColor = kColorDarkGreen;
     _historyTitleLabel.text= L(@"search_local_title");
     [_historyTitleView addSubview:_historyTitleLabel];
     [_historyTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -68,6 +70,7 @@
     }];
     // 编辑按钮
     _historyEditBtn = [[UIButton alloc] init];
+    [_historyEditBtn setTitleColor:kColorBlack forState:UIControlStateNormal];
     [_historyEditBtn setTitle:L(@"edit") forState:UIControlStateNormal];
     [_historyEditBtn addTarget:self action:@selector(buttonClickEvent:) forControlEvents:UIControlEventTouchUpInside];
     [_historyTitleView addSubview:_historyEditBtn];
@@ -94,15 +97,13 @@
 - (void)setHistoryKeywordArray:(NSArray<NSString *> *)historyKeywordArray{
     _historyKeywordArray = historyKeywordArray;
     [_historyContentTagView tagViewDataArray:historyKeywordArray];
+    _historyContentTagView.editing = _editing;
 }
 
 - (void)buttonClickEvent:(UIButton*)button{
     _editing = !_editing;
     [_historyEditBtn setTitle:_editing? L(@"done") : L(@"edit") forState:UIControlStateNormal];
-
-    if([_childViewDelegate respondsToSelector:@selector(searchKeywordView:editButtonClickEvent:)]){
-        [_childViewDelegate searchKeywordView:self editButtonClickEvent:button];
-    }
+    _historyContentTagView.editing = _editing;
 }
 
 #pragma mark -ZTUITagViewDelegate
@@ -112,6 +113,24 @@
     }
 }
 
+- (void)tagViewDidEdit:(ZTUITagView *)tagView index:(NSInteger)index{
+    if([_childViewDelegate respondsToSelector:@selector(searchKeywordView:tagViewDidEdit:index:)]){
+        [_childViewDelegate searchKeywordView:self tagViewDidEdit:tagView index:index];
+    }
+}
 
+#pragma mark -UIScrollerView事件
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    if(!self.dragging){//当前控件不是正在拖动，事件交给下一个响应者（父控件）
+        [self.nextResponder touchesBegan:touches withEvent:event];
+    }
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    if(!self.dragging){//当前控件不是正在拖动，事件交给下一个响应者（父控件）
+        [self.nextResponder touchesEnded: touches withEvent:event];
+    }
+}
 
 @end

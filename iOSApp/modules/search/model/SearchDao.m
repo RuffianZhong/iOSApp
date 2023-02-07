@@ -28,14 +28,13 @@
     return sql;
 }
 
-- (void)insertOrUpdate:(SearchKeywordData *)searchKeywordData result:(void (^)(BOOL))result{
+- (void)insertOrUpdate:(SearchKeywordData *)searchKeywordData result:(void (^)(SearchKeywordData *))result{
     NSString *sql = nil;
     NSArray* valueArray = nil;
     NSInteger kid = searchKeywordData.kid;
     searchKeywordData.time = [NSDate date].timeIntervalSince1970;//当前时间
-    
     if(kid <=0 ){
-        
+
         sql = [NSString stringWithFormat:@"INSERT INTO %@ (%@, %@) VALUES (?, ?);", tbSearch,fSearchValue,fSearchTime];
         
         valueArray = @[
@@ -43,8 +42,15 @@
             [NSNumber numberWithInteger:searchKeywordData.time]
         ];
         
-    }else{
         
+        [self.dbHelper insertWithSQL:sql arguments:valueArray result:^(NSInteger resultId) {
+            if(result){
+                searchKeywordData.kid = resultId;
+                result(resultId >=0 ? searchKeywordData : nil);
+            }
+        }];
+    }else{
+
         sql = [NSString stringWithFormat:@"update %@ set %@ = ?, %@ = ? where %@ = ?;", tbSearch,fSearchValue,fSearchTime,fSearchId];
         
         valueArray = @[
@@ -52,16 +58,16 @@
             [NSNumber numberWithInteger:searchKeywordData.time],
             [NSNumber numberWithInteger:searchKeywordData.kid]
         ];
+        
+        [self.dbHelper updateWithSQL:sql arguments:valueArray result:^(BOOL resultBOOL) {
+            if(result) result(resultBOOL ? searchKeywordData : nil);
+        }];
     }
-    
-    [self.dbHelper updateWithSQL:sql arguments:valueArray result:^(BOOL resultBOOL) {
-        NSLog(@"--insert:%@----",result?@"Y":@"No");
-        if(result) result(resultBOOL);
-    }];
+
 }
 
 - (void)querySearchKeywordArray:(void (^)(NSMutableArray<SearchKeywordData *> * _Nonnull))result{
-    NSString *sql = [NSString stringWithFormat:@"select * FROM %@;", tbSearch];
+    NSString *sql = [NSString stringWithFormat:@"select * FROM %@ ORDER BY %@ DESC;", tbSearch,fSearchTime];
 
     [self.dbHelper queryWithSQL:sql arguments:[NSMutableArray array] result:^(FMResultSet * _Nonnull resultSet) {
         
@@ -75,8 +81,6 @@
              data.time = [resultSet intForColumn:fSearchTime];
              [dataArray addObject:data];
          }
-        NSLog(@"--querySearchKeywordArray:%@----",dataArray);
-
         if(result) result(dataArray);
 
     }];

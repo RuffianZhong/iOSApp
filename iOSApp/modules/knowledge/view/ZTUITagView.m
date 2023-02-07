@@ -37,7 +37,7 @@
 }
 
 - (void)initTagViews:(NSArray<NSString*> *)dataArray{
-    if(dataArray == nil || dataArray.count ==0) return;
+    
     //对比数据
     NSArray<ZTUITagChildView*> *subViews = [self subviews];
     if(subViews.count != 0){
@@ -55,6 +55,8 @@
         if(dataChange){
             //清除旧数据
             [subViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        }else{
+            return;
         }
     }
 

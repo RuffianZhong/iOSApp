@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 插入数据或者更新数据
 /// id不存在：插入数据；id存在：更新数据
-- (void)insertOrUpdate:(SearchKeywordData*)searchKeywordData result:(void (^)(BOOL result))result;
+- (void)insertOrUpdate:(SearchKeywordData*)searchKeywordData result:(void (^)(SearchKeywordData * resultData))result;
 
 //删除数据
 - (void)deleteSearchKeyword:(NSInteger)keywordId result:(void (^)(BOOL result))result;

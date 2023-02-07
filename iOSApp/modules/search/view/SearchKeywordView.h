@@ -29,9 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol SearchKeywordViewDelegate <NSObject>
 
-- (void)searchKeywordView:(SearchKeywordView*) searchKeywordView editButtonClickEvent:(UIButton*)button;
-
 -(void)searchKeywordView:(SearchKeywordView*) searchKeywordView tagViewDidSelected:(ZTUITagView *)tagView index:(NSInteger)index;
+
+-(void)searchKeywordView:(SearchKeywordView*) searchKeywordView tagViewDidEdit:(ZTUITagView *)tagView index:(NSInteger)index;
 
 @end
 

@@ -27,6 +27,7 @@
 		B43D73522990E40D00A3BAFF /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73512990E40D00A3BAFF /* SearchModel.m */; };
 		B43D73552990E76E00A3BAFF /* SearchKeywordData.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73542990E76E00A3BAFF /* SearchKeywordData.m */; };
 		B43D7358299118F400A3BAFF /* SearchDao.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D7357299118F400A3BAFF /* SearchDao.m */; };
+		B43D735B2992468300A3BAFF /* KeyboardUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D735A2992468300A3BAFF /* KeyboardUtils.m */; };
 		B445F0BD297685D600D97D60 /* ZTUITagView.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0BC297685D600D97D60 /* ZTUITagView.m */; };
 		B445F0C32976A71100D97D60 /* ZTUITagChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0C22976A71000D97D60 /* ZTUITagChildView.m */; };
 		B445F0C82977939E00D97D60 /* NavData.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0C72977939E00D97D60 /* NavData.m */; };
@@ -164,6 +165,8 @@
 		B43D73542990E76E00A3BAFF /* SearchKeywordData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchKeywordData.m; sourceTree = "<group>"; };
 		B43D7356299118F400A3BAFF /* SearchDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchDao.h; sourceTree = "<group>"; };
 		B43D7357299118F400A3BAFF /* SearchDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchDao.m; sourceTree = "<group>"; };
+		B43D73592992468300A3BAFF /* KeyboardUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardUtils.h; sourceTree = "<group>"; };
+		B43D735A2992468300A3BAFF /* KeyboardUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardUtils.m; sourceTree = "<group>"; };
 		B445F0BB297685D600D97D60 /* ZTUITagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITagView.h; sourceTree = "<group>"; };
 		B445F0BC297685D600D97D60 /* ZTUITagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUITagView.m; sourceTree = "<group>"; };
 		B445F0C12976A71000D97D60 /* ZTUITagChildView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITagChildView.h; sourceTree = "<group>"; };
@@ -953,6 +956,8 @@
 				B4D26059297549E10002E748 /* NSUserDefaultsUtils.m */,
 				B48FADFD298BB25C009671DA /* DateUtils.h */,
 				B48FADFE298BB25C009671DA /* DateUtils.m */,
+				B43D73592992468300A3BAFF /* KeyboardUtils.h */,
+				B43D735A2992468300A3BAFF /* KeyboardUtils.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1295,6 +1300,7 @@
 				B40C0E0E295A932F00C0BC9A /* DemoMixedController.m in Sources */,
 				B417239029504E6C008C568E /* DemoBorderController.m in Sources */,
 				B451737E297292B6004DA03F /* BookModel.m in Sources */,
+				B43D735B2992468300A3BAFF /* KeyboardUtils.m in Sources */,
 				B48FADFC298BA3ED009671DA /* StudyData.m in Sources */,
 				B469C4F92919EF96000C8D45 /* DemoUserData.m in Sources */,
 				B417239629505498008C568E /* DemoGradientController.m in Sources */,

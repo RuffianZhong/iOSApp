@@ -21,14 +21,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) NSMutableArray<ArticleData*> *artcleArray;
 @property(nonatomic,strong) NSMutableArray<NSString*> *hotKeywordArray;
 @property(nonatomic,strong) NSMutableArray<NSString*> *historyKeywordArray;
-
-@property(nonatomic,strong) NSMutableArray<SearchKeywordData*> *historySearchKeywordDataArray;
+//本地数据库缓存
+@property(nonatomic,strong) NSMutableArray<SearchKeywordData*> *searchKeywordDataArray;
 
 @property(nonatomic,assign) BOOL showSearchView;//展示搜索界面
 
 - (void)getHotKeyword;
 
 - (void)getArticleList:(NSString*)keyword;
+
+- (SearchKeywordData*)getSearchKeywordDataWithKeyword:(NSString*)keyword;
 
 - (void)getHistoryKeyword;
 

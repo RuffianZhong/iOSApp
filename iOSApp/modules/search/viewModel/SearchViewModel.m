@@ -14,11 +14,12 @@
     self = [super init];
     if(!self)return nil;
     
-    _searchModel = [[SearchModel alloc]init];
+    _searchDao = [[SearchDao alloc] init];
+    _searchModel = [[SearchModel alloc] init];
     _artcleArray = [NSMutableArray array];
     _hotKeywordArray = [NSMutableArray array];
-    _searchDao = [[SearchDao alloc] init];
-    _historySearchKeywordDataArray = [NSMutableArray array];
+    _historyKeywordArray = [NSMutableArray array];
+    _searchKeywordDataArray = [NSMutableArray array];
     _showSearchView = YES;
     
     return self;
@@ -40,6 +41,27 @@
     }];
 }
 
+//获取搜索数据：已存在更新数据，不存在则新建实例
+- (SearchKeywordData*)getSearchKeywordDataWithKeyword:(NSString*)keyword{
+    SearchKeywordData *data = nil;
+    SearchKeywordData *targetData = nil;
+
+    if(keyword && _searchKeywordDataArray){
+        for (int i=0; i<_searchKeywordDataArray.count; i++) {
+            data = [_searchKeywordDataArray objectAtIndex:i];
+            if([data.value isEqualToString:keyword]){
+                targetData = data;
+                break;
+            }
+        }
+    }
+    if(!targetData){
+        targetData = [[SearchKeywordData alloc] init];
+        targetData.value = keyword;
+    }
+    return targetData;
+}
+
 - (void)getHistoryKeyword{
     [_searchDao querySearchKeywordArray:^(NSMutableArray<SearchKeywordData *> * _Nonnull dataArray) {
         if(dataArray==nil ||dataArray.count==0) return;
@@ -50,15 +72,26 @@
             value = dataArray[i].value;
             [keywordArray addObject:value];
         }
-        NSLog(@"-----%@",keywordArray);
         self.historyKeywordArray = keywordArray;
-        self->_historySearchKeywordDataArray = dataArray;
+        self->_searchKeywordDataArray = dataArray;
     }];
 }
 
 - (void)insertOrUpdateSearchKeyword:(SearchKeywordData *)data{
-    [_searchDao insertOrUpdate:data result:^(BOOL result) {
-        
+    [_searchDao insertOrUpdate:data result:^(SearchKeywordData *resultData) {
+        if(resultData){
+            
+            NSMutableArray<SearchKeywordData*> *tempArray = [self.searchKeywordDataArray mutableCopy];
+            NSMutableArray<NSString*> *tempArrayString = [self.historyKeywordArray mutableCopy];
+            
+            [tempArray removeObject:data];
+            [tempArray insertObject:data atIndex:0];
+            [tempArrayString removeObject:data.value];
+            [tempArrayString insertObject:data.value atIndex:0];
+            
+            self.historyKeywordArray = tempArrayString;
+            self.searchKeywordDataArray = tempArray;
+        }
     }];
 }
 
@@ -66,22 +99,19 @@
     [_searchDao deleteSearchKeyword:keywordId result:^(BOOL result) {
         if(result){
             SearchKeywordData *data = nil;
-            NSString *value = nil;
-            NSMutableArray *tempArray = self->_historySearchKeywordDataArray;
+            NSMutableArray *tempArray = [self->_searchKeywordDataArray mutableCopy];
+            NSMutableArray<NSString*> *tempArrayString = [self->_historyKeywordArray mutableCopy];
             for (int i = 0; i < tempArray.count; i++) {
                 data = tempArray[i];
                 if(data.kid == keywordId){
                     [tempArray removeObjectAtIndex:i];
-                    value = data.value;
+                    [tempArrayString removeObjectAtIndex:i];
                     break;
                 }
             }
-            self->_historySearchKeywordDataArray = tempArray;
-            
-            //删除某个数据再重新赋值
-            [self.historyKeywordArray removeObject:value];
-            self.historyKeywordArray = self.historyKeywordArray;
 
+            self.historyKeywordArray = tempArrayString;
+            self->_searchKeywordDataArray = tempArray;
         }
     }];
 }
