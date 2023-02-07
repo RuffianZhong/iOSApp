@@ -68,6 +68,19 @@ static id _instance;
     }
 }
 
+/// 插入数据
+/// @param sql sql语句
+/// @param arguments 参数
+- (void)insertWithSQL:(NSString*)sql arguments:(NSArray *)arguments result:(void (^)(NSInteger resultId))result{
+    //[db executeUpdate:@"INSERT INTO foo VALUES (?, ? , ?)" withArgumentsInArray:@[@1, @"zt", @30]];
+    [_dbQueue inDatabase:^(FMDatabase * _Nonnull db) {
+        [db open];
+        BOOL success = [db executeUpdate:sql withArgumentsInArray:arguments];
+        NSInteger _id = success ? db.lastInsertRowId : -1;
+        if(result) result(_id);
+        [db close];
+    }];
+}
 
 /// 更新数据（除了查询）
 /// @param sql sql语句

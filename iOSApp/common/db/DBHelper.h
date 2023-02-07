@@ -16,6 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -FMDatabaseQueue
 
+/// 插入数据
+/// @param sql sql语句
+/// @param arguments 参数
+- (void)insertWithSQL:(NSString*)sql arguments:(NSArray *)arguments result:(void (^)(NSInteger resultId))result;
+
 /// 更新数据（除了查询）
 /// @param sql sql语句
 /// @param arguments 参数
