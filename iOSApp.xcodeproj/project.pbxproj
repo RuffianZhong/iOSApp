@@ -28,6 +28,13 @@
 		B43D73552990E76E00A3BAFF /* SearchKeywordData.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73542990E76E00A3BAFF /* SearchKeywordData.m */; };
 		B43D7358299118F400A3BAFF /* SearchDao.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D7357299118F400A3BAFF /* SearchDao.m */; };
 		B43D735B2992468300A3BAFF /* KeyboardUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D735A2992468300A3BAFF /* KeyboardUtils.m */; };
+		B43D736229926B0E00A3BAFF /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D736129926B0E00A3BAFF /* LoginController.m */; };
+		B43D73652993528700A3BAFF /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73642993528700A3BAFF /* RegisterController.m */; };
+		B43D7369299386C400A3BAFF /* UITouchScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D7368299386C400A3BAFF /* UITouchScrollView.m */; };
+		B43D736C29938A9E00A3BAFF /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D736B29938A9E00A3BAFF /* AccountModel.m */; };
+		B43D73722993943F00A3BAFF /* RegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73712993943F00A3BAFF /* RegisterViewModel.m */; };
+		B43D737529939CC400A3BAFF /* HUDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D737429939CC400A3BAFF /* HUDUtils.m */; };
+		B43D73782993A36200A3BAFF /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73772993A36200A3BAFF /* LoginViewModel.m */; };
 		B445F0BD297685D600D97D60 /* ZTUITagView.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0BC297685D600D97D60 /* ZTUITagView.m */; };
 		B445F0C32976A71100D97D60 /* ZTUITagChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0C22976A71000D97D60 /* ZTUITagChildView.m */; };
 		B445F0C82977939E00D97D60 /* NavData.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0C72977939E00D97D60 /* NavData.m */; };
@@ -167,6 +174,20 @@
 		B43D7357299118F400A3BAFF /* SearchDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchDao.m; sourceTree = "<group>"; };
 		B43D73592992468300A3BAFF /* KeyboardUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardUtils.h; sourceTree = "<group>"; };
 		B43D735A2992468300A3BAFF /* KeyboardUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardUtils.m; sourceTree = "<group>"; };
+		B43D736029926B0E00A3BAFF /* LoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		B43D736129926B0E00A3BAFF /* LoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		B43D73632993528700A3BAFF /* RegisterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
+		B43D73642993528700A3BAFF /* RegisterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
+		B43D7367299386C400A3BAFF /* UITouchScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITouchScrollView.h; sourceTree = "<group>"; };
+		B43D7368299386C400A3BAFF /* UITouchScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITouchScrollView.m; sourceTree = "<group>"; };
+		B43D736A29938A9E00A3BAFF /* AccountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountModel.h; sourceTree = "<group>"; };
+		B43D736B29938A9E00A3BAFF /* AccountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountModel.m; sourceTree = "<group>"; };
+		B43D73702993943F00A3BAFF /* RegisterViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewModel.h; sourceTree = "<group>"; };
+		B43D73712993943F00A3BAFF /* RegisterViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewModel.m; sourceTree = "<group>"; };
+		B43D737329939CC400A3BAFF /* HUDUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDUtils.h; sourceTree = "<group>"; };
+		B43D737429939CC400A3BAFF /* HUDUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDUtils.m; sourceTree = "<group>"; };
+		B43D73762993A36200A3BAFF /* LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		B43D73772993A36200A3BAFF /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		B445F0BB297685D600D97D60 /* ZTUITagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITagView.h; sourceTree = "<group>"; };
 		B445F0BC297685D600D97D60 /* ZTUITagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUITagView.m; sourceTree = "<group>"; };
 		B445F0C12976A71000D97D60 /* ZTUITagChildView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITagChildView.h; sourceTree = "<group>"; };
@@ -493,6 +514,53 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		B43D735C29926AB700A3BAFF /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		B43D735D29926ABD00A3BAFF /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B43D73702993943F00A3BAFF /* RegisterViewModel.h */,
+				B43D73712993943F00A3BAFF /* RegisterViewModel.m */,
+				B43D73762993A36200A3BAFF /* LoginViewModel.h */,
+				B43D73772993A36200A3BAFF /* LoginViewModel.m */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		B43D735E29926AC600A3BAFF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B43D736029926B0E00A3BAFF /* LoginController.h */,
+				B43D736129926B0E00A3BAFF /* LoginController.m */,
+				B43D73632993528700A3BAFF /* RegisterController.h */,
+				B43D73642993528700A3BAFF /* RegisterController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		B43D735F29926ACD00A3BAFF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B43D736A29938A9E00A3BAFF /* AccountModel.h */,
+				B43D736B29938A9E00A3BAFF /* AccountModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B43D7366299385E900A3BAFF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B43D7367299386C400A3BAFF /* UITouchScrollView.h */,
+				B43D7368299386C400A3BAFF /* UITouchScrollView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		B445F0BA2976851100D97D60 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +673,7 @@
 		B4634DBB296D7C8000EBCFB2 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				B43D7366299385E900A3BAFF /* view */,
 				B4634DBC296D7C9A00EBCFB2 /* ImageHelper.h */,
 				B4634DBD296D7C9A00EBCFB2 /* ImageHelper.m */,
 				B4634DC8296FA06100EBCFB2 /* BaseUINavigationController.h */,
@@ -653,6 +722,10 @@
 		B46651EC295D6EB0009953B7 /* account */ = {
 			isa = PBXGroup;
 			children = (
+				B43D735F29926ACD00A3BAFF /* model */,
+				B43D735E29926AC600A3BAFF /* controller */,
+				B43D735D29926ABD00A3BAFF /* viewModel */,
+				B43D735C29926AB700A3BAFF /* view */,
 			);
 			path = account;
 			sourceTree = "<group>";
@@ -958,6 +1031,8 @@
 				B48FADFE298BB25C009671DA /* DateUtils.m */,
 				B43D73592992468300A3BAFF /* KeyboardUtils.h */,
 				B43D735A2992468300A3BAFF /* KeyboardUtils.m */,
+				B43D737329939CC400A3BAFF /* HUDUtils.h */,
+				B43D737429939CC400A3BAFF /* HUDUtils.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1222,8 +1297,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B466520D295D75F1009953B7 /* KnowledgeController.m in Sources */,
+				B43D736229926B0E00A3BAFF /* LoginController.m in Sources */,
 				B469C4F32919EDCC000C8D45 /* DemoController.m in Sources */,
 				B445F0D72977A46800D97D60 /* KnowledgeContentCell.m in Sources */,
+				B43D737529939CC400A3BAFF /* HUDUtils.m in Sources */,
 				B469C505291B8994000C8D45 /* UIViewController+ZTMVVM.m in Sources */,
 				B445F0C82977939E00D97D60 /* NavData.m in Sources */,
 				B4634DA9296BF65100EBCFB2 /* ZTUIPageView.m in Sources */,
@@ -1244,6 +1321,7 @@
 				B41723992950613A008C568E /* DemoShadowController.m in Sources */,
 				B48FADF02989F7FC009671DA /* ArticleDetailsController.m in Sources */,
 				B4634DB2296D7AB800EBCFB2 /* ArtcleListController.m in Sources */,
+				B43D736C29938A9E00A3BAFF /* AccountModel.m in Sources */,
 				B451737A29729248004DA03F /* BookViewModel.m in Sources */,
 				B4D2606A29755B6C0002E748 /* UserData.m in Sources */,
 				B4D26067297557B10002E748 /* MeViewModel.m in Sources */,
@@ -1273,6 +1351,7 @@
 				B445F0CB297793C600D97D60 /* KnowledgeData.m in Sources */,
 				B43D734C29909F2100A3BAFF /* SearchKeywordView.m in Sources */,
 				B4634DD0296FAC2F00EBCFB2 /* BaseUIViewController.m in Sources */,
+				B43D73652993528700A3BAFF /* RegisterController.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
 				B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */,
 				B469C502291A679C000C8D45 /* UserChild.m in Sources */,
@@ -1281,10 +1360,13 @@
 				B4D2605A297549E10002E748 /* NSUserDefaultsUtils.m in Sources */,
 				B4D2606D29755B8D0002E748 /* UserModel.m in Sources */,
 				B46651FC295D74C4009953B7 /* HomeController.m in Sources */,
+				B43D73722993943F00A3BAFF /* RegisterViewModel.m in Sources */,
 				B4665225295ECA15009953B7 /* BannerData.m in Sources */,
+				B43D7369299386C400A3BAFF /* UITouchScrollView.m in Sources */,
 				B43D73522990E40D00A3BAFF /* SearchModel.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
 				B48FADF3298B94D0009671DA /* BookDetailsController.m in Sources */,
+				B43D73782993A36200A3BAFF /* LoginViewModel.m in Sources */,
 				B43D734829909E5700A3BAFF /* SearchController.m in Sources */,
 				B48FAE06298CA960009671DA /* DBHelper.m in Sources */,
 				B4634DCA296FA06200EBCFB2 /* BaseUINavigationController.m in Sources */,

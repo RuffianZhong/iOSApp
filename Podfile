@@ -13,7 +13,7 @@ target 'iOSApp' do
   pod 'SDWebImage', '~>5.0'
   pod 'ZTUIStyle', '~>0.0.1'
   pod 'FMDB'
-
+  pod 'MBProgressHUD', '~> 1.2.0'
 
   target 'iOSAppTests' do
     inherit! :search_paths
