@@ -13,4 +13,7 @@ static NSString * const languageKey = @"languageKey";
 
 static NSString * const userDataKey = @"userDataKey";
 
+static NSString * const userAccountKey = @"userAccountKey";
+
+
 #endif /* CommonValue_h */

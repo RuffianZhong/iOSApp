@@ -9,6 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @class ArticleData;
+typedef void (^CellChildClick) (UIView *view);
 
 @interface ArticleCell : UITableViewCell
 
@@ -22,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) UIImageView *ivCollect;//收藏
 
 @property(nonatomic,strong) ArticleData *data;
+
+@property(nonatomic,copy) CellChildClick cellChildClickBlock;
 
 @end
 

@@ -7,6 +7,8 @@
 
 #import "MeController.h"
 #import "MeViewModel.h"
+#import "LoginController.h"
+#import "CollectController.h"
 
 @interface MeController ()
 @property(nonatomic,strong) UIScrollView *scrollView;
@@ -44,23 +46,19 @@
     [self initHeaderView];
     [self initCollectView];
     [self initLanguageView];
-    
-
-    //test
-    UserData *userData = [[UserData alloc] init];
-    userData.icon =  @"https://img0.baidu.com/it/u=1694074520,2517635995&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1657472400&t=3b8cee3f0f6a844e69f3b43dff3d8465";
-    
-    userData.nickname = @"RuffianZhong";
-    userData.coinCount = 1008611;
-    
-    [_meViewModel setUserDataForLocal:userData];
+    [self initData];
 }
 
+- (void)initData{
+    [_meViewModel getUserDataFromLocal];
+}
 
 - (void)initDataNotify{
     _meViewModel = [[MeViewModel alloc] init];
     MJWeakSelf
     [self observe:_meViewModel notify:^(MeViewModel *observable, NSString *keyPath) {
+        NSLog(@"---keyPath--:%@",keyPath);
+
         [weakSelf updateUI:observable keyPath:keyPath];
     }];
 }
@@ -115,9 +113,13 @@
         make.left.top.mas_equalTo(_scrollView);
     }];
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userIconAction)];
     _ivUserIcon = [[UIImageView alloc] init];
     [_ivUserIcon setContentMode:UIViewContentModeScaleAspectFill];
     [_ivUserIcon zt_cornerWithCornerRadii:50];
+    //添加点击事件
+    _ivUserIcon.userInteractionEnabled = YES;
+    [_ivUserIcon addGestureRecognizer:tapGesture];
     [_headerView addSubview:_ivUserIcon];
     [_ivUserIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.width.mas_equalTo(90);
@@ -161,6 +163,7 @@
     [_btnCollect setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [_btnCollect setTitle:L(@"collect") forState:UIControlStateNormal];
     [_btnCollect setImage:[UIImage imageNamed:@"ic_tab_home"] forState:UIControlStateNormal];
+    [_btnCollect addTarget:self action:@selector(collectActionLogic:) forControlEvents:UIControlEventTouchUpInside];
     [_viewCollect addSubview:_btnCollect];
     [_btnCollect mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.width.mas_equalTo(_viewCollect);
@@ -273,6 +276,19 @@
     [_meViewModel logout];
 }
 
+- (void)userIconAction{
+    if(!_meViewModel.userData){
+        LoginController *controller = [[LoginController alloc] init];
+        controller.hidesBottomBarWhenPushed = YES;
+        controller.loginResultBlock = ^(UserData * _Nonnull userData) {
+            if(userData){
+                self.meViewModel.userData = userData;
+            }
+        };
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+}
+
 - (void)languageActionLogic:(UIButton *)button{
    
     [_viewLanguage mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -303,6 +319,21 @@
     [[AppDelegate shareAppDelegate] setAppLanguage:language];
 }
 
-
+- (void)collectActionLogic:(UIButton *)button{
+    if(!_meViewModel.userData){
+        LoginController *controller = [[LoginController alloc] init];
+        controller.hidesBottomBarWhenPushed = YES;
+        controller.loginResultBlock = ^(UserData * _Nonnull userData) {
+            if(userData){
+                self.meViewModel.userData = userData;
+            }
+        };
+        [self.navigationController pushViewController:controller animated:YES];
+    }else{
+        CollectController *controller = [[CollectController alloc] init];
+        controller.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+}
 
 @end

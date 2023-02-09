@@ -7,17 +7,15 @@
 
 #import <Foundation/Foundation.h>
 #import "UserData.h"
-#import "UserModel.h"
+#import "AccountModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MeViewModel : NSObject
 @property(nonatomic,strong,nullable) UserData *userData;
-@property(nonatomic,strong) UserModel *userModel;
+@property(nonatomic,strong) AccountModel *accountModel;
 
-- (UserData*)getUserDataFromLocal;
-
-- (void)setUserDataForLocal:(UserData*) userData;
+- (void)getUserDataFromLocal;
 
 - (void)logout;
 @end

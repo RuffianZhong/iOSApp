@@ -18,7 +18,6 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.mode = MBProgressHUDModeText;//纯文本
     hud.label.text = msg;//内容
-    hud.removeFromSuperViewOnHide = YES;
     [hud hideAnimated:YES afterDelay:duration];//展示时长
 }
 

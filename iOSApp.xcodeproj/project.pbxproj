@@ -35,6 +35,10 @@
 		B43D73722993943F00A3BAFF /* RegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73712993943F00A3BAFF /* RegisterViewModel.m */; };
 		B43D737529939CC400A3BAFF /* HUDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D737429939CC400A3BAFF /* HUDUtils.m */; };
 		B43D73782993A36200A3BAFF /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73772993A36200A3BAFF /* LoginViewModel.m */; };
+		B43D737C2994D37000A3BAFF /* CookieHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D737B2994D37000A3BAFF /* CookieHelper.m */; };
+		B43D73832994E9B800A3BAFF /* CollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73822994E9B800A3BAFF /* CollectController.m */; };
+		B43D73862994EA3A00A3BAFF /* CollectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73852994EA3A00A3BAFF /* CollectModel.m */; };
+		B43D73892994EACA00A3BAFF /* CollectViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73882994EACA00A3BAFF /* CollectViewModel.m */; };
 		B445F0BD297685D600D97D60 /* ZTUITagView.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0BC297685D600D97D60 /* ZTUITagView.m */; };
 		B445F0C32976A71100D97D60 /* ZTUITagChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0C22976A71000D97D60 /* ZTUITagChildView.m */; };
 		B445F0C82977939E00D97D60 /* NavData.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0C72977939E00D97D60 /* NavData.m */; };
@@ -188,6 +192,14 @@
 		B43D737429939CC400A3BAFF /* HUDUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDUtils.m; sourceTree = "<group>"; };
 		B43D73762993A36200A3BAFF /* LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
 		B43D73772993A36200A3BAFF /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		B43D737A2994D37000A3BAFF /* CookieHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookieHelper.h; sourceTree = "<group>"; };
+		B43D737B2994D37000A3BAFF /* CookieHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookieHelper.m; sourceTree = "<group>"; };
+		B43D73812994E9B800A3BAFF /* CollectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectController.h; sourceTree = "<group>"; };
+		B43D73822994E9B800A3BAFF /* CollectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectController.m; sourceTree = "<group>"; };
+		B43D73842994EA3A00A3BAFF /* CollectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectModel.h; sourceTree = "<group>"; };
+		B43D73852994EA3A00A3BAFF /* CollectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectModel.m; sourceTree = "<group>"; };
+		B43D73872994EACA00A3BAFF /* CollectViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectViewModel.h; sourceTree = "<group>"; };
+		B43D73882994EACA00A3BAFF /* CollectViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectViewModel.m; sourceTree = "<group>"; };
 		B445F0BB297685D600D97D60 /* ZTUITagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITagView.h; sourceTree = "<group>"; };
 		B445F0BC297685D600D97D60 /* ZTUITagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUITagView.m; sourceTree = "<group>"; };
 		B445F0C12976A71000D97D60 /* ZTUITagChildView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITagChildView.h; sourceTree = "<group>"; };
@@ -561,6 +573,52 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		B43D73792994D34D00A3BAFF /* cookie */ = {
+			isa = PBXGroup;
+			children = (
+				B43D737A2994D37000A3BAFF /* CookieHelper.h */,
+				B43D737B2994D37000A3BAFF /* CookieHelper.m */,
+			);
+			path = cookie;
+			sourceTree = "<group>";
+		};
+		B43D737D2994E8BD00A3BAFF /* collect */ = {
+			isa = PBXGroup;
+			children = (
+				B43D73802994E8D100A3BAFF /* controller */,
+				B43D737F2994E8CB00A3BAFF /* model */,
+				B43D737E2994E8C500A3BAFF /* viewModel */,
+			);
+			path = collect;
+			sourceTree = "<group>";
+		};
+		B43D737E2994E8C500A3BAFF /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B43D73872994EACA00A3BAFF /* CollectViewModel.h */,
+				B43D73882994EACA00A3BAFF /* CollectViewModel.m */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		B43D737F2994E8CB00A3BAFF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B43D73842994EA3A00A3BAFF /* CollectModel.h */,
+				B43D73852994EA3A00A3BAFF /* CollectModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B43D73802994E8D100A3BAFF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B43D73812994E9B800A3BAFF /* CollectController.h */,
+				B43D73822994E9B800A3BAFF /* CollectController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		B445F0BA2976851100D97D60 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +753,7 @@
 		B46651EA295D6E86009953B7 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				B43D737D2994E8BD00A3BAFF /* collect */,
 				B4634DBB296D7C8000EBCFB2 /* common */,
 				B466521D295EC37A009953B7 /* article */,
 				B4665209295D75D6009953B7 /* knowledge */,
@@ -964,6 +1023,7 @@
 		B469C4E529191E5D000C8D45 /* http */ = {
 			isa = PBXGroup;
 			children = (
+				B43D73792994D34D00A3BAFF /* cookie */,
 				B469C4E629191E9E000C8D45 /* ZTHttpManager.h */,
 				B469C4E729191E9E000C8D45 /* ZTHttpManager.m */,
 				B469C4E92919281A000C8D45 /* ZTResponse.h */,
@@ -1343,6 +1403,7 @@
 				B48FADE62987C7BF009671DA /* KnowledgeChildController.m in Sources */,
 				B4634DC1296D7FCA00EBCFB2 /* ProjectModel.m in Sources */,
 				B466521A295DA398009953B7 /* UIImage+Common.m in Sources */,
+				B43D73892994EACA00A3BAFF /* CollectViewModel.m in Sources */,
 				B4634DBE296D7C9A00EBCFB2 /* ImageHelper.m in Sources */,
 				B43D73552990E76E00A3BAFF /* SearchKeywordData.m in Sources */,
 				B469C508291B89C1000C8D45 /* UIView+ZTMVVM.m in Sources */,
@@ -1352,6 +1413,8 @@
 				B43D734C29909F2100A3BAFF /* SearchKeywordView.m in Sources */,
 				B4634DD0296FAC2F00EBCFB2 /* BaseUIViewController.m in Sources */,
 				B43D73652993528700A3BAFF /* RegisterController.m in Sources */,
+				B43D73862994EA3A00A3BAFF /* CollectModel.m in Sources */,
+				B43D73832994E9B800A3BAFF /* CollectController.m in Sources */,
 				B425267F2918B44B00E509BD /* main.m in Sources */,
 				B469C4EE29192856000C8D45 /* ParseHelper.m in Sources */,
 				B469C502291A679C000C8D45 /* UserChild.m in Sources */,
@@ -1373,6 +1436,7 @@
 				B4634DC7296D876B00EBCFB2 /* ProjectViewModel.m in Sources */,
 				B445F0CE297795C200D97D60 /* KnowledgeModel.m in Sources */,
 				B417238D29504D6D008C568E /* DemoBaseController.m in Sources */,
+				B43D737C2994D37000A3BAFF /* CookieHelper.m in Sources */,
 				B48FAE02298BC7D3009671DA /* BookDetailsViewModel.m in Sources */,
 				B48FAE0C298CEA19009671DA /* StudyDao.m in Sources */,
 				B4665229295EDC62009953B7 /* BannerView.m in Sources */,

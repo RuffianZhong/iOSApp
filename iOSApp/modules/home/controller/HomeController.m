@@ -27,13 +27,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
 
-    
     [self initDataNotify];
     [self initHeaderView];
     [self initTableView];
     [self initNavigationItem];
-    
-//    [self loadData];
+    [self loadData];
 }
 
 #pragma mark -init
@@ -42,6 +40,8 @@
     _homeViewModel = [[HomeViewModel alloc] init];
     MJWeakSelf
     [self observe:_homeViewModel notify:^(HomeViewModel *observable, NSString *keyPath) {
+        NSLog(@"----keyPath:%@",keyPath);
+
         [weakSelf updateUI:observable keyPath:keyPath];
     }];
 }
@@ -124,11 +124,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"HomeListCell";
+    ArticleData *data = [_homeViewModel.artcleArray objectAtIndex:indexPath.row];
+    
     ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if(!cell){
         cell = [[ArticleCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
-    cell.data = [_homeViewModel.artcleArray objectAtIndex:indexPath.row];
+    cell.data = data;
+    cell.cellChildClickBlock = ^(UIView * _Nonnull view) {
+        [self.homeViewModel collectOrCancelArticle:data.aid collect:!data.collect];
+    };
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
 }

@@ -93,8 +93,11 @@
         make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-20);
     }];
     //收藏
+    UITapGestureRecognizer *tapGuesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(childViewClickEvent:)];
     _ivCollect = [[UIImageView alloc] init];
     _ivCollect.image = [UIImage imageNamed:@"ic_tab_home"];
+    _ivCollect.userInteractionEnabled = YES;
+    [_ivCollect addGestureRecognizer:tapGuesture];
     [self.contentView addSubview:_ivCollect];
     [_ivCollect mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.width.mas_equalTo(30);
@@ -110,6 +113,7 @@
 
 - (void)updateUI:(ArticleData *)data{
     //设置UI数据
+    self.backgroundColor = data.isTop ? [UIColor grayColor] : [UIColor whiteColor];
     [_ivUserIcon setImageWithURL:data.userIcon];
     _labelUserName.text = data.userName;
     _labelDate.text = data.date;
@@ -117,6 +121,7 @@
     _labelSubTitle.text = data.desc;
     [_ivCorver setImageWithURL:data.cover];
     _labelChapter.text = [NSString stringWithFormat:L(@"label_group"), data.superChapterName,data.chapterName];
+    [_ivCollect setImage:[UIImage imageNamed:data.collect ? @"ic_tab_home" : @"ic_tab_me"]];
     
     //控件展示逻辑：1.隐藏的控件大小设置为0，对应的约束保留；2.remakeConstraints
     //封面
@@ -156,6 +161,12 @@
         make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-20);
     }];
     
+}
+
+- (void)childViewClickEvent:(UIView*)view{
+    if(self.cellChildClickBlock){
+        self.cellChildClickBlock(view);
+    }
 }
 
 @end

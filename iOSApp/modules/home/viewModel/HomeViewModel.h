@@ -8,15 +8,19 @@
 #import <Foundation/Foundation.h>
 #import "HomeModel.h"
 #import "ArticleData.h"
+#import "CollectModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeViewModel : NSObject
 
 @property(nonatomic,strong) HomeModel *homeModel;
-
+@property(nonatomic,strong) CollectModel *collectModel;
 @property(nonatomic,strong) NSMutableArray<ArticleData*> *artcleArray;
 @property(nonatomic,strong) NSMutableArray<BannerData*> *bannerArray;
+
+@property(nonatomic,strong) NSMutableArray<ArticleData*> *topArray;
+@property(nonatomic,strong) NSMutableArray<ArticleData*> *contentArray;
 
 @property(nonatomic,assign) NSInteger pageIndex;
 @property(nonatomic,assign) NSInteger refreshState; //刷新状态：0:没有刷新 1:下啦刷新 2:上来加载
@@ -27,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getArtcleListWithRefresh:(BOOL)refresh;
 
 - (void)getBannerList;
+
+- (void)collectOrCancelArticle:(NSInteger)articleId collect:(BOOL)collect;
 
 @end
 
