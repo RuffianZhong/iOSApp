@@ -6,6 +6,7 @@
 //
 
 #import "HttpConfig.h"
+#import "CookieHelper.h"
 
 @implementation HttpConfig
 
@@ -23,7 +24,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        //
+        _timeoutInterval = 15;
     }
     return self;
 }
@@ -34,4 +35,15 @@
     }
     return _baseUrl;
 }
+
+- (AFHTTPRequestSerializer *)makeRequestSerializer{
+    AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
+    //超时时间
+    requestSerializer.timeoutInterval = _timeoutInterval;
+    // 设置自动管理Cookies
+    requestSerializer.HTTPShouldHandleCookies = YES;
+    
+    return [CookieHelper setCookieForRequest:requestSerializer];
+}
+
 @end

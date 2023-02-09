@@ -8,6 +8,7 @@
 #import "ZTHttpManager.h"
 #import "ParseHelper.h"
 #import "HttpConfig.h"
+#import "CookieHelper.h"
 
 @implementation ZTHttpManager
 
@@ -57,6 +58,7 @@ static id _instance;
     
     ///底层使用 AFNetworking
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    manager.requestSerializer = [[HttpConfig sharedHttpConfig] makeRequestSerializer];
     
     [manager GET:URLString parameters:parameters headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        
@@ -93,13 +95,16 @@ static id _instance;
     
     ///底层使用 AFNetworking
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    manager.requestSerializer = [[HttpConfig sharedHttpConfig] makeRequestSerializer];
     
     [manager POST:URLString parameters:parameters headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        
         NSLog(@"Respone-success:%@",(NSString *)responseObject);
         
+//        [CookieHelper getCookieFromResponse:task.response];
+        
         ZTResponse *ztResponse= [ParseHelper parseResponse:responseObject class:clazz];
-        if([ztResponse.code isEqual:@1]){//成功
+        if([ztResponse.code isEqual:@0]){//成功
             successBlock(ztResponse.data);//调用block
         }else{//失败
             errorBlock(ztResponse.code,ztResponse.msg);
