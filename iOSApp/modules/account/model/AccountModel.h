@@ -26,6 +26,19 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)logoutOnSuccess:(void (^)(void))success
                onError:(void (^)(NSNumber *code,NSString *msg))error;
 
+
+- (UserData*)getUserDataFromLocal;
+
+- (void)setUserDataForLocal:(UserData*) userData;
+
+- (BOOL)isLogin;
+
+- (void)logout;
+
+- (void)setUserAccount:(NSString*) account;
+
+- (NSString*)getUserAccount;
+
 @end
 
 NS_ASSUME_NONNULL_END

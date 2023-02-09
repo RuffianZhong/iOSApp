@@ -204,6 +204,9 @@
     if(button == self.pswHidenButton){
         self.pswHidenButton.selected = !button.isSelected;
         self.pswTextField.secureTextEntry = !button.isSelected;
+    }if(button == self.pswConfirmHidenButton){
+        self.pswConfirmHidenButton.selected = !button.isSelected;
+        self.pswConfirmTextField.secureTextEntry = !button.isSelected;
     }else if(button == self.loginButton){
         
         NSString *pswText = self.pswTextField.text;
@@ -214,7 +217,11 @@
         [_registerViewModel registerWithAccount:accountText password:pswText confirmPsw:pswConfirmText success:^{
             [HUDUtils hideLoadingForView:self.view];
 
-            [HUDUtils showToastMsg:L(@"register_success") forView:self.view];
+//            [HUDUtils showToastMsg:L(@"register_success") forView:self.view];
+            
+            if(self.registerResultBlock){
+                self.registerResultBlock(accountText);
+            }
             
             [self.navigationController popViewControllerAnimated:YES];
         } error:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {

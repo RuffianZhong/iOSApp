@@ -70,5 +70,32 @@
     }];
 }
 
+- (UserData*)getUserDataFromLocal{
+    id keyValues = [NSUserDefaultsUtils objectForKey:userDataKey];
+    UserData *userData =  [UserData mj_objectWithKeyValues:keyValues];
+    return userData;
+}
+
+- (void)setUserDataForLocal:(UserData*) userData{
+    id keyValues = [userData mj_keyValues];
+    [NSUserDefaultsUtils setObject:keyValues forKey:userDataKey];
+}
+
+- (BOOL)isLogin{
+    UserData *userData = [self getUserDataFromLocal];
+    return userData != nil;
+}
+
+- (void)logout{
+    [NSUserDefaultsUtils removeObjectForKey:userDataKey];
+}
+
+- (void)setUserAccount:(NSString*) account{
+    [NSUserDefaultsUtils setObject:account forKey:userAccountKey];
+}
+
+- (NSString*)getUserAccount{
+    return [NSUserDefaultsUtils objectForKey:userAccountKey];
+}
 
 @end

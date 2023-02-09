@@ -28,8 +28,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initDataNotify];
+    [self initNavigationBar];
     [self initViews];
+    [self initData];
+}
+
+- (void)initDataNotify{
     _loginViewModel = [[LoginViewModel alloc] init];
+    MJWeakSelf
+    [self observe:_loginViewModel notify:^(LoginViewModel *observable, NSString * _Nonnull keyPath) {
+        if([keyPath isEqualToString:@"account"]){
+            [weakSelf updateUI:observable.account];
+        }
+    }];
+}
+
+- (void)initData{
+    [_loginViewModel getUserAccount];
+}
+
+-(void)updateUI:(NSString*)account{
+    if(account){
+        _accountTextField.text = account;
+    }
+}
+
+- (void)initNavigationBar{
+    [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
+        
+    //右侧按钮
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_tab_home"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationBarActionBack)];
+
+    self.navigationItem.leftBarButtonItem = backButtonItem;
 }
 
 - (void)initViews{
@@ -199,6 +230,10 @@
 
             [HUDUtils showToastMsg:L(@"login_success") forView:self.view];
             
+            if(self.loginResultBlock) self.loginResultBlock(self.loginViewModel.userData);
+
+            [self.navigationController popViewControllerAnimated:YES];
+
         } error:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
             [HUDUtils hideLoadingForView:self.view];
 
@@ -207,8 +242,18 @@
         
     }else if(button == self.registerButton){
         RegisterController *controller = [[RegisterController alloc] init];
+        controller.registerResultBlock = ^(NSString * _Nonnull account) {
+            self.loginViewModel.account = account;
+        };
         [self.navigationController pushViewController:controller animated:YES];
     }
+}
+
+- (void)navigationBarActionBack{
+//    [HUDUtils showToastMsg:L(@"login_success") forView:self.view];
+
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 // 点击空白处收起键盘

@@ -20,6 +20,7 @@
 - (void)registerWithAccount:(NSString*)account password:(NSString*)password confirmPsw:(NSString*)confirmPsw success:(void (^)(void))success error:(void (^)(NSNumber *code,NSString* msg))error{
     
     [_accountModel registerWithAccount:account password:password confirmPassword:confirmPsw onSuccess:^(UserData * _Nonnull response) {
+        [self.accountModel setUserAccount:account];
         success();
     } onError:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
         error(code,msg);

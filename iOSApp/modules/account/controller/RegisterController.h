@@ -9,8 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RegisterController : UIViewController
+typedef void (^RegisterResult) (NSString *account);
 
+@interface RegisterController : UIViewController
+@property(nonatomic,copy) RegisterResult registerResultBlock;
 @end
 
 NS_ASSUME_NONNULL_END

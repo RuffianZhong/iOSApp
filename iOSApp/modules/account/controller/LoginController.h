@@ -6,11 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginController : UIViewController
+typedef void (^LoginResult) (UserData *userData);
 
+@interface LoginController : UIViewController
+@property(nonatomic,copy) LoginResult loginResultBlock;
 @end
 
 NS_ASSUME_NONNULL_END
