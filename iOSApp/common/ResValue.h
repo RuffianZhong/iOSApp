@@ -77,5 +77,7 @@
 
 #define L(key) key.I18N
 
+// 弱引用
+#define WeakSelf __weak typeof(self) weakSelf = self;
 
 #endif /* ResValue_h */

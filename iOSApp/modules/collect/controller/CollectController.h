@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseUIViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CollectController : UIViewController
+@interface CollectController : BaseUIViewController
 
 @end
 

@@ -16,7 +16,7 @@
             onSuccess:(void (^)(NSMutableArray<ArticleData*> *response))success
               onError:(void (^)(NSNumber *code,NSString *msg))error{
     
-    NSString *api = [NSString stringWithFormat:@"article/list/%ld/json", pageIndex];
+    NSString *api = [NSString stringWithFormat:@"article/list/%li/json", pageIndex];
     
     [[ZTHttpManager shareManager] get:api parseClass:[NSDictionary class] success:^(id  _Nonnull response) {
         

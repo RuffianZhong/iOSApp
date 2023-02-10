@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseUIViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KnowledgeController : UIViewController
+@interface KnowledgeController : BaseUIViewController
 
 @end
 

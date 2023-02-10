@@ -40,4 +40,7 @@
     return NO;
 }
 
+- (void)dealloc{
+    NSLog(@"---vc--dealloc:%@",self);
+}
 @end

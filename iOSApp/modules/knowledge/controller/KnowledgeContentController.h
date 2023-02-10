@@ -6,10 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseUIViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KnowledgeContentController : UIViewController
+@interface KnowledgeContentController : BaseUIViewController
 @property(nonatomic,assign) NSInteger type;//0:system,1:nav
 @end
 

@@ -30,4 +30,8 @@
     [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
 }
 
+
+- (void)dealloc{
+    NSLog(@"---nav--dealloc:%@",self);
+}
 @end
