@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 加载数据
 /// @param refresh 是否下拉刷新
 - (void)getArtcleListWithRefresh:(BOOL)refresh;
+
+- (void)cancelCollectArticle:(NSInteger)articleId result:(void (^)(NSNumber *code, NSString *msg))result;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -8,6 +8,7 @@
 #import "CollectController.h"
 #import "ArticleCell.h"
 #import "CollectViewModel.h"
+#import "ZTUIAlertController.h"
 
 @interface CollectController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -96,13 +97,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"CollectListCell";
+    ArticleData *data = [_collectViewModel.artcleArray objectAtIndex:indexPath.row];
     ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if(!cell){
         cell = [[ArticleCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
-    cell.data = [_collectViewModel.artcleArray objectAtIndex:indexPath.row];
+    cell.data = data;
+    cell.cellChildClickBlock = ^(UIView * _Nonnull view) {
+        [self cancelCollectArticle:data];
+    };
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
+}
+
+
+- (void)cancelCollectArticle:(ArticleData*)articleData{
+    ZTUIAlertController *alert = [ZTUIAlertController alertControllerWithTitle:L(@"tips_msg") message:L(@"collect_content")];
+    [alert cancelActionTitle:L(@"cancel")];
+    [alert confirmActionTitle:L(@"confirm") handler:^{
+        [self.collectViewModel cancelCollectArticle:articleData.aid result:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
+            [HUDUtils showToastMsg:msg forView:self.view];
+        }];
+    }];
+    [alert showWithController:self];
 }
 
 

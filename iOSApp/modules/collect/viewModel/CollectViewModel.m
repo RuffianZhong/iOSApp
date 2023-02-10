@@ -41,4 +41,23 @@
     }];
 }
 
+- (void)cancelCollectArticle:(NSInteger)articleId result:(void (^)(NSNumber *code, NSString *msg))result{
+    //取消收藏
+    [_collectModel collectOrCancelArticle:articleId collect:NO onSuccess:^{
+        result(0,L(@"done"));
+        NSMutableArray *tempArray = [self.artcleArray mutableCopy];
+        ArticleData *tempData;
+        for (int i=0; i<tempArray.count; i++) {
+            tempData = tempArray[i];
+            if(tempData.aid == articleId){
+                [tempArray removeObjectAtIndex:i];
+                break;
+            }
+        }
+        self.artcleArray = tempArray;
+    } onError:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
+        result(code,msg);
+    }];
+}
+
 @end
