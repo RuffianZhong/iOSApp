@@ -464,8 +464,6 @@
 				B425267D2918B44B00E509BD /* Info.plist */,
 				B425267E2918B44B00E509BD /* main.m */,
 				B469C4E02918E2B8000C8D45 /* PrefixHeader.pch */,
-				B469C4E12918FC65000C8D45 /* LaunchController.h */,
-				B469C4E22918FC65000C8D45 /* LaunchController.m */,
 				B4665212295D865E009953B7 /* Localizable.strings */,
 				B466521B295DA619009953B7 /* zh-Hans_image.bundle */,
 			);
@@ -567,15 +565,6 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		B43D7366299385E900A3BAFF /* view */ = {
-			isa = PBXGroup;
-			children = (
-				B43D7367299386C400A3BAFF /* UITouchScrollView.h */,
-				B43D7368299386C400A3BAFF /* UITouchScrollView.m */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
 		B43D73792994D34D00A3BAFF /* cookie */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,10 +614,45 @@
 		B43D738A2995141F00A3BAFF /* view */ = {
 			isa = PBXGroup;
 			children = (
+				B43D7367299386C400A3BAFF /* UITouchScrollView.h */,
+				B43D7368299386C400A3BAFF /* UITouchScrollView.m */,
 				B43D738B2995144000A3BAFF /* ZTUIAlertController.h */,
 				B43D738C2995144000A3BAFF /* ZTUIAlertController.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		B43D738E2996926400A3BAFF /* base */ = {
+			isa = PBXGroup;
+			children = (
+				B4634DC8296FA06100EBCFB2 /* BaseUINavigationController.h */,
+				B4634DC9296FA06200EBCFB2 /* BaseUINavigationController.m */,
+				B4634DCE296FAC2F00EBCFB2 /* BaseUIViewController.h */,
+				B4634DCF296FAC2F00EBCFB2 /* BaseUIViewController.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		B43D738F299692A100A3BAFF /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				B4634DBC296D7C9A00EBCFB2 /* ImageHelper.h */,
+				B4634DBD296D7C9A00EBCFB2 /* ImageHelper.m */,
+				B4634DD1296FF22500EBCFB2 /* UIBarHelper.h */,
+				B4634DD2296FF22500EBCFB2 /* UIBarHelper.m */,
+				B4634DD4297004DA00EBCFB2 /* UIViewHelper.h */,
+				B4634DD5297004DA00EBCFB2 /* UIViewHelper.m */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
+		B43D73902996931400A3BAFF /* launch */ = {
+			isa = PBXGroup;
+			children = (
+				B469C4E12918FC65000C8D45 /* LaunchController.h */,
+				B469C4E22918FC65000C8D45 /* LaunchController.m */,
+			);
+			path = launch;
 			sourceTree = "<group>";
 		};
 		B445F0BA2976851100D97D60 /* view */ = {
@@ -740,33 +764,11 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		B4634DBB296D7C8000EBCFB2 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				B43D7366299385E900A3BAFF /* view */,
-				B4634DBC296D7C9A00EBCFB2 /* ImageHelper.h */,
-				B4634DBD296D7C9A00EBCFB2 /* ImageHelper.m */,
-				B4634DC8296FA06100EBCFB2 /* BaseUINavigationController.h */,
-				B4634DC9296FA06200EBCFB2 /* BaseUINavigationController.m */,
-				B4634DCE296FAC2F00EBCFB2 /* BaseUIViewController.h */,
-				B4634DCF296FAC2F00EBCFB2 /* BaseUIViewController.m */,
-				B4634DD1296FF22500EBCFB2 /* UIBarHelper.h */,
-				B4634DD2296FF22500EBCFB2 /* UIBarHelper.m */,
-				B4634DD4297004DA00EBCFB2 /* UIViewHelper.h */,
-				B4634DD5297004DA00EBCFB2 /* UIViewHelper.m */,
-				B4634DDA2970FCDB00EBCFB2 /* SystemUtils.h */,
-				B4634DDB2970FCDB00EBCFB2 /* SystemUtils.m */,
-				B48FAE07298CBF29009671DA /* BaseDao.h */,
-				B48FAE08298CBF29009671DA /* BaseDao.m */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
 		B46651EA295D6E86009953B7 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				B43D73902996931400A3BAFF /* launch */,
 				B43D737D2994E8BD00A3BAFF /* collect */,
-				B4634DBB296D7C8000EBCFB2 /* common */,
 				B466521D295EC37A009953B7 /* article */,
 				B4665209295D75D6009953B7 /* knowledge */,
 				B46651F1295D6EDE009953B7 /* project */,
@@ -1022,6 +1024,8 @@
 		B469C4E429190DBB000C8D45 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				B43D738F299692A100A3BAFF /* helper */,
+				B43D738E2996926400A3BAFF /* base */,
 				B43D738A2995141F00A3BAFF /* view */,
 				B48FAE03298CA940009671DA /* db */,
 				B4D26057297549BE0002E748 /* utils */,
@@ -1089,6 +1093,8 @@
 		B48FAE03298CA940009671DA /* db */ = {
 			isa = PBXGroup;
 			children = (
+				B48FAE07298CBF29009671DA /* BaseDao.h */,
+				B48FAE08298CBF29009671DA /* BaseDao.m */,
 				B48FAE04298CA960009671DA /* DBHelper.h */,
 				B48FAE05298CA960009671DA /* DBHelper.m */,
 			);
@@ -1098,6 +1104,8 @@
 		B4D26057297549BE0002E748 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				B4634DDA2970FCDB00EBCFB2 /* SystemUtils.h */,
+				B4634DDB2970FCDB00EBCFB2 /* SystemUtils.m */,
 				B4D26058297549E10002E748 /* NSUserDefaultsUtils.h */,
 				B4D26059297549E10002E748 /* NSUserDefaultsUtils.m */,
 				B48FADFD298BB25C009671DA /* DateUtils.h */,
