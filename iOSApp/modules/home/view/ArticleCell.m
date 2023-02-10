@@ -95,7 +95,7 @@
     //收藏
     UITapGestureRecognizer *tapGuesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(childViewClickEvent:)];
     _ivCollect = [[UIImageView alloc] init];
-    _ivCollect.image = [UIImage imageNamed:@"ic_tab_home"];
+    _ivCollect.image = [UIImage imageNamed:@"ic_collect_no"];
     _ivCollect.userInteractionEnabled = YES;
     [_ivCollect addGestureRecognizer:tapGuesture];
     [self.contentView addSubview:_ivCollect];
@@ -120,8 +120,9 @@
     _labelTitle.text = data.title;
     _labelSubTitle.text = data.desc;
     [_ivCorver setImageWithURL:data.cover];
-    _labelChapter.text = [NSString stringWithFormat:L(@"label_group"), data.superChapterName,data.chapterName];
-    [_ivCollect setImage:[UIImage imageNamed:data.collect ? @"ic_tab_home" : @"ic_tab_me"]];
+    NSString *superChapterName = !data.superChapterName ? @"?" : data.superChapterName;
+    _labelChapter.text = [NSString stringWithFormat:L(@"label_group"), superChapterName,data.chapterName];
+    [_ivCollect setImage:[UIImage imageNamed:data.collect ? @"ic_collect" : @"ic_collect_no"]];
     
     //控件展示逻辑：1.隐藏的控件大小设置为0，对应的约束保留；2.remakeConstraints
     //封面

@@ -57,8 +57,8 @@
 - (void)initNavigationBar{
     [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
         
-    //右侧按钮
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_tab_home"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationBarActionBack)];
+    //左侧按钮
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_close"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationBarActionBack)];
 
     self.navigationItem.leftBarButtonItem = backButtonItem;
 }
@@ -88,7 +88,7 @@
     }];
     
     _logoImageView = [[UIImageView alloc] init];
-    _logoImageView.image = [UIImage imageNamed:@"ic_tab_home"];
+    _logoImageView.image = [UIImage imageNamed:@"ic_logo"];
     [_headerView addSubview:_logoImageView];
     [_logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(_headerView.mas_centerY);
@@ -110,7 +110,7 @@
     
     //账号
     _accountTextField = [[UITextField alloc] init];
-    [_accountTextField setLeftView:[self textFieldLeftView:@"ic_tab_home"]];
+    [_accountTextField setLeftView:[self textFieldLeftView:@"ic_account"]];
     [_accountTextField setLeftViewMode:UITextFieldViewModeAlways];
     [_accountTextField setClearButtonMode:UITextFieldViewModeWhileEditing];
     [_accountTextField setPlaceholder:L(@"user_name")];
@@ -131,7 +131,7 @@
     //密码
     _pswTextField = [[UITextField alloc] init];
     _pswTextField.secureTextEntry = YES;
-    [_pswTextField setLeftView:[self textFieldLeftView:@"ic_tab_home"]];
+    [_pswTextField setLeftView:[self textFieldLeftView:@"ic_password"]];
     [_pswTextField setLeftViewMode:UITextFieldViewModeAlways];
     [_pswTextField setClearButtonMode:UITextFieldViewModeWhileEditing];
     [_pswTextField setPlaceholder:L(@"user_psw")];
@@ -152,8 +152,8 @@
     //密码显示-隐藏
     _pswHidenButton = [UIButton new];
     _pswHidenButton.backgroundColor = [UIColor redColor];
-    [_pswHidenButton setImage:[UIImage imageNamed:@"ic_tab_home"] forState:UIControlStateNormal];//默认图片
-    [_pswHidenButton setImage:[UIImage imageNamed:@"ic_tab_me"] forState:UIControlStateSelected];//选中图片
+    [_pswHidenButton setImage:[UIImage imageNamed:@"ic_show"] forState:UIControlStateNormal];//默认图片
+    [_pswHidenButton setImage:[UIImage imageNamed:@"ic_hide"] forState:UIControlStateSelected];//选中图片
     [_pswHidenButton addTarget:self action:@selector(buttonClickEvent:)forControlEvents:UIControlEventTouchUpInside];
     [_contentView addSubview:_pswHidenButton];
     [_pswHidenButton mas_makeConstraints:^(MASConstraintMaker *make) {

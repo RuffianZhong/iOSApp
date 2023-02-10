@@ -76,7 +76,7 @@
     }else{
         [self updateNavigationItem:NO];
     
-        [_ivUserIcon setImage:[UIImage imageNamed:@"ic_tab_home"]];
+        [_ivUserIcon setImage:[UIImage imageNamed:@"ic_logo"]];
         [_labelUserName setText:L(@"login")];
         [_labelUserIntegral setHidden:YES];
     }
@@ -85,7 +85,7 @@
 - (void)updateNavigationItem:(BOOL)isLogin{
     if(isLogin){
         //右侧按钮
-        UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_tab_home"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonAction)];
+        UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_logout"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonAction)];
         
         self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     }else{
@@ -162,7 +162,7 @@
     [_btnCollect setTitleColor:kColorBlack forState:UIControlStateNormal];
     [_btnCollect setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [_btnCollect setTitle:L(@"collect") forState:UIControlStateNormal];
-    [_btnCollect setImage:[UIImage imageNamed:@"ic_tab_home"] forState:UIControlStateNormal];
+    [_btnCollect setImage:[UIImage imageNamed:@"ic_collect_normal"] forState:UIControlStateNormal];
     [_btnCollect addTarget:self action:@selector(collectActionLogic:) forControlEvents:UIControlEventTouchUpInside];
     [_viewCollect addSubview:_btnCollect];
     [_btnCollect mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -170,7 +170,7 @@
     }];
     
     _ivCollectNext = [[UIImageView alloc] init];
-    _ivCollectNext.image = [UIImage imageNamed:@"ic_tab_project"];
+    _ivCollectNext.image = [UIImage imageNamed:@"ic_right"];
     [_viewCollect addSubview:_ivCollectNext];
     [_ivCollectNext mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(24);
@@ -216,7 +216,7 @@
     [_btnLanguage setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [_btnLanguage setTitle:L(@"multi_language") forState:UIControlStateNormal];
     [_btnLanguage setTitleColor:kColorBlack forState:UIControlStateNormal];
-    [_btnLanguage setImage:[UIImage imageNamed:@"ic_tab_home"] forState:UIControlStateNormal];
+    [_btnLanguage setImage:[UIImage imageNamed:@"ic_language"] forState:UIControlStateNormal];
     [_btnLanguage addTarget:self action:@selector(languageActionLogic:) forControlEvents:UIControlEventTouchUpInside];
     [_viewLanguage addSubview:_btnLanguage];
     [_btnLanguage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -227,7 +227,7 @@
     }];
     
     _ivLanguageNext = [[UIImageView alloc] init];
-    _ivLanguageNext.image = [UIImage imageNamed:@"ic_tab_home"];
+    _ivLanguageNext.image = [UIImage imageNamed:@"ic_down"];
     [_viewLanguage addSubview:_ivLanguageNext];
     [_ivLanguageNext mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(24);
@@ -240,8 +240,8 @@
     [_btnLanguageChinese setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [_btnLanguageChinese setTitle:L(@"language_chinese") forState:UIControlStateNormal];
     [_btnLanguageChinese setTitleEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 0)];
-    [_btnLanguageChinese setImage:[UIImage imageNamed:@"ic_tab_home"] forState:UIControlStateNormal];
-    [_btnLanguageChinese setImage:[UIImage imageNamed:@"ic_tab_project"] forState:UIControlStateSelected];
+    [_btnLanguageChinese setImage:[UIImage imageNamed:@"ic_select_no"] forState:UIControlStateNormal];
+    [_btnLanguageChinese setImage:[UIImage imageNamed:@"ic_select"] forState:UIControlStateSelected];
     [_btnLanguageChinese addTarget:self action:@selector(languageChildActionLogic:) forControlEvents:UIControlEventTouchUpInside];
     [_btnLanguageChinese setSelected:[language isEqualToString:Language_zh]];
     [_viewLanguage addSubview:_btnLanguageChinese];
@@ -256,8 +256,8 @@
     [_btnLanguageEnglish setTitleColor:kColorBlack forState:UIControlStateNormal];
     [_btnLanguageEnglish setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [_btnLanguageEnglish setTitleEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 0)];
-    [_btnLanguageEnglish setImage:[UIImage imageNamed:@"ic_tab_home"] forState:UIControlStateNormal];
-    [_btnLanguageEnglish setImage:[UIImage imageNamed:@"ic_tab_project"] forState:UIControlStateSelected];
+    [_btnLanguageEnglish setImage:[UIImage imageNamed:@"ic_select_no"] forState:UIControlStateNormal];
+    [_btnLanguageEnglish setImage:[UIImage imageNamed:@"ic_select"] forState:UIControlStateSelected];
     [_btnLanguageEnglish addTarget:self action:@selector(languageChildActionLogic:) forControlEvents:UIControlEventTouchUpInside];
     [_btnLanguageEnglish setTitle:L(@"language_english") forState:UIControlStateNormal];
     [_btnLanguageEnglish setSelected: [language isEqualToString:Language_en]];

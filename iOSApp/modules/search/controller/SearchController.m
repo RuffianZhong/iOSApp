@@ -36,8 +36,8 @@
     [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
         
     //导航栏按钮
-    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_tab_home"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationLeftBarAction)];
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_tab_home"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationRightBarAction)];
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_back"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationLeftBarAction)];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_search"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationRightBarAction)];
     
     _searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth - 100, [UIBarHelper navigationBarHeight]-10)];
     _searchTextField.font = kFontText14;

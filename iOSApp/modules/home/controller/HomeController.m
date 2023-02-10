@@ -77,7 +77,7 @@
 - (void)initNavigationItem{
     
     //右侧按钮
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_tab_home"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonAction)];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_search"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonAction)];
     
     self.navigationItem.title = L(@"tab_home");
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;

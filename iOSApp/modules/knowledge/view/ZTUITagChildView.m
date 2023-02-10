@@ -16,7 +16,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _padding = 6;
-        _editImage = [UIImage imageNamed:@"ic_tab_home"];
+        _editImage = [UIImage imageNamed:@"ic_remove"];
         //自定义子控件初始化逻辑
         [self initViews];
     }
