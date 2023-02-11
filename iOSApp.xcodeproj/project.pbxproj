@@ -40,6 +40,7 @@
 		B43D73862994EA3A00A3BAFF /* CollectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73852994EA3A00A3BAFF /* CollectModel.m */; };
 		B43D73892994EACA00A3BAFF /* CollectViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73882994EACA00A3BAFF /* CollectViewModel.m */; };
 		B43D738D2995144000A3BAFF /* ZTUIAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D738C2995144000A3BAFF /* ZTUIAlertController.m */; };
+		B43D73932997429A00A3BAFF /* ZTNSProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D73922997429A00A3BAFF /* ZTNSProxy.m */; };
 		B445F0BD297685D600D97D60 /* ZTUITagView.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0BC297685D600D97D60 /* ZTUITagView.m */; };
 		B445F0C32976A71100D97D60 /* ZTUITagChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0C22976A71000D97D60 /* ZTUITagChildView.m */; };
 		B445F0C82977939E00D97D60 /* NavData.m in Sources */ = {isa = PBXBuildFile; fileRef = B445F0C72977939E00D97D60 /* NavData.m */; };
@@ -203,6 +204,8 @@
 		B43D73882994EACA00A3BAFF /* CollectViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectViewModel.m; sourceTree = "<group>"; };
 		B43D738B2995144000A3BAFF /* ZTUIAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUIAlertController.h; sourceTree = "<group>"; };
 		B43D738C2995144000A3BAFF /* ZTUIAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUIAlertController.m; sourceTree = "<group>"; };
+		B43D73912997429A00A3BAFF /* ZTNSProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTNSProxy.h; sourceTree = "<group>"; };
+		B43D73922997429A00A3BAFF /* ZTNSProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTNSProxy.m; sourceTree = "<group>"; };
 		B445F0BB297685D600D97D60 /* ZTUITagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITagView.h; sourceTree = "<group>"; };
 		B445F0BC297685D600D97D60 /* ZTUITagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTUITagView.m; sourceTree = "<group>"; };
 		B445F0C12976A71000D97D60 /* ZTUITagChildView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTUITagChildView.h; sourceTree = "<group>"; };
@@ -785,8 +788,6 @@
 		B46651EB295D6EA9009953B7 /* main */ = {
 			isa = PBXGroup;
 			children = (
-				B46651F4295D6F68009953B7 /* model */,
-				B46651F3295D6F59009953B7 /* viewModel */,
 				B46651F2295D6F4C009953B7 /* controller */,
 			);
 			path = main;
@@ -864,20 +865,6 @@
 				B46651F6295D6F88009953B7 /* MainController.m */,
 			);
 			path = controller;
-			sourceTree = "<group>";
-		};
-		B46651F3295D6F59009953B7 /* viewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = viewModel;
-			sourceTree = "<group>";
-		};
-		B46651F4295D6F68009953B7 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		B46651F9295D74A3009953B7 /* controller */ = {
@@ -1114,6 +1101,8 @@
 				B43D735A2992468300A3BAFF /* KeyboardUtils.m */,
 				B43D737329939CC400A3BAFF /* HUDUtils.h */,
 				B43D737429939CC400A3BAFF /* HUDUtils.m */,
+				B43D73912997429A00A3BAFF /* ZTNSProxy.h */,
+				B43D73922997429A00A3BAFF /* ZTNSProxy.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1448,6 +1437,7 @@
 				B43D73722993943F00A3BAFF /* RegisterViewModel.m in Sources */,
 				B4665225295ECA15009953B7 /* BannerData.m in Sources */,
 				B43D7369299386C400A3BAFF /* UITouchScrollView.m in Sources */,
+				B43D73932997429A00A3BAFF /* ZTNSProxy.m in Sources */,
 				B43D73522990E40D00A3BAFF /* SearchModel.m in Sources */,
 				B469C4EB2919281A000C8D45 /* ZTResponse.m in Sources */,
 				B48FADF3298B94D0009671DA /* BookDetailsController.m in Sources */,

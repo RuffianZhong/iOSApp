@@ -45,7 +45,7 @@
 
 - (void)initDataNotify{
     _viewModel = [[KnowledgeViewModel alloc] init];
-    MJWeakSelf
+    WeakSelf
     [self observe:_viewModel notify:^(KnowledgeViewModel *observable, NSString *keyPath) {
         [weakSelf.tableView reloadData];
     }];

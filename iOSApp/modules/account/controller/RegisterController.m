@@ -214,20 +214,21 @@
         NSString *accountText = self.accountTextField.text;
         
         [HUDUtils showLoadingForView:self.view];
+        WeakSelf
         [_registerViewModel registerWithAccount:accountText password:pswText confirmPsw:pswConfirmText success:^{
-            [HUDUtils hideLoadingForView:self.view];
+            [HUDUtils hideLoadingForView:weakSelf.view];
 
 //            [HUDUtils showToastMsg:L(@"register_success") forView:self.view];
             
-            if(self.registerResultBlock){
-                self.registerResultBlock(accountText);
+            if(weakSelf.registerResultBlock){
+                weakSelf.registerResultBlock(accountText);
             }
             
-            [self.navigationController popViewControllerAnimated:YES];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         } error:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
-            [HUDUtils hideLoadingForView:self.view];
+            [HUDUtils hideLoadingForView:weakSelf.view];
 
-            [HUDUtils showToastMsg:msg forView:self.view];
+            [HUDUtils showToastMsg:msg forView:weakSelf.view];
         }];
     }
 }

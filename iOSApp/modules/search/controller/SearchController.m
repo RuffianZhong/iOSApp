@@ -78,7 +78,7 @@
 
 - (void)initDataNotify{
     _searchViewModel = [[SearchViewModel alloc] init];
-    MJWeakSelf
+    WeakSelf
     [self observe:_searchViewModel notify:^(SearchViewModel* observable, NSString * keyPath) {
         
         [weakSelf updateContentView:observable.showSearchView];

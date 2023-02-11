@@ -32,8 +32,9 @@
 
 - (void)initDataNotify{
     _viewModel = [[BookDetailsViewModel alloc] init];
+    WeakSelf
     [self observe:_viewModel notify:^(id  _Nonnull observable, NSString * _Nonnull keyPath) {
-        [self->_tableView reloadData];
+        [weakSelf.tableView reloadData];
     }];
 }
 
@@ -91,7 +92,7 @@
     __block StudyData *studyData = articleData.studyData;
     
     ArticleDetailsController *controller = [[ArticleDetailsController alloc] init];
-    MJWeakSelf
+    WeakSelf
     [controller setProgressUpdateBlock:^(CGFloat progress) {
         if(studyData){
             studyData.progress = progress;

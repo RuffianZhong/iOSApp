@@ -36,7 +36,7 @@
 
 - (void)initDataNotify{
     _loginViewModel = [[LoginViewModel alloc] init];
-    MJWeakSelf
+    WeakSelf
     [self observe:_loginViewModel notify:^(LoginViewModel *observable, NSString * _Nonnull keyPath) {
         if([keyPath isEqualToString:@"account"]){
             [weakSelf updateUI:observable.account];
@@ -225,25 +225,27 @@
         NSString *accountText = self.accountTextField.text;
         
         [HUDUtils showLoadingForView:self.view];
+        WeakSelf
         [_loginViewModel loginWithAccount:accountText password:pswText success:^(UserData * _Nonnull data) {
-            [HUDUtils hideLoadingForView:self.view];
+            [HUDUtils hideLoadingForView:weakSelf.view];
 
-            [HUDUtils showToastMsg:L(@"login_success") forView:self.view];
+            [HUDUtils showToastMsg:L(@"login_success") forView:weakSelf.view];
             
-            if(self.loginResultBlock) self.loginResultBlock(self.loginViewModel.userData);
+            if(weakSelf.loginResultBlock) weakSelf.loginResultBlock(weakSelf.loginViewModel.userData);
 
-            [self.navigationController popViewControllerAnimated:YES];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
 
         } error:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
-            [HUDUtils hideLoadingForView:self.view];
+            [HUDUtils hideLoadingForView:weakSelf.view];
 
-            [HUDUtils showToastMsg:msg forView:self.view];
+            [HUDUtils showToastMsg:msg forView:weakSelf.view];
         }];
         
     }else if(button == self.registerButton){
         RegisterController *controller = [[RegisterController alloc] init];
+        WeakSelf
         controller.registerResultBlock = ^(NSString * _Nonnull account) {
-            self.loginViewModel.account = account;
+            weakSelf.loginViewModel.account = account;
         };
         [self.navigationController pushViewController:controller animated:YES];
     }

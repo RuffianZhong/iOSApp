@@ -70,7 +70,7 @@
 
 - (void)initDataNotify{
     _projectViewModel = [[ProjectViewModel alloc] init];
-    MJWeakSelf
+    WeakSelf
     [self observe:_projectViewModel notify:^(ProjectViewModel *observable, NSString *keyPath) {
         [weakSelf updateUI:observable keyPath:keyPath];
     }];

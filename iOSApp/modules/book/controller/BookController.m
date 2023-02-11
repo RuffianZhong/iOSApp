@@ -60,7 +60,7 @@ static NSString * const book_cell_id = @"book_cell_id";
 
 - (void)initDataNotify{
     _bookViewModel = [[BookViewModel alloc] init];
-    MJWeakSelf
+    WeakSelf
     [self observe:_bookViewModel notify:^(BookViewModel *observable, NSString *keyPath) {
         [weakSelf.collectionView reloadData];
     }];

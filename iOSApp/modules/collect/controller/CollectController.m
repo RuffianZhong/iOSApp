@@ -35,7 +35,7 @@
 
 - (void)initDataNotify{
     _collectViewModel = [[CollectViewModel alloc] init];
-    MJWeakSelf
+    WeakSelf
     [self observe:_collectViewModel notify:^(CollectViewModel *observable, NSString *keyPath) {
         [weakSelf updateUI:observable keyPath:keyPath];
     }];
@@ -58,7 +58,7 @@
         make.left.top.mas_equalTo(self.view);
     }];
     
-    MJWeakSelf;
+    WeakSelf
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf loadData];
     }];
@@ -103,8 +103,9 @@
         cell = [[ArticleCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
     cell.data = data;
+    WeakSelf
     cell.cellChildClickBlock = ^(UIView * _Nonnull view) {
-        [self cancelCollectArticle:data];
+        [weakSelf cancelCollectArticle:data];
     };
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
@@ -114,9 +115,10 @@
 - (void)cancelCollectArticle:(ArticleData*)articleData{
     ZTUIAlertController *alert = [ZTUIAlertController alertControllerWithTitle:L(@"tips_msg") message:L(@"collect_content")];
     [alert cancelActionTitle:L(@"cancel")];
+    WeakSelf
     [alert confirmActionTitle:L(@"confirm") handler:^{
-        [self.collectViewModel cancelCollectArticle:articleData.aid result:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
-            [HUDUtils showToastMsg:msg forView:self.view];
+        [weakSelf.collectViewModel cancelCollectArticle:articleData.aid result:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
+            [HUDUtils showToastMsg:msg forView:weakSelf.view];
         }];
     }];
     [alert showWithController:self];

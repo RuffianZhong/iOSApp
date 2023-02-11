@@ -38,10 +38,8 @@
 
 - (void)initDataNotify{
     _homeViewModel = [[HomeViewModel alloc] init];
-    MJWeakSelf
+    WeakSelf
     [self observe:_homeViewModel notify:^(HomeViewModel *observable, NSString *keyPath) {
-        NSLog(@"----keyPath:%@",keyPath);
-
         [weakSelf updateUI:observable keyPath:keyPath];
     }];
 }
@@ -60,7 +58,7 @@
         make.left.top.mas_equalTo(self.view);
     }];
     
-    MJWeakSelf;
+    WeakSelf
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf loadData];
     }];
@@ -131,8 +129,9 @@
         cell = [[ArticleCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
     cell.data = data;
+    WeakSelf
     cell.cellChildClickBlock = ^(UIView * _Nonnull view) {
-        [self.homeViewModel collectOrCancelArticle:data.aid collect:!data.collect];
+        [weakSelf.homeViewModel collectOrCancelArticle:data.aid collect:!data.collect];
     };
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;

@@ -37,7 +37,7 @@
         make.left.top.mas_equalTo(self.view);
     }];
     
-    MJWeakSelf;
+    WeakSelf;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf loadData];
     }];
@@ -49,7 +49,7 @@
 
 - (void)initDataNotify{
     _artcleListViewModel = [[ArtcleListViewModel alloc] init];
-    MJWeakSelf
+    WeakSelf
     [self observe:_artcleListViewModel notify:^(ArtcleListViewModel *observable, NSString *keyPath) {
         [weakSelf updateUI:observable keyPath:keyPath];
     }];

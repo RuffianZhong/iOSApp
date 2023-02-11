@@ -55,10 +55,8 @@
 
 - (void)initDataNotify{
     _meViewModel = [[MeViewModel alloc] init];
-    MJWeakSelf
+    WeakSelf
     [self observe:_meViewModel notify:^(MeViewModel *observable, NSString *keyPath) {
-        NSLog(@"---keyPath--:%@",keyPath);
-
         [weakSelf updateUI:observable keyPath:keyPath];
     }];
 }
@@ -280,9 +278,10 @@
     if(!_meViewModel.userData){
         LoginController *controller = [[LoginController alloc] init];
         controller.hidesBottomBarWhenPushed = YES;
+        WeakSelf
         controller.loginResultBlock = ^(UserData * _Nonnull userData) {
             if(userData){
-                self.meViewModel.userData = userData;
+                weakSelf.meViewModel.userData = userData;
             }
         };
         [self.navigationController pushViewController:controller animated:YES];
@@ -323,9 +322,10 @@
     if(!_meViewModel.userData){
         LoginController *controller = [[LoginController alloc] init];
         controller.hidesBottomBarWhenPushed = YES;
+        WeakSelf
         controller.loginResultBlock = ^(UserData * _Nonnull userData) {
             if(userData){
-                self.meViewModel.userData = userData;
+                weakSelf.meViewModel.userData = userData;
             }
         };
         [self.navigationController pushViewController:controller animated:YES];

@@ -7,6 +7,7 @@
 
 #import "BannerView.h"
 #import "BannerData.h"
+#import "ZTNSProxy.h"
 
 @interface BannerView()<UIScrollViewDelegate>
 
@@ -115,7 +116,7 @@
     _loopScrollerView.contentOffset = CGPointMake(_loopIndex * kScreenWidth, 0);
     
     if(!_timer){
-        _timer = [NSTimer timerWithTimeInterval:2.0f target:self selector:@selector(timerTask) userInfo:nil repeats:YES];
+        _timer = [NSTimer timerWithTimeInterval:2.0f target:[ZTNSProxy proxyWithObject:self] selector:@selector(timerTask) userInfo:nil repeats:YES];
         //NSDefaultRunLoopMode:拖拽时暂停
         [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
     }
