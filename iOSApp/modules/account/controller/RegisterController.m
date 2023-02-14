@@ -38,8 +38,8 @@
     _scrollView.backgroundColor = kColorWhite;
     [self.view addSubview:_scrollView];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(self.view);
-        make.left.top.mas_equalTo(self.view);
+        make.left.right.bottom.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
     }];
     
     [self initHeaderView];
@@ -117,7 +117,6 @@
     
     //密码显示-隐藏
     _pswHidenButton = [UIButton new];
-    _pswHidenButton.backgroundColor = [UIColor redColor];
     [_pswHidenButton setImage:[UIImage imageNamed:@"ic_show"] forState:UIControlStateNormal];//默认图片
     [_pswHidenButton setImage:[UIImage imageNamed:@"ic_hide"] forState:UIControlStateSelected];//选中图片
     [_pswHidenButton addTarget:self action:@selector(buttonClickEvent:)forControlEvents:UIControlEventTouchUpInside];
@@ -153,7 +152,6 @@
 
     //密码显示-隐藏
     _pswConfirmHidenButton = [UIButton new];
-    _pswConfirmHidenButton.backgroundColor = [UIColor redColor];
     [_pswConfirmHidenButton setImage:[UIImage imageNamed:@"ic_show"] forState:UIControlStateNormal];//默认图片
     [_pswConfirmHidenButton setImage:[UIImage imageNamed:@"ic_hide"] forState:UIControlStateSelected];//选中图片
     [_pswConfirmHidenButton addTarget:self action:@selector(buttonClickEvent:)forControlEvents:UIControlEventTouchUpInside];

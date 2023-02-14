@@ -24,21 +24,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self initNavigationItem];
     [self initDataNotify];
     [self initTabView];
     [self initPageView];
     [self getCategoryList];
-
 }
 
 - (void)initNavigationItem{
-    [UIBarHelper navigationBarHidden:YES controller:self];
-    [UIBarHelper statusBarBackgroundColor:kColorDarkGreen];
-    
-    self.navigationItem.title = L(@"tab_project");
+    [self setNavigationBarHiden:YES];
 }
 
 

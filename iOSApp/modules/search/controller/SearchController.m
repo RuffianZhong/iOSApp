@@ -23,8 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-
     [self initDataNotify];
     [self initNavigationBar];
     [self initTableView];
@@ -33,22 +31,29 @@
 }
 
 - (void)initNavigationBar{
-    [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
-        
-    //导航栏按钮
-    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_back"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationLeftBarAction)];
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_search"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationRightBarAction)];
     
-    _searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth - 100, [UIBarHelper navigationBarHeight]-10)];
+    CGFloat titleHeight = [self.navigationBarView height];
+    CGFloat titleWidth = kScreenWidth - titleHeight*2 - 8;
+
+    _searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, titleWidth, 35)];
+    _searchTextField.backgroundColor = [UIColor redColor];
     _searchTextField.font = kFontText14;
     _searchTextField.backgroundColor = UIColorFromRGBWithAlpha(0x838383,0.50f);
     _searchTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     _searchTextField.placeholder = L(@"search_hint");
-    [_searchTextField zt_cornerWithCornerRadii:100];
+    [_searchTextField zt_cornerWithCornerRadii:35];
     
-    self.navigationItem.titleView = _searchTextField;
-    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
-    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    WeakSelf;
+    [self setNavigationLeftBarHandler:^(NSInteger index) {
+        [weakSelf navigationLeftBarAction];
+    }];
+    
+    [self setNavigationRightImage:[UIImage imageNamed:@"ic_search"]];
+    [self setNavigationRightBarHandler:^(NSInteger index) {
+        [weakSelf navigationRightBarAction];
+    }];
+    
+    [self.navigationBarView setCustomTitleView:_searchTextField];
 }
 
 
@@ -101,8 +106,8 @@
     _tableView.estimatedRowHeight = 50;//估算高度
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.width.mas_equalTo(self.view);
-        make.left.top.mas_equalTo(self.view);
+        make.left.right.bottom.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
     }];
 }
 
@@ -111,8 +116,8 @@
     _searchKeywordView.childViewDelegate = self;
     [self.view addSubview:_searchKeywordView];
     [_searchKeywordView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.width.mas_equalTo(self.view);
-        make.left.top.mas_equalTo(self.view);
+        make.left.right.bottom.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
     }];
 }
 

@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self initNavigationBar];
     [self initWebView];
     [self initProgressView];
@@ -49,17 +48,23 @@
 
 
 - (void)initNavigationBar{
-    [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
-    
-    self.navigationItem.title = _articleData.title;
-    
-    //右侧按钮
-    UIBarButtonItem *browseButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_tab_home"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationBarActionBrowse)];
-    
-    UIBarButtonItem *collectButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_tab_home"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationBarActionCollect)];
+    CGFloat itemWidth = 44.f;
+    CGFloat itemHeight = 44.f;
 
-    self.navigationItem.rightBarButtonItems = @[browseButtonItem,collectButtonItem];
-
+    UIButton *browseButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, itemWidth, itemHeight)];
+    [browseButton setImage:[UIImage imageNamed:@"ic_language"] forState:UIControlStateNormal];
+    [browseButton addTarget:self action:@selector(navigationBarActionBrowse) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *collectButton = [[UIButton alloc] initWithFrame:CGRectMake(itemWidth + 10, 0, itemWidth, itemHeight)];
+    [collectButton setImage:[UIImage imageNamed:@"ic_language"] forState:UIControlStateNormal];
+    [collectButton addTarget:self action:@selector(navigationBarActionBrowse) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, itemWidth * 2 + 10, itemHeight)];
+    [rightView addSubview:browseButton];
+    [rightView addSubview:collectButton];
+    
+    [self setNavigationTitle:self.articleData.title];
+    [self.navigationBarView setCustomRightBarView:rightView];
 }
 
 - (void)navigationBarActionBrowse{

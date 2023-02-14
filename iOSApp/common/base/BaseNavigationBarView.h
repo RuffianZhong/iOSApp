@@ -29,6 +29,8 @@ typedef void(^RightBarHandler) (NSInteger index);
 -(void)setLeftImage:(UIImage*)leftImage;
 
 -(void)setRightImage:(UIImage*)rightImage;
+
+-(CGFloat)height;
 @end
 
 NS_ASSUME_NONNULL_END

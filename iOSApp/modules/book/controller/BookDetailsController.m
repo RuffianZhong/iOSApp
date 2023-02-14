@@ -22,8 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    [UIBarHelper navigationBarBackgroundShadowImage:[UIImage imageWithSize:CGSizeMake(1, 1) color:[UIColor clearColor] cornerRadius:0] controller:self];
     [self initDataNotify];
     [self initHeaderView];
     [self initTableView];
@@ -58,8 +56,8 @@
     _tableView.estimatedRowHeight = 100;//估算高度
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(self.view);
-        make.left.top.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
+        make.left.right.bottom.mas_equalTo(self.view);
     }];
 }
 

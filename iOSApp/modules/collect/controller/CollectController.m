@@ -21,14 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-
     [self initDataNotify];
     [self initNavigationBar];
     [self initTableView];
     [self loadData];
-
 }
 
 #pragma mark -init
@@ -42,7 +38,7 @@
 }
 
 - (void)initNavigationBar{
-    self.navigationItem.title = L(@"collect");
+    [self setNavigationTitle:L(@"collect")];
 }
 
 - (void)initTableView{
@@ -54,8 +50,8 @@
 
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(self.view);
-        make.left.top.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
+        make.left.right.bottom.mas_equalTo(self.view);
     }];
     
     WeakSelf

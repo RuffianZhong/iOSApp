@@ -19,8 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     [self initNavigationItem];
     [self initTabView];
     [self initPageView];
@@ -29,16 +28,12 @@
 }
 
 - (void)initNavigationItem{
-    [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
-    [UIBarHelper navigationBarBackgroundShadowImage:[UIImage imageWithSize:CGSizeMake(1, 1) color:kColorDarkGreen cornerRadius:0] controller:self];
-    [UIBarHelper statusBarBackgroundColor:kColorDarkGreen];
-    
-    self.navigationItem.title = _categoryData.name;
+    [self setNavigationTitle:self.categoryData.name];
 }
 
 
 - (void)initTabView{
-    _tabView = [[ZTUITabView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];
+    _tabView = [[ZTUITabView alloc] initWithFrame:CGRectMake(0, [UIBarHelper statusBarHeight] + [self.navigationBarView height], kScreenWidth, 60)];
     _tabView.backgroundColor = kColorDarkGreen;
     _tabView.delegate = self;
     [_tabView.tabScrollerView setContentInsetAdjustmentBehaviorNO];

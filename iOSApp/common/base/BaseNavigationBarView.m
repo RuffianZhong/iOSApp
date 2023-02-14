@@ -99,6 +99,8 @@
     }
 }
 
+#pragma mark - 对外函数
+
 - (void)setCustomLeftBarView:(UIView*)leftBarView{
     //移除旧数据
     [[self.leftBarView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
@@ -134,13 +136,14 @@
     
     //添加新数据
     [self.titleView addSubview:titleView];
-    [titleView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.bottom.mas_equalTo(self.titleView);
-    }];
     [self.titleView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.mas_equalTo(self);
         make.left.mas_equalTo(self.leftBarView.mas_right).offset(4);
         make.right.mas_equalTo(self.rightBarView.mas_left).offset(-4);
+    }];
+    [titleView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.centerY.mas_equalTo(self.titleView);
+        make.size.mas_equalTo(titleView.frame.size);
     }];
 }
 
@@ -156,4 +159,7 @@
     [self.rightBarButton setImage:rightImage forState:UIControlStateNormal];
 }
 
+- (CGFloat)height{
+    return _navigationBarHeight;
+}
 @end

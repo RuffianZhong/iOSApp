@@ -25,8 +25,8 @@ static NSString * const book_cell_id = @"book_cell_id";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = L(@"tab_book");
+    [self setNavigationLeftImage:[UIImage new]];
+    [self setNavigationTitle:L(@"tab_book")];
     [self initDataNotify];
     [self initCollectionView];
     [self initData];
@@ -54,7 +54,8 @@ static NSString * const book_cell_id = @"book_cell_id";
     
     [self.view addSubview:_collectionView];
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.width.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
+        make.left.right.bottom.mas_equalTo(self.view);
     }];
 }
 

@@ -24,8 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
 
     [self initDataNotify];
     [self initHeaderView];
@@ -54,8 +52,8 @@
 
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(self.view);
-        make.left.top.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
+        make.left.right.bottom.mas_equalTo(self.view);
     }];
     
     WeakSelf
@@ -73,22 +71,18 @@
 }
 
 - (void)initNavigationItem{
-    
-    //右侧按钮
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_search"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonAction)];
-    
-    self.navigationItem.title = L(@"tab_home");
-    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    [self setNavigationLeftImage:[UIImage new]];
+    [self setNavigationTitle:L(@"tab_home")];
+    [self setNavigationRightImage:[UIImage imageNamed:@"ic_search"]];
+    WeakSelf
+    [self setNavigationRightBarHandler:^(NSInteger index) {
+        SearchController *controller = [[SearchController alloc] init];
+        controller.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:controller animated:YES];
+    }];
 }
 
 #pragma mark -selector
-
-- (void)rightBarButtonAction{
-    SearchController *controller = [[SearchController alloc] init];
-    controller.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:controller animated:YES];
-    
-}
 
 -(void)updateUI:(HomeViewModel *)homeViewModel keyPath:(NSString*) keyPath{
 

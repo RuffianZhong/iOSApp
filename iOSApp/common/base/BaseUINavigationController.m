@@ -15,7 +15,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initNavigationBar];
 }
 
 #pragma mark -StatusBar
@@ -23,13 +22,6 @@
 - (UIViewController *)childViewControllerForStatusBarStyle{
     return self.topViewController;
 }
-
-#pragma mark -NavigationBar
-//初始化NavigationBar
-- (void)initNavigationBar{
-    [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
-}
-
 
 - (void)dealloc{
     NSLog(@"---nav--dealloc:%@",self);

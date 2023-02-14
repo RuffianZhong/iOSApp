@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setNavigationBarHiden:YES];
     [self initDataNotify];
     [self initTableView];
     [self initData];

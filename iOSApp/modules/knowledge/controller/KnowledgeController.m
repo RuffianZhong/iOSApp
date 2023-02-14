@@ -21,9 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = kColorWhite;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-
+    [self setNavigationLeftImage:[UIImage new]];
+    
     _titleArray = [NSArray arrayWithObjects:L(@"tab_tree"), L(@"tab_nav"), nil];
     [self initSegmentedControl];
     [self initPageView];
@@ -32,12 +31,11 @@
 
 - (void)initSegmentedControl{
     _segmentedControl = [[UISegmentedControl alloc] initWithItems:_titleArray];
-    _segmentedControl.frame = CGRectMake(0, 0, 100, 35);
-    _segmentedControl.selectedSegmentIndex = 1;
+    _segmentedControl.frame = CGRectMake(0, 0, 200, 35);
+    _segmentedControl.selectedSegmentIndex = 0;
     _segmentedControl.translatesAutoresizingMaskIntoConstraints = NO;//must:否则页面回退时崩溃
     [_segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
-    
-    self.navigationItem.titleView = _segmentedControl;
+    [self.navigationBarView setCustomTitleView:_segmentedControl];
 }
 
 
@@ -47,11 +45,12 @@
     _pageView.delegate = self;
     [self.view addSubview:_pageView];
     [_pageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(self.view);
+        make.left.right.bottom.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
     }];
     //initData
     [_pageView pageViewDataArray:_titleArray];
-    [_pageView pageViewSelectIndex:1];
+    [_pageView pageViewSelectIndex:0];
 }
 
 #pragma mark -辅助函数

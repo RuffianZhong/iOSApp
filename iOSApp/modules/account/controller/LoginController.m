@@ -28,10 +28,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initCustomStatusView];
     [self initDataNotify];
     [self initNavigationBar];
     [self initViews];
     [self initData];
+}
+
+//通过模态方式弹出会导致顶部预留空白，暂时通过添加默认占位控件解决，后续寻找解决方案
+- (void)initCustomStatusView{
+    UIView *statusView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, [UIBarHelper statusBarHeight])];
+    statusView.backgroundColor = kColorDarkGreen;
+    [self.view addSubview:statusView];
 }
 
 - (void)initDataNotify{
@@ -55,12 +63,11 @@
 }
 
 - (void)initNavigationBar{
-    [UIBarHelper navigationBarBackgroundColor:kColorDarkGreen controller:self];
-        
-    //左侧按钮
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_close"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationBarActionBack)];
-
-    self.navigationItem.leftBarButtonItem = backButtonItem;
+    [self setNavigationLeftImage:[UIImage imageNamed:@"ic_close"]];
+    WeakSelf
+    [self setNavigationLeftBarHandler:^(NSInteger index) {
+        [weakSelf navigationBarActionBack];
+    }];
 }
 
 - (void)initViews{
@@ -68,8 +75,8 @@
     _scrollView.backgroundColor = kColorWhite;
     [self.view addSubview:_scrollView];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(self.view);
-        make.left.top.mas_equalTo(self.view);
+        make.left.right.bottom.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
     }];
     
     [self initHeaderView];
@@ -151,7 +158,6 @@
 
     //密码显示-隐藏
     _pswHidenButton = [UIButton new];
-    _pswHidenButton.backgroundColor = [UIColor redColor];
     [_pswHidenButton setImage:[UIImage imageNamed:@"ic_show"] forState:UIControlStateNormal];//默认图片
     [_pswHidenButton setImage:[UIImage imageNamed:@"ic_hide"] forState:UIControlStateSelected];//选中图片
     [_pswHidenButton addTarget:self action:@selector(buttonClickEvent:)forControlEvents:UIControlEventTouchUpInside];
@@ -233,7 +239,7 @@
             
             if(weakSelf.loginResultBlock) weakSelf.loginResultBlock(weakSelf.loginViewModel.userData);
 
-            [weakSelf.navigationController popViewControllerAnimated:YES];
+            [weakSelf navigationBarActionBack];
 
         } error:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
             [HUDUtils hideLoadingForView:weakSelf.view];
@@ -252,10 +258,7 @@
 }
 
 - (void)navigationBarActionBack{
-//    [HUDUtils showToastMsg:L(@"login_success") forView:self.view];
-
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 // 点击空白处收起键盘

@@ -31,15 +31,14 @@
 @property(nonatomic) BOOL languageContentOpen;
 
 @property(nonatomic,strong) MeViewModel *meViewModel;
+
 @end
 
 @implementation MeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = kColorWhite;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    [UIBarHelper navigationBarBackgroundShadowImage:[[UIImage alloc] init] controller:self];
+    [self setNavigationLeftImage:[UIImage new]];
     
     [self initDataNotify];
     [self initScrollView];
@@ -47,6 +46,10 @@
     [self initCollectView];
     [self initLanguageView];
     [self initData];
+}
+
+- (void)dealloc{
+    [_meViewModel removeObserver:self forKeyPath:@"userData" context:nil];
 }
 
 - (void)initData{
@@ -82,12 +85,14 @@
 
 - (void)updateNavigationItem:(BOOL)isLogin{
     if(isLogin){
-        //右侧按钮
-        UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_logout"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonAction)];
-        
-        self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+        [self setNavigationRightImage:[UIImage imageNamed:@"ic_logout"]];
+        WeakSelf
+        [self setNavigationRightBarHandler:^(NSInteger index) {
+            [weakSelf.meViewModel logout];
+        }];
     }else{
-        self.navigationItem.rightBarButtonItem = nil;
+        [self setNavigationRightImage:[UIImage new]];
+        [self setNavigationRightBarHandler:nil];
     }
    
 }
@@ -97,7 +102,8 @@
     _scrollView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_scrollView];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.width.mas_equalTo(self.view);
+        make.left.right.bottom.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
     }];
 }
 
@@ -270,21 +276,10 @@
 }
 
 #pragma mark - 事件/逻辑
-- (void)rightBarButtonAction{
-    [_meViewModel logout];
-}
 
 - (void)userIconAction{
     if(!_meViewModel.userData){
-        LoginController *controller = [[LoginController alloc] init];
-        controller.hidesBottomBarWhenPushed = YES;
-        WeakSelf
-        controller.loginResultBlock = ^(UserData * _Nonnull userData) {
-            if(userData){
-                weakSelf.meViewModel.userData = userData;
-            }
-        };
-        [self.navigationController pushViewController:controller animated:YES];
+        [self gotoLoginController];
     }
 }
 
@@ -299,7 +294,8 @@
         make.width.mas_equalTo(_scrollView);
         make.top.mas_equalTo(_viewCollect.mas_bottom);
     }];
-    
+    _ivLanguageNext.image = _languageContentOpen ? [UIImage imageNamed:@"ic_down"] : [UIImage imageNamed:@"ic_up"];
+
     //赋值
     _languageContentOpen = !_languageContentOpen;
 }
@@ -320,20 +316,30 @@
 
 - (void)collectActionLogic:(UIButton *)button{
     if(!_meViewModel.userData){
-        LoginController *controller = [[LoginController alloc] init];
-        controller.hidesBottomBarWhenPushed = YES;
-        WeakSelf
-        controller.loginResultBlock = ^(UserData * _Nonnull userData) {
-            if(userData){
-                weakSelf.meViewModel.userData = userData;
-            }
-        };
-        [self.navigationController pushViewController:controller animated:YES];
+        [self gotoLoginController];
     }else{
         CollectController *controller = [[CollectController alloc] init];
         controller.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:controller animated:YES];
     }
+}
+
+- (void)gotoLoginController{
+    LoginController *controller = [[LoginController alloc] init];
+    controller.hidesBottomBarWhenPushed = YES;
+    WeakSelf
+    controller.loginResultBlock = ^(UserData * _Nonnull userData) {
+        if(userData){
+            weakSelf.meViewModel.userData = userData;
+        }
+    };
+    
+    BaseUINavigationController *parentController = [[BaseUINavigationController alloc] init];
+    [parentController pushViewController:controller animated:NO];
+    parentController.modalPresentationStyle = UIModalPresentationOverFullScreen;
+//    parentController.modalPresentationCapturesStatusBarAppearance = YES;
+    
+    [self.navigationController presentViewController:parentController animated:YES completion:nil];
 }
 
 @end
