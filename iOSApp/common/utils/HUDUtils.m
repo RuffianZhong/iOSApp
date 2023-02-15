@@ -10,22 +10,37 @@
 
 @implementation HUDUtils
 
++ (void)showToastMsg:(NSString*)msg{
+    UIView *view = [AppDelegate shareAppDelegate].window;
+    [HUDUtils showToastMsg:msg forView:view];
+}
+
 + (void)showToastMsg:(NSString*)msg forView:(UIView*)view{
     [HUDUtils showToastMsg:msg forView:view durationTime:1.0f];
 }
 
 + (void)showToastMsg:(NSString*)msg forView:(UIView*)view durationTime:(NSTimeInterval)duration{
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view  animated:YES];
     hud.mode = MBProgressHUDModeText;//纯文本
     hud.label.text = msg;//内容
     [hud hideAnimated:YES afterDelay:duration];//展示时长
 }
 
-+(void)showLoadingForView:(UIView*)view{
++ (void)showLoading{
+    UIView *view = [AppDelegate shareAppDelegate].window;
     [MBProgressHUD showHUDAddedTo:view animated:YES];
 }
 
-+(void)hideLoadingForView:(UIView*)view{
++ (void)showLoadingForView:(UIView*)view{
+    [MBProgressHUD showHUDAddedTo:view animated:YES];
+}
+
++ (void)hideLoading{
+    UIView *view = [AppDelegate shareAppDelegate].window;
+    [MBProgressHUD hideHUDForView:view animated:YES];
+}
+
++ (void)hideLoadingForView:(UIView*)view{
     [MBProgressHUD hideHUDForView:view animated:YES];
 }
 

@@ -114,7 +114,7 @@
     WeakSelf
     [alert confirmActionTitle:L(@"confirm") handler:^{
         [weakSelf.collectViewModel cancelCollectArticle:articleData.aid result:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
-            [HUDUtils showToastMsg:msg forView:weakSelf.view];
+            [HUDUtils showToastMsg:msg];
         }];
     }];
     [alert showWithController:self];

@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LaunchController : BaseUIViewController
+@interface LaunchController : UIViewController
 
 @end
 

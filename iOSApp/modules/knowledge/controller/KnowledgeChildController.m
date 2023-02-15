@@ -6,7 +6,7 @@
 //
 
 #import "KnowledgeChildController.h"
-#import "ArtcleListController.h"
+#import "ArticleListController.h"
 #import "ZTUITabView.h"
 #import "ZTUIPageView.h"
 
@@ -72,7 +72,7 @@
 #pragma mark -ZTUIPageViewDelegate
 - (UIViewController *)pageViewChildViewController:(ZTUIPageView *)pageView index:(NSInteger)index{
     
-    ArtcleListController *controller = [[ArtcleListController alloc] init];
+    ArticleListController *controller = [[ArticleListController alloc] init];
     controller.categoryId = _categoryData.childArray[index].cid;
     
     return controller;

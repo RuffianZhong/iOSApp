@@ -86,7 +86,7 @@
     
     NSInteger dataCount = bannerArray.count;
     _dataArray = bannerArray;
-    _loopCount = (int)dataCount * 3;
+    _loopCount = dataCount * 3;
     
     _loopScrollerView.contentSize = CGSizeMake(self.frame.size.width * _loopCount, self.frame.size.height);
     _pageControl.numberOfPages = dataCount;

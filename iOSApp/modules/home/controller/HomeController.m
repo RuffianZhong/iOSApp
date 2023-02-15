@@ -10,6 +10,7 @@
 #import "ArticleCell.h"
 #import "HomeViewModel.h"
 #import "SearchController.h"
+#import "ArticleDetailsController.h"
 
 @interface HomeController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -129,6 +130,13 @@
     };
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ArticleDetailsController *controller = [[ArticleDetailsController alloc] init];
+    controller.articleData = [_homeViewModel.artcleArray objectAtIndex:indexPath.row];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)dealloc{

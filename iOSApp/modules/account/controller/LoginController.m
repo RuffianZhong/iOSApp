@@ -230,21 +230,21 @@
         NSString *pswText = self.pswTextField.text;
         NSString *accountText = self.accountTextField.text;
         
-        [HUDUtils showLoadingForView:self.view];
+        [HUDUtils showLoading];
         WeakSelf
         [_loginViewModel loginWithAccount:accountText password:pswText success:^(UserData * _Nonnull data) {
-            [HUDUtils hideLoadingForView:weakSelf.view];
+            [HUDUtils hideLoading];
 
-            [HUDUtils showToastMsg:L(@"login_success") forView:weakSelf.view];
+            [HUDUtils showToastMsg:L(@"login_success")];
             
             if(weakSelf.loginResultBlock) weakSelf.loginResultBlock(weakSelf.loginViewModel.userData);
 
             [weakSelf navigationBarActionBack];
 
         } error:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
-            [HUDUtils hideLoadingForView:weakSelf.view];
+            [HUDUtils hideLoading];
 
-            [HUDUtils showToastMsg:msg forView:weakSelf.view];
+            [HUDUtils showToastMsg:msg];
         }];
         
     }else if(button == self.registerButton){

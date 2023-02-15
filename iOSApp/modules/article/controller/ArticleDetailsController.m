@@ -24,11 +24,16 @@
 }
 
 - (void)initWebView{
-    _webView = [[WKWebView alloc] initWithFrame:self.view.frame];
+//    _webView = [[WKWebView alloc] initWithFrame:self.view.frame];
+    _webView = [[WKWebView alloc] init];
     _webView.backgroundColor = kColorWhite;
     _webView.navigationDelegate = self;
     _webView.scrollView.delegate = self;
     [self.view addSubview:_webView];
+    [_webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationBarView.mas_bottom);
+    }];
     //添加进度监听
     [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
 
@@ -56,8 +61,8 @@
     [browseButton addTarget:self action:@selector(navigationBarActionBrowse) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *collectButton = [[UIButton alloc] initWithFrame:CGRectMake(itemWidth + 10, 0, itemWidth, itemHeight)];
-    [collectButton setImage:[UIImage imageNamed:@"ic_language"] forState:UIControlStateNormal];
-    [collectButton addTarget:self action:@selector(navigationBarActionBrowse) forControlEvents:UIControlEventTouchUpInside];
+    [collectButton setImage:[UIImage imageNamed:@"ic_collect_no"] forState:UIControlStateNormal];
+    [collectButton addTarget:self action:@selector(navigationBarActionCollect) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, itemWidth * 2 + 10, itemHeight)];
     [rightView addSubview:browseButton];

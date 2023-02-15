@@ -9,6 +9,7 @@
 #import "SearchKeywordView.h"
 #import "ArticleCell.h"
 #import "SearchViewModel.h"
+#import "ArticleDetailsController.h"
 
 @interface SearchController ()<UITableViewDelegate,UITableViewDataSource,SearchKeywordViewDelegate>
 @property(nonatomic,strong) SearchKeywordView *searchKeywordView;
@@ -161,6 +162,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _searchViewModel.artcleArray.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ArticleDetailsController *controller = [[ArticleDetailsController alloc] init];
+    controller.articleData = [_searchViewModel.artcleArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 

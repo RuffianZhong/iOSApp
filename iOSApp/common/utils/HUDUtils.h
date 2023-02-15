@@ -11,13 +11,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HUDUtils : NSObject
 
++ (void)showToastMsg:(NSString*)msg;
+
 + (void)showToastMsg:(NSString*)msg forView:(UIView*)view;
 
 + (void)showToastMsg:(NSString*)msg forView:(UIView*)view durationTime:(NSTimeInterval)duration;
 
-+(void)showLoadingForView:(UIView*)view;
++ (void)showLoading;
 
-+(void)hideLoadingForView:(UIView*)view;
++ (void)showLoadingForView:(UIView*)view;
+
++ (void)hideLoading;
+
++ (void)hideLoadingForView:(UIView*)view;
 
 @end
 

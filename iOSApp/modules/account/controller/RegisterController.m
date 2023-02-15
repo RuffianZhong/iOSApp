@@ -211,12 +211,12 @@
         NSString *pswConfirmText = self.pswConfirmTextField.text;
         NSString *accountText = self.accountTextField.text;
         
-        [HUDUtils showLoadingForView:self.view];
+        [HUDUtils showLoading];
         WeakSelf
         [_registerViewModel registerWithAccount:accountText password:pswText confirmPsw:pswConfirmText success:^{
-            [HUDUtils hideLoadingForView:weakSelf.view];
+            [HUDUtils hideLoading];
 
-//            [HUDUtils showToastMsg:L(@"register_success") forView:self.view];
+            [HUDUtils showToastMsg:L(@"register_success")];
             
             if(weakSelf.registerResultBlock){
                 weakSelf.registerResultBlock(accountText);
@@ -224,9 +224,9 @@
             
             [weakSelf.navigationController popViewControllerAnimated:YES];
         } error:^(NSNumber * _Nonnull code, NSString * _Nonnull msg) {
-            [HUDUtils hideLoadingForView:weakSelf.view];
+            [HUDUtils hideLoading];
 
-            [HUDUtils showToastMsg:msg forView:weakSelf.view];
+            [HUDUtils showToastMsg:msg];
         }];
     }
 }
