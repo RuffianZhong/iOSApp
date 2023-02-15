@@ -60,11 +60,11 @@
     [browseButton setImage:[UIImage imageNamed:@"ic_language"] forState:UIControlStateNormal];
     [browseButton addTarget:self action:@selector(navigationBarActionBrowse) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *collectButton = [[UIButton alloc] initWithFrame:CGRectMake(itemWidth + 10, 0, itemWidth, itemHeight)];
+    UIButton *collectButton = [[UIButton alloc] initWithFrame:CGRectMake(itemWidth, 0, itemWidth, itemHeight)];
     [collectButton setImage:[UIImage imageNamed:@"ic_collect_no"] forState:UIControlStateNormal];
     [collectButton addTarget:self action:@selector(navigationBarActionCollect) forControlEvents:UIControlEventTouchUpInside];
     
-    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, itemWidth * 2 + 10, itemHeight)];
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, itemWidth * 2, itemHeight)];
     [rightView addSubview:browseButton];
     [rightView addSubview:collectButton];
     

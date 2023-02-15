@@ -123,7 +123,7 @@
     
     //添加新数据
     [self.rightBarView addSubview:rightBarView];
-    [self.rightBarView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.rightBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.mas_equalTo(self);
         make.right.mas_equalTo(self).offset(-4);
         make.width.mas_equalTo(rightBarView.frame.size.width);
@@ -144,7 +144,11 @@
     }];
     [titleView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.centerY.mas_equalTo(self.titleView);
-        make.size.mas_equalTo(titleView.frame.size);
+        if(titleView == self.titleViewLabel){
+            make.width.height.mas_equalTo(self.titleView);
+        }else{
+            make.size.mas_equalTo(titleView.frame.size);
+        }
     }];
 }
 
