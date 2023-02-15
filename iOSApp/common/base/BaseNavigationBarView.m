@@ -65,7 +65,8 @@
 
 - (UILabel*)titleViewLabel{
     if(!_titleViewLabel){
-        _titleViewLabel = [[UILabel alloc] init];
+        CGFloat width = self.frame.size.width - _navigationBarHeight*2 - 4*2;
+        _titleViewLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, _navigationBarHeight)];
         _titleViewLabel.font = kFontText18;
         _titleViewLabel.textColor= [UIColor whiteColor];
         _titleViewLabel.textAlignment = NSTextAlignmentCenter;
