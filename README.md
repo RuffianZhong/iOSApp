@@ -6,10 +6,9 @@
 ### 功能效果图
 |  |  |  |
 | --- | --- | --- |
-| <img src="screenshot/home.png" width="248px" height="441px"/> | <img src="screenshot/search.png" width="248px" height="441px"/>| <img src="screenshot/project.png" width="248px" height="441px"/> |
-| <img src="screenshot/book.png" width="248px" height="441px"/> | <img src="screenshot/book_details.png" width="248px" height="441px"/> | <img src="screenshot/article_details.png" width="248px" height="441px"/> |
-| <img src="screenshot/me.png" width="248px" height="441px"/> | <img src="screenshot/login.png" width="248px" height="441px"/> | <img src="screenshot/register.png" width="248px" height="441px"/> |
-| <img src="screenshot/home_dark.png" width="248px" height="441px"/> | <img src="screenshot/knowledge_dark.png" width="248px" height="441px"/> | <img src="screenshot/category_dark.png" width="248px" height="441px"/> |
+| <img src="screenshot/home.png" width="248px" height="537px"/> | <img src="screenshot/search.png" width="248px" height="537px"/>| <img src="screenshot/project.png" width="248px" height="537px"/> |
+| <img src="screenshot/book.png" width="248px" height="537px"/> | <img src="screenshot/book_details.png" width="248px" height="537px"/> | <img src="screenshot/article_details.png" width="248px" height="537px"/> |
+| <img src="screenshot/me.png" width="248px" height="537px"/> | <img src="screenshot/login.png" width="248px" height="537px"/> | <img src="screenshot/register.png" width="248px" height="537px"/> |
 
 
 ### 项目结构
