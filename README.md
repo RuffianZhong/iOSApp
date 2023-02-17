@@ -1,127 +1,87 @@
 # iOSApp
-这是一个使用 MVVM 模式架构的 iOSApp，目的是通过编写一个完整的 App 来探讨学习 iOS 应用开发中常用的一些架构模式，开发方法，常用控件，控件样式自定义，基本动画，自定义View...
 
-一.MVVM 
+大体上通过业务模块分包，使用 MVVM （基于 KVO ）模式架构，目标是构建一个扩展性良好的应用，controller 模块编写 view 相关的布局信息，界面业务逻辑在 ViewModel 中实现，数据通过 Model 管理。
 
-这里的 MVVM 模式是基于 KVO 特性，实现属性更改监听，通过感知 UIViewController/UIView 生命周期实现资源管理和释放。
 
+### 功能效果图
+|  |  |  |
+| --- | --- | --- |
+| <img src="screenshot/home.png" width="248px" height="441px"/> | <img src="screenshot/search.png" width="248px" height="441px"/>| <img src="screenshot/project.png" width="248px" height="441px"/> |
+| <img src="screenshot/book.png" width="248px" height="441px"/> | <img src="screenshot/book_details.png" width="248px" height="441px"/> | <img src="screenshot/article_details.png" width="248px" height="441px"/> |
+| <img src="screenshot/me.png" width="248px" height="441px"/> | <img src="screenshot/login.png" width="248px" height="441px"/> | <img src="screenshot/register.png" width="248px" height="441px"/> |
+| <img src="screenshot/home_dark.png" width="248px" height="441px"/> | <img src="screenshot/knowledge_dark.png" width="248px" height="441px"/> | <img src="screenshot/category_dark.png" width="248px" height="441px"/> |
+
+
+### 项目结构
+```
+ |--iOSApp
+    |-- modules (业务模块：账户模块，文章模块，搜索模块，收藏模块,,,)
+    |-- demo (项目相关的demo，快速熟悉某些项目特性：mvvm特性，第三方库特性,,,)
+    |-- common (常用工具类，帮助类，分类)
+        |-- helper (常用辅助类)
+        |-- base (通用基类)
+        |-- view (通用自定义View)248
+        |-- db (数据库)
+        |-- utils (工具类)
+        |-- category (常用分类)
+        |-- http (网络)
+    |-- mvvm (mvvm框架)
+    |-- AppDelatege
+    |-- Assets.xcassets (默认图片/图标)
+    |-- Info.plist
+    |-- PrefixHeader.pch
+    |-- Localizable.strings (国际化文本)
+    |-- zh-Hans_image.bundle （国际化图片：繁体）
+```
+
+### 业务模块结构
+```
+|--modules
+    |-- article (文章模块)
+    |-- search (搜索模块)
+    |-- collect (收藏模块)
+    |-- ...... (其他模块)
+    |-- account (账户模块)
+         |-- model (数据管理model，实体类data)
+              |-- AccountModel (登录，注册，用户本地数据)
+              |-- UserData (用户实体) 
+         |-- controller 
+              |-- LoginController  
+              |-- RegisterController
+         |-- viewModel
+              |-- LoginViewModel  
+              |-- RegisterViewModel 
+         |-- view (此模块相关的自定义View)
+    
+```
+
+### 技术概览
+
+- AFNetworking ： 网络数据请求
+- FMDB ： 本地数据库管理
+- SDWebImage ： 图片加载
+- MJExtension ： 数据转换/解析
+- MJRefresh ： 下拉刷新/上拉加载
+- Masonry ： 自动布局框架
+- MBProgressHUD ： 吐司/Loading
+- ZTUIStyle ： UI效果（圆角/边框/渐变/阴影）
+- ZTMVVM ： mvvm
+
+### 附加产物
+
+#### 1.ZTMVVM
+        
+基于 KVO 特性，实现属性更改监听，通过数据变更驱动UI变化，通过感知 UIViewController/UIView 生命周期实现资源管理和释放。
+
+优点：
 - [Y] 使用简单，无侵入
 - [Y] 自动管理资源，无须手动释放，不存在内存泄漏
 - [Y] 支持点语法
 - [Y] 支持 UIView / UIViewController
 
+[ZTMVVM 文档](https://github.com/RuffianZhong/iOSApp/blob/master/README_mvvm.md)
 
-1.使用简单
-
-```objectivec
-
-///添加 UIViewController 分类
-#import "mvvm/UIViewController+ZTMVVM.h"
-
-
-//某个你需要监听的数据类
-_viewModel = [[DemoViewModel alloc]init]
-
-//监听数据变化：更新UI
-[self observe:_viewModel notify:^(DemoViewModel *observable, NSString *keyPath) {
-    self->_label.text = observable.userData.name;//更新UI
-}];
-
-///更新数据
-_viewModel.userData.name = @"Ruffian";
-
-```
-
-2.其他接口
-
-```objectivec
-
-//监听所有属性
-- (void)observe:(id)observable notify:(void (^)(id observable,NSString *keyPath)) notify;
-
-//设置 需要 监听的属性
-- (void)observe:(id)observable keyPaths:(NSArray*)keyPathArray notify:(void (^)(id observable,NSString *keyPath)) notify;
-
-//设置 不需要 监听的属性
-- (void)observe:(id)observable keyPathsNot:(NSArray*)keyPathArray notify:(void (^)(id observable,NSString *keyPath)) notify;
-
-
-//设置 NSKeyValueObservingOptions
-- (void)observe:(id)observable options:(NSKeyValueObservingOptions)options notify:(void (^)(id observable,NSString *keyPath)) notify;
-
-
-//设置 NSKeyValueObservingOptions 和 需要监听的属性
-- (void)observe:(id)observable keyPaths:(NSArray*)keyPathArray options:(NSKeyValueObservingOptions)options notify:(void (^)(id observable,NSString *keyPath)) notify;
-
-//设置 NSKeyValueObservingOptions 和 不需要监听的属性
-- (void)observe:(id)observable keyPathsNot:(NSArray*)keyPathArray options:(NSKeyValueObservingOptions)options notify:(void (^)(id observable,NSString *keyPath)) notify;
-
-```
-
-3.我认为的使用姿势
-
-```objectivec
-
--------------UIView/UIViewController-------------
-"DemoController.m"
-
-/// 监听数据变化：更新UI
-[self observe:_viewModel notify:^(DemoViewModel *observable, NSString *keyPath) {
-    ///更新UI
-    self->_label.text = observable.userData.name;
-}];
-
-/// 通过 ViewModel 管理数据
-[_viewModel showUserInfo];
-
-/// 通过 ViewModel 更新数据
-[_viewModel updateUserInfo:name];
-
-
--------------ViewModel-------------
-"DemoViewModel.m"
-
-@property(nonatomic,strong) UserData *userData;//用户数据类
-
-@property(nonatomic,strong) UserModel *userModel;//用户相关 model
-
-///更新数据
-- (void)updateUserInfo:(NSString *)name{
-    
-    ///更新实体类数据
-    self.userData.name = name;
-}
-
-///获取数据
-- (void)showUserInfo{
-    self.userData = _userModel.getUserData;
-}
-
--------------Model-------------
-
-"UserModel.m"
-
-///获取用户数据信息
-- (UserData *)getUserData{
-    UserData *userData = [[UserData alloc]init];
-    userData.name = name;
-    return userData;
-}
-
-
-"UserData.h"
-
-@interface UserData : NSObject
-@property(nonatomic,assign) NSInteger uid;
-@property(nonatomic,copy) NSString* name;
-@property(nonatomic,strong) NSMutableArray *array;
-@property(nonatomic,strong) NSMutableDictionary *dictionary;
-@property(nonatomic,strong) UserChild *child;
-@end
-
-```
-
-二.ZTUIStyle
+#### 2.ZTUIStyle
 
 UI 快速开发，高效实现精美 UI 样式：圆角，边框，阴影，渐变...  >>>> [ZTUIStyle](https://github.com/RuffianZhong/ZTUIStyle)
 
@@ -130,8 +90,4 @@ UI 快速开发，高效实现精美 UI 样式：圆角，边框，阴影，渐�
 - [Y] 不依赖 frame ，框架自适应 UIView 大小
 - [Y] 支持多种效果同时使用
 - [Y] 支持 UIView 及其 所有子类
-
-
-
-
 
