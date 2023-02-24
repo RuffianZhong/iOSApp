@@ -11,7 +11,7 @@ target 'iOSApp' do
   pod 'MJExtension', '~> 3.0.15'
   pod 'MJRefresh', '~>3.6.1'
   pod 'SDWebImage', '~>5.0'
-  pod 'ZTUIStyle', '~>0.0.1'
+  pod 'ZTUIStyle', '~>0.0.2'
   pod 'FMDB'
   pod 'MBProgressHUD', '~> 1.2.0'
 

@@ -24,7 +24,7 @@ PODS:
   - SDWebImage (5.15.0):
     - SDWebImage/Core (= 5.15.0)
   - SDWebImage/Core (5.15.0)
-  - ZTUIStyle (0.0.1)
+  - ZTUIStyle (0.0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0.1)
@@ -34,7 +34,7 @@ DEPENDENCIES:
   - MJExtension (~> 3.0.15)
   - MJRefresh (~> 3.6.1)
   - SDWebImage (~> 5.0)
-  - ZTUIStyle (~> 0.0.1)
+  - ZTUIStyle (~> 0.0.2)
 
 SPEC REPOS:
   trunk:
@@ -55,8 +55,8 @@ SPEC CHECKSUMS:
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
   SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
-  ZTUIStyle: 97817621dc1f2823515509c0a2d44a71ae9e145c
+  ZTUIStyle: 380bb4f6f26be28a9b0b1a1751af80b81a419b40
 
-PODFILE CHECKSUM: 5cc385bde8fca63fe651e0ac21e049756a0be109
+PODFILE CHECKSUM: ba062fa7ec1a2225480d1ef4195580580956a08d
 
 COCOAPODS: 1.10.1
