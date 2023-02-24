@@ -48,10 +48,6 @@
     [self initData];
 }
 
-- (void)dealloc{
-    [_meViewModel removeObserver:self forKeyPath:@"userData" context:nil];
-}
-
 - (void)initData{
     [_meViewModel getUserDataFromLocal];
 }

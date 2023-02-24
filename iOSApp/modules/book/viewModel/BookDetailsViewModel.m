@@ -42,12 +42,12 @@
 
 //查询某教程所有学习进度
 - (void)queryWithBookId:(NSInteger)bookId{
-    
+    WeakSelf
     [_studyDao queryWithId:bookId result:^(NSMutableArray<StudyData *> * _Nonnull dataArray) {
         
         StudyData *studyData = nil;
         ArticleData *articleData = nil;
-        NSMutableArray<ArticleData*> *tempArray = self->_dataArray;
+        NSMutableArray<ArticleData*> *tempArray = weakSelf.dataArray;
         //匹配本地学习数据
         for (int i = 0; i < tempArray.count; i++) {
             articleData = [tempArray objectAtIndex:i];
@@ -64,14 +64,14 @@
             tempArray[i] = articleData;
         }
         
-        self->_dataArray = tempArray;
+        weakSelf.dataArray = tempArray;
     }];
 }
 
 - (void)updateStudyData:(StudyData*) studyData{
     
     ArticleData *articleData = nil;
-    NSMutableArray<ArticleData*> *tempArray = self->_dataArray;
+    NSMutableArray<ArticleData*> *tempArray = [self.dataArray mutableCopy];
     //匹配本地学习数据
     for (int i = 0; i < tempArray.count; i++) {
         articleData = [tempArray objectAtIndex:i];
@@ -83,7 +83,7 @@
         
         tempArray[i] = articleData;
     }
-    self->_dataArray = tempArray;
+    self.dataArray = tempArray;
 }
 
 
